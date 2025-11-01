@@ -1,4 +1,36 @@
-.main {
-    display: flex;
-    flex-wrap: wrap;
+h1 {
+    text-align: center;
+    border-radius: 15px;
+    margin: 1% -2%;
+    background-color: #3C9E82;
+    font-weight: 600;
+    padding: 1%;
+}
+
+.formSections {
+    margin: 1% 10%;
+    border-style: ridge;
+    border-radius: 20px;
+    padding: 1% 4%;
+}
+
+.btn{
+    background-color: #247AB7;
+    font-weight: 600;
+    color: white;
+    margin-top: 1%;
+}
+
+.endButton{
+    margin-right: 12%;
+
+}
+
+
+@media (max-width: 426px) {
+    .VehicleInfo {
+    margin: 3% 6%;
+    border-style: none;
+    border-radius: 0px;
+}
 }
