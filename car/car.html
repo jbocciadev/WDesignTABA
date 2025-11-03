@@ -33,7 +33,8 @@
                         <a class="nav-link" href="../life/life.html">Life</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page">Car</a>
+                        <a class="nav-link"><img src="assets/media/images/carLOGO.png" alt="Company Logo" width="80"
+                                height="auto"></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../home/home.html">Home</a>
@@ -41,23 +42,21 @@
                 </ul>
             </div>
         </div>
+
     </nav>
 
     <form>
 
         <!-- Vehicle Information -->
-        <div class="formSections">
+        <div class="formSections" id="carInfo">
             <h1>Vehicle Information</h1>
 
             <div class="row mb-3">
                 <div class="form-group col-md-9">
-
                     <label for="inputReg" class="form-label">Enter Registration</label>
                     <input type="text" class="form-control" id="inputReg" placeholder="Example 181D123"
                         onblur="processReg(this.value)">
-
                 </div>
-
 
                 <div class="form-group col-md-3 mx-auto">
                     <label for="inputReg" class="form-label">Year</label>
@@ -143,69 +142,81 @@
             </div>
             <!-- VALUE -->
             <div class="row mb-3">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="carValue" class="form-label">Vehicle Value (€)</label>
                     <input type="text" id="carValue" class="form-control">
                 </div>
+                <div class="form-group col-md-4">
+                    <label for="mileage" class="form-label">Estimated Annual Mileage (km)</label>
+                    <input type="text" id="mileage" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="parking" class="form-label">Parking Location</label>
+                    <select class="form-select" id="parking" required>
+                        <option value="">Select Location</option>
+                        <option>Garage</option>
+                        <option>Street</option>
+                        <option>Driveway</option>
+                    </select>
+                </div>
 
-                <!-- Imported Vehicle -->
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input" type="checkbox" id="importedSwitch">
-                    <label class="form-check-label" for="importedSwitch">Is this car imported?</label>
-                </div>
-                <!-- HIDDEN COUNTRY OF IMPORT -->
-                <div id="importedCountry" class="mb-3" style="display:none;">
-                    <label for="origin" class="form-label">Country of Origin</label>
-                    <input type="text" class="form-control" id="origin" placeholder="e.g. UK">
-                </div>
             </div>
-
+            <!-- Imported Vehicle -->
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="importedSwitch">
+                <label class="form-check-label" for="importedSwitch">Is this car imported?</label>
+            </div>
+            <!-- HIDDEN COUNTRY OF IMPORT -->
+            <div id="importedCountry" class="mb-3" style="display:none;">
+                <label for="origin" class="form-label">Country of Origin</label>
+                <input type="text" class="form-control" id="origin" placeholder="e.g. UK">
+            </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg" href="#">Next: Insurance Preferences</button>
+                <button type="submit" class="btn btn-primary btn-lg" href="#insurancePreferences">Next: Insurance
+                    Preferences</button>
             </div>
 
         </div>
 
-
-
-
+        <br><br>
 
         <!-- Insurance Preferences -->
-        <div class="formSections">
+        <div class="formSections" id="insurancePreferences">
             <h1>Insurance Preferences</h1>
 
-            <div class="row mb-3">
+            <div class="row d-flex justify-content-around">
                 <!-- POLICY TYPE -->
-                <div class="policy form-group col-md-6">
-                    <h6>Please select your policy type:</h6>
-                    <input type="radio" id="comprehensive" name="fav_language" value="HTML">
+                <div class="policy form-group col-md-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <h6>1. Please select your policy type:</h6>
+                    <input type="radio" id="comprehensive" name="policy" value="HTML">
                     <label for="comprehensive" class="form-label">Comprehensive</label><br>
-                    <input type="radio" id="fireTheft" name="fav_language" value="CSS">
+                    <input type="radio" id="fireTheft" name="policy" value="CSS">
                     <label for="fireTheft" class="form-label">Third Party, Fire and Theft</label><br>
-                    <input type="radio" id="thirdOnly" name="fav_language" value="JavaScript">
+                    <input type="radio" id="thirdOnly" name="policy" value="JavaScript">
                     <label for="thirdOnly" class="form-label">Third Party Only</label><br>
                 </div>
                 <!-- POLICY START -->
-                <div class="policy form-group col-md-6">
-                    <h6>Please select policy START date</h6>
+                <div class="policy form-group col-md-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <h6>2. Please select policy START date</h6>
                     <input type="date" id="policyStart" name="policyStart">
                     <input type="submit">
                 </div>
             </div>
             <!-- POLICY DURATION -->
-            <div class="row mb-3">
-                <div class="policy form-group col-md-6">
-                    <h6>Please select your policy type:</h6>
-                    <input type="radio" id="annual" name="fav_language" value="HTML">
+            <div class="row d-flex justify-content-around">
+                <div class="policy form-group col-md-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <h6>3. Please select your policy type:</h6>
+                    <input type="radio" id="annual" name="period" value="HTML">
                     <label for="annual" class="form-label">Annual</label><br>
-                    <input type="radio" id="monthly" name="fav_language" value="CSS">
+                    <input type="radio" id="monthly" name="period" value="CSS">
                     <label for="monthly" class="form-label">Monthly</label><br>
                 </div>
+
                 <!-- POLICY ADDONS -->
-                <div class="policy form-group col-md-6">
-                    <h6>Please select your policy add-ons:</h6>
+                <div class="policy form-group col-md-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <h6>4. Please select your policy add-ons:</h6>
                     <input type="checkbox" id="NCB" name="NCB" value="NCB">
-                    <label for="NCB">No Claim Bonus (NCB) Protection</label><br>
+                    <label for="NCB">No Claim Bonus Protection</label><br>
                     <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
                     <label for="vehicle2">Roadside Assistance</label><br>
                     <input type="checkbox" id="newKey" name="newKey" value="newKey">
@@ -216,23 +227,25 @@
 
 
             <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg" href="#">Next: Insurance add-ons</button>
+                <button type="submit" class="btn btn-primary btn-lg" href="#driverDetails">Next: Insurance
+                    add-ons</button>
             </div>
 
         </div>
 
+        <br><br>
 
         <!-- Driver Details -->
-        <div class="formSections">
+        <div class="formSections" id="driverInfo">
             <h1>Driver Details</h1>
-            <div class="row mb-3">
+            <div class="row mb-3" id="driverDetails">
                 <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <label for="Age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="Age" placeholder="16+" min="16" required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Full Name</label>
-                    <input type="name" class="form-control" id="inputEmail4" placeholder="Full Name">
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Full Name">
                 </div>
             </div>
 
@@ -265,18 +278,18 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="mb-3 form-group">
                 <label for="inputAddress" class="form-label">Address</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="123 Main St">
             </div>
-            <div class="form-group">
+            <div class="mb-3 form-group">
                 <label for="inputAddress2" class="form-label">Address 2</label>
                 <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
             </div>
 
 
             <div class="row mb-3">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="County" class="form-label">County</label>
                     <select class="form-select" id="County" required>
                         <option value="">Select County</option>
@@ -308,7 +321,7 @@
                         <option>Wicklow</option>
                     </select>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="inputCity" class="form-label">City</label>
                     <input type="text" class="form-control" id="inputCity">
                 </div>
@@ -316,18 +329,37 @@
 
                 <div class="form-group col-md-4">
                     <label for="inputZip" class="form-label">Enter Post Code</label>
-                    <input type="text" class="form-control" id="inputZip">
+                    <input type="text" class="form-control" id="inputZip" placeholder="DXX XXXX">
                 </div>
-
             </div>
+
+
+            <!-- PENALTY POINTS? -->
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="penaltySwitch">
+                <label class="form-check-label" for="importedSwitch">Do you have any penalty points?</label>
+            </div>
+            <!-- HIDDEN PENALTY -->
+            <div id="penaltyArea" class="mb-3" style="display:none;">
+                <label for="origin" class="form-label">How many penalty points do you have?</label>
+                <select class="form-select" id="penalty" required>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5+</option>
+                </select>
+            </div>
+
             <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg" href="#">Next: Contact Info</button>
+                <button type="submit" class="btn btn-primary btn-lg" href="#contactInfo">Next: Contact Info</button>
             </div>
         </div>
 
+        <br><br>
 
         <!-- Contact Information -->
-        <div class="formSections">
+        <div class="formSections" id="contactInfo">
             <h1>Contact Information</h1>
             <div class="row mb-3">
                 <div class="form-group col-md-6">
@@ -355,12 +387,6 @@
 
     </form>
     <hr>
-
-
-
-
-
-
 
 
 

@@ -47,6 +47,17 @@ h1 {
     border-style: inset;
 }
 
+/* Better Balance between size and content amount
+@media (max-width: 1024px) {
+body {
+    
+}
+} */
+
+
+body {
+    font-size: small;
+}
 @media (max-width: 426px) {
     .VehicleInfo {
         margin: 3% 6%;
@@ -58,3 +69,5 @@ h1 {
         margin-top: 12px;
     }
 }
+
+
