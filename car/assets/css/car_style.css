@@ -7,30 +7,54 @@ h1 {
     padding: 1%;
 }
 
+
+/* Classes */
 .formSections {
-    margin: 1% 10%;
+    margin: 1vw 7vw;
     border-style: ridge;
     border-radius: 20px;
     padding: 1% 4%;
 }
 
-.btn{
+.form-auto {
+    margin-top: 1%;
+    border-style: none;
+    border-radius: 20px;
+    padding: 1% 4%;
+}
+
+.policy {
+    text-align: center;
+    margin-top: 15px;
+    border-style: inset;
+    border-radius: 35px;
+}
+
+.btn {
     background-color: #247AB7;
     font-weight: 600;
     color: white;
     margin-top: 1%;
 }
 
-.endButton{
-    margin-right: 12%;
-
+.col-12 {
+    text-align: center;
 }
 
+/* IDs */
+
+#carYear {
+    border-style: inset;
+}
 
 @media (max-width: 426px) {
     .VehicleInfo {
-    margin: 3% 6%;
-    border-style: none;
-    border-radius: 0px;
-}
+        margin: 3% 6%;
+        border-style: none;
+        border-radius: 0px;
+    }
+
+    .policy {
+        margin-top: 12px;
+    }
 }
