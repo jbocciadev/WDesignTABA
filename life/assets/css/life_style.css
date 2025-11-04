@@ -7,6 +7,10 @@
 }
 .life-form {
     /* background-color: var(--green); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
     margin: 10px 0;
     min-width: 33vw;
@@ -19,7 +23,9 @@
 .formsection {
     display: flex;
     flex-direction: column;
-    padding: 0 0 5% 5%;
+    margin: 0 0 0 -20px;
+    border-left: 3px solid var(--green);
+
     /* padding-left: 10%; */
     /* display: block; */
 }
@@ -30,13 +36,17 @@
     border: none;
     background-color: transparent;
     width: 2.5em;
+    margin-right: -15px;
 }
+
+#cover-term:focus,
 #cover-term:hover {
-    background-color: lightgray;
+    margin: 0;
+    background-color: #fff;
 }
 
 .formsection ul {
-    border-left: 2px solid var(--green);
+    list-style: none;
     font-weight: 500;
 }
 .form-buttons * {
@@ -50,10 +60,29 @@
     border-color: var(--blue);
     background-color: var(--blue);
     color: #fff;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 #submit-form-btn {
     border-color: var(--green);
     background-color: var(--green);
     color: #fff;
+}
+
+.formsection div {
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.formsection div:not(.form-buttons):hover {
+    background-color: lightgray;
+}
+
+.list-header {
+    border-top: 3px solid var(--blue);
+    border-width: 90%;
+    border-radius: 0 !important;
+    color: var(--blue);
+}
+#second-adult-list {
+    display: none;
 }
