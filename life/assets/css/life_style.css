@@ -1,0 +1,59 @@
+@import "../../../base.css";
+
+.form-container {
+    /* background-color: gray; */
+    display: flex;
+    justify-content: center;
+}
+.life-form {
+    /* background-color: var(--green); */
+    background-color: #fff;
+    margin: 10px 0;
+    min-width: 33vw;
+    min-height: 100px;
+}
+.form-title {
+    justify-self: center;
+    color: var(--green);
+}
+.formsection {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 5% 5%;
+    /* padding-left: 10%; */
+    /* display: block; */
+}
+#cover-amount {
+    width: 50%;
+}
+#cover-term {
+    border: none;
+    background-color: transparent;
+    width: 2.5em;
+}
+#cover-term:hover {
+    background-color: lightgray;
+}
+
+.formsection ul {
+    border-left: 2px solid var(--green);
+    font-weight: 500;
+}
+.form-buttons * {
+    border: 2px solid;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 5px 10px;
+    text-shadow: -0.5px -0.5px 0.5px #000, 0.5px 0.5px 0.5px #000; /* text-shadow: 1px 1px 1px #000; */
+}
+#add-adult-btn {
+    border-color: var(--blue);
+    background-color: var(--blue);
+    color: #fff;
+    margin-left: 15px;
+}
+#submit-form-btn {
+    border-color: var(--green);
+    background-color: var(--green);
+    color: #fff;
+}
