@@ -1,24 +1,54 @@
-/* This is the main css file. It will provide the layout styling to the landing page as well as to the rest of pages
+/* This is the main css file. It will provide the layout styling to the landing page as well as to the rest of pages.
+    Variables are declared in this file.
+    This file is also intended to provide styling to header and footer elements that will repeat across pages.
     Every other page to have their specific css to deal with elements that are not shared with the rest of pages */
 
-@import url("https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"); */
+
+@font-face {
+    font-family: "Zalando"; /* set name */
+    src: url(https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap); /* url of the font */
+}
 
 :root {
     --green: #3c9e82;
     --blue: #247ab7;
+    --white: #fafafa;
+    --black: darkslategray;
+}
+body {
+    background-color: var(--white);
+    font-family: "Zalando", sans-serif !important;
+}
+.outer-wrapper {
+    background-color: transparent;
+    overflow: visible;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.outer-background {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 125px;
+    background-color: var(--green);
+}
+.nav-wrapper {
+    background-color: #fff; /*Need to fix this, image to remove background*/
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .navbar {
     /* background-color: var(--blue); */
 }
-
 .company-logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 20vw;
+    width: 10vw;
 }
-
 .brand-bar {
     justify-self: center;
     justify-content: center;
@@ -27,20 +57,31 @@
 }
 
 .nav-link {
-    font-family: "Zalando Sans", sans-serif !important;
+    font-size: 20px;
     font-weight: 300;
-    color: #000;
+    color: var(--black);
 }
 
 .nav-link:hover {
     border-bottom: 4px solid #3c9e82;
     padding-bottom: 4px;
-    color: #000000;
+    color: var(--black);
+}
+
+.nav-link.show {
+    background-color: var(--green) !important;
+    color: var(--white) !important;
+    border-radius: 15px;
 }
 
 .nav-item .active {
-    color: #fafafa !important;
     font-weight: 600;
+    color: var(--black) !important;
+}
+
+.dropdown-item:hover {
+    background-color: var(--green);
+    color: var(--white);
 }
 
 .insurance-types {
@@ -126,6 +167,7 @@ footer li {
 }
 
 .footer-logo {
+    scale: 80%;
     max-width: 100%;
 }
 
@@ -229,7 +271,7 @@ footer hr {
     }
 
     .nav-link {
-        font-size: 32px;
+        /* font-size: 32px; */
     }
 }
 
@@ -243,6 +285,6 @@ footer hr {
 /* Fixed */
 @media (min-width: 768px) {
     .nav-link {
-        font-size: 26px;
+        /* font-size: 26px; */
     }
 }
