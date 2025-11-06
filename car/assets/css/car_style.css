@@ -10,7 +10,7 @@ h1 {
 
 /* Classes */
 .formSections {
-    margin: 1vw 7vw;
+    margin: 1vw 18vw;
     border-style: ridge;
     border-radius: 20px;
     padding: 1% 4%;
@@ -31,21 +31,37 @@ h1 {
 }
 
 .btn {
-    background-color: #247AB7;
+    background-color: ;
     font-weight: 600;
     color: white;
     margin-top: 1%;
 }
 
+div.sticky {
+    position: sticky;
+    bottom: 0;
+    background-color: #247AB7;
+    padding: 0.2vh 1.2vh;
+width: 50vw;
+    font-size: 20px;
+
+    justify-self: center;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Buttons */
 .col-12 {
     text-align: center;
 }
 
-/* IDs */
 
+/* IDs */
 #carYear {
     border-style: inset;
 }
+
 
 /* Better Balance between size and content amount
 @media (max-width: 1024px) {
@@ -58,6 +74,19 @@ body {
 body {
     font-size: small;
 }
+
+
+/* Tablet */
+@media (max-width: 769px) {
+    .formSections {
+        margin: 1vw 8vw;
+        border-style: ridge;
+        border-radius: 20px;
+        padding: 1% 4%;
+    }
+}
+
+/* Mobile Large */
 @media (max-width: 426px) {
     .VehicleInfo {
         margin: 3% 6%;
@@ -69,5 +98,3 @@ body {
         margin-top: 12px;
     }
 }
-
-

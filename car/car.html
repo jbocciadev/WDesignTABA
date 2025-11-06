@@ -126,8 +126,7 @@
                         <option value="">Select Fuel Type</option>
                         <option>Petrol</option>
                         <option>Diesel</option>
-                        <option>Petrol-Hybrid</option>
-                        <option>Diesel-Hybrid</option>
+                        <option>Hybrid</option>
                         <option>Electric</option>
                     </select>
 
@@ -136,7 +135,7 @@
                 <!-- ENGINE CAPACITY -->
                 <div class="form-group col-md-6">
                     <label for="engineSize" class="form-label">Enter Engine Size (cc)</label>
-                    <input type="text" id="engineSize" class="form-control" placeholder="Example: 999, 1249">
+                    <input type="text" id="engineSize" class="form-control" placeholder="Example: '999', '1249'">
                 </div>
 
             </div>
@@ -144,19 +143,22 @@
             <div class="row mb-3">
                 <div class="form-group col-md-4">
                     <label for="carValue" class="form-label">Vehicle Value (€)</label>
-                    <input type="text" id="carValue" class="form-control">
+                    <input type="text" id="carValue" class="form-control" required>
                 </div>
+
                 <div class="form-group col-md-4">
-                    <label for="mileage" class="form-label">Estimated Annual Mileage (km)</label>
-                    <input type="text" id="mileage" class="form-control">
+                    <label for="mileage" class="form-label">Estimated Annual Mileage</label>
+                    <input type="text" id="mileage" class="form-control" placeholder="(km)" required>
                 </div>
+
                 <div class="form-group col-md-4">
                     <label for="parking" class="form-label">Parking Location</label>
                     <select class="form-select" id="parking" required>
                         <option value="">Select Location</option>
-                        <option>Garage</option>
-                        <option>Street</option>
-                        <option>Driveway</option>
+                        <option value="0">Garage</option>
+                        <option value="1">Driveway</option>
+                        <option value="2">Street</option>
+
                     </select>
                 </div>
 
@@ -186,17 +188,17 @@
 
             <div class="row d-flex justify-content-around">
                 <!-- POLICY TYPE -->
-                <div class="policy form-group col-md-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                <div class="policy form-group col-lg-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                     <h6>1. Please select your policy type:</h6>
-                    <input type="radio" id="comprehensive" name="policy" value="HTML">
+                    <input type="radio" id="comprehensive" name="policy" value="comprehensive" required>
                     <label for="comprehensive" class="form-label">Comprehensive</label><br>
-                    <input type="radio" id="fireTheft" name="policy" value="CSS">
+                    <input type="radio" id="fireTheft" name="policy" value="fireTheft">
                     <label for="fireTheft" class="form-label">Third Party, Fire and Theft</label><br>
-                    <input type="radio" id="thirdOnly" name="policy" value="JavaScript">
+                    <input type="radio" id="thirdOnly" name="policy" value="thirdOnly">
                     <label for="thirdOnly" class="form-label">Third Party Only</label><br>
                 </div>
                 <!-- POLICY START -->
-                <div class="policy form-group col-md-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                <div class="policy form-group col-lg-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                     <h6>2. Please select policy START date</h6>
                     <input type="date" id="policyStart" name="policyStart">
                     <input type="submit">
@@ -204,22 +206,16 @@
             </div>
             <!-- POLICY DURATION -->
             <div class="row d-flex justify-content-around">
-                <div class="policy form-group col-md-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                    <h6>3. Please select your policy type:</h6>
-                    <input type="radio" id="annual" name="period" value="HTML">
-                    <label for="annual" class="form-label">Annual</label><br>
-                    <input type="radio" id="monthly" name="period" value="CSS">
-                    <label for="monthly" class="form-label">Monthly</label><br>
-                </div>
+
 
                 <!-- POLICY ADDONS -->
-                <div class="policy form-group col-md-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                    <h6>4. Please select your policy add-ons:</h6>
-                    <input type="checkbox" id="NCB" name="NCB" value="NCB">
-                    <label for="NCB">No Claim Bonus Protection</label><br>
-                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                    <label for="vehicle2">Roadside Assistance</label><br>
-                    <input type="checkbox" id="newKey" name="newKey" value="newKey">
+                <div class="policy form-group col-lg-11 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <h6>3. Please select your policy add-ons:</h6>
+                    <input type="checkbox" id="ncb" name="addon" value="ncb">
+                    <label for="ncb">No Claim Bonus Protection</label><br>
+                    <input type="checkbox" id="roadside" name="addon" value="roadside">
+                    <label for="roadside">Roadside Assistance</label><br>
+                    <input type="checkbox" id="newKey" name="addon" value="newKey">
                     <label for="newKey">Key Replacement Cover</label><br>
 
                 </div>
@@ -236,12 +232,13 @@
         <br><br>
 
         <!-- Driver Details -->
+        <!-- Driver Age -->
         <div class="formSections" id="driverInfo">
             <h1>Driver Details</h1>
             <div class="row mb-3" id="driverDetails">
                 <div class="col-md-6">
-                    <label for="Age" class="form-label">Age</label>
-                    <input type="number" class="form-control" id="Age" placeholder="16+" min="16" required>
+                    <label for="driverAge" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="driverAge" placeholder="16+" min="16" required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Full Name</label>
@@ -252,15 +249,15 @@
             <!-- Driver Experience -->
             <div class="row mb-3">
                 <div class="form-group col-md-6">
-                    <label for="noClaims" class="form-label">How long have you held your Drivers licence?</label>
-                    <select class="form-select" id="noClaims" required>
-                        <option value="">Driving Experience (years)</option>
-                        <option>Under a year</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5+</option>
+                    <label for="noClaims" class="form-label">Driving Experience (years)</label>
+                    <select class="form-select" id="experience" required>
+                        <option value="">How long have you held your Drivers licence?</option>
+                        <option value="0">Under a year</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
                     </select>
                 </div>
 
@@ -269,12 +266,12 @@
                     <label for="noClaims" class="form-label">No Claims Bonus</label>
                     <select class="form-select" id="noClaims" required>
                         <option value="">Years</option>
-                        <option>None</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5+</option>
+                        <option value="0">None</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
                     </select>
                 </div>
             </div>
@@ -386,6 +383,11 @@
         </div>
 
     </form>
+    <!-- Sticky Bottom price -->
+    <div class="sticky">
+        <h4>Premium : €<span id="premiumOutput">0.00</span></h4>
+        <h4>Monthly Premium : €<span id="monthlyPremiumOutput">0.00</span></h4>
+    </div>
     <hr>
 
 
@@ -396,9 +398,9 @@
             <div>
                 <h3>Our Products</h3>
                 <ul class="products-list">
-                    <li><a href="#">Life Insurance</a></li>
+                    <li><a href="../life/life.html">Life Insurance</a></li>
                     <li><a href="#">Car Insurance</a></li>
-                    <li><a href="#">Home Insurance</a></li>
+                    <li><a href="../home/home.html">Home Insurance</a></li>
 
                 </ul>
             </div>
