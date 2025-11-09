@@ -34,6 +34,7 @@ body {
     width: 100vw;
     height: 100px;
     background-color: var(--green);
+    z-index: -1;
 }
 .nav-wrapper {
     background-color: #fff; /*Need to fix this, image to remove background*/
@@ -41,9 +42,7 @@ body {
     border-bottom-right-radius: 30px;
 }
 
-.navbar {
-    /* background-color: var(--blue); */
-}
+
 .company-logo {
     display: block;
     margin-left: auto;
@@ -86,16 +85,9 @@ body {
 }
 
 .insurance-types {
-    color: #fafafa;
+    color: var(--white);
     display: flex;
     flex-wrap: wrap;
-}
-
-.hero-image {
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    flex-direction: row;
 }
 
 .hero-text-1,
@@ -127,10 +119,6 @@ body {
 .hero-text-header {
     text-align: center;
     text-decoration: underline;
-}
-
-.hero-text-p {
-    padding: 5px;
 }
 
 .hero-image-mobile {
