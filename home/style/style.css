@@ -10,6 +10,8 @@
 }
 */
 
+/* Headings  background-color: #3C9E82;*/
+
 h2 {
   
     text-align: center;
@@ -35,15 +37,16 @@ h3 {
     border-style: ridge;
     border-radius: 20px;
     padding: 1% 4%;
-    box-shadow:0 0 5px rgba(000,0.1);
+    box-shadow:0 0 5px black;
   
 }
 
 .form {
+  font-family: "Zalando", sans-serif !important;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-     box-shadow:0 0 5px rgba(000,0.1);
+  box-shadow:0 0 5px black;
 
 }
 
@@ -97,14 +100,16 @@ button{
  	  margin-top:15px;
     border-radius: 15px;
  	  padding:8px;
- 	  background-color:#3C9E82;
+ 	  background-color:#3C9E82;  
     color: black;
     margin: 8px 0;
     border: none;
     font-weight: 600;
     cursor: pointer;
+     box-shadow:0 0 5px black;
 }
 
  button:hover{
  	background-color:#33816b;
+ 	color:white;
  }
