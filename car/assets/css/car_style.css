@@ -1,21 +1,54 @@
 h1 {
     text-align: center;
+    color: #fff;
     border-radius: 15px;
-    margin: 1% -2%;
-    background-color: #3C9E82;
+    margin: 10px -10px 30px -10px;
+    background-color: #247AB7;
     font-weight: 600;
     padding: 1%;
+    box-shadow: 0px 0px 15px #247AB7;
+    border-style: outset;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: large;
+}
+
+label {
+    font-size: large;
+    font-weight: bold;
 }
 
 
-/* Classes */
+/* Classes -------------------------------------------------------------*/
 .formSections {
-    margin: 1vw 18vw;
-    border-style: ridge;
-    border-radius: 20px;
+    margin: 1vw 20vw;
+    border-radius: 60px;
     padding: 1% 4%;
+    background-color: white;
+    box-shadow: 0 0 10px;
 }
 
+/* Sections Background */
+.greenBack {
+    background-color: #3C9E82;
+    padding: 20px 0px 20px 0px;
+}
+
+.whiteBack {
+
+    padding: 20px 0px 20px 0px;
+}
+
+
+/* Buttons and checkboxes end of sections */
+.form-check {
+    justify-self: center;
+    margin-top: 30px;
+}
+
+/* Read-Only Year determiner */
 .form-auto {
     margin-top: 1%;
     border-style: none;
@@ -26,29 +59,41 @@ h1 {
 .policy {
     text-align: center;
     margin-top: 15px;
-    border-style: inset;
-    border-radius: 35px;
+    border-style: outset;
+    border-radius: 40px;
+    background-color: rgb(245, 245, 245);
 }
 
 .btn {
-    background-color: ;
+    background-color: rgb(209, 209, 209);
     font-weight: 600;
-    color: white;
+    color: black;
     margin-top: 1%;
+    border-color: #3C9E82;
+    box-shadow: 0 0 10px #3C9E82;
+    border-style: outset;
 }
 
+/* Live Price */
 div.sticky {
     position: sticky;
     bottom: 0;
     background-color: #247AB7;
-    padding: 0.2vh 1.2vh;
-width: 50vw;
-    font-size: 20px;
-
-    justify-self: center;
+    padding: 18px 18px 12px 18px;
+    width: 60vw;
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    justify-self: center;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 0 0 5px #3C9E82;
+}
+
+
+.radio {
+    font-weight: unset;
+    font-size: 16px;
 }
 
 /* Buttons */
@@ -57,23 +102,11 @@ width: 50vw;
 }
 
 
-/* IDs */
+/* IDs ---------------------*/
 #carYear {
     border-style: inset;
 }
 
-
-/* Better Balance between size and content amount
-@media (max-width: 1024px) {
-body {
-    
-}
-} */
-
-
-body {
-    font-size: small;
-}
 
 
 /* Tablet */
@@ -84,10 +117,30 @@ body {
         border-radius: 20px;
         padding: 1% 4%;
     }
+
+    div.sticky {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 8px 8px 2px 8px;
+    }
 }
 
 /* Mobile Large */
 @media (max-width: 426px) {
+    h1 {
+        padding 5%;
+        margin-bottom: 10px;
+    }
+
+    .policy {
+        text-align: center;
+        margin-top: 2px;
+        border-style: outset;
+        border-radius: 40px;
+        background-color: rgb(245, 245, 245);
+    }
+
     .VehicleInfo {
         margin: 3% 6%;
         border-style: none;

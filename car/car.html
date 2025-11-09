@@ -46,213 +46,302 @@
     </nav>
 
     <form>
+        <section class="greenBack">
+            <!-- Vehicle Information-------------------------------------------------- -->
+            <div class="formSections" id="carInfo">
+                <h1>Vehicle Information</h1>
 
-        <!-- Vehicle Information -->
-        <div class="formSections" id="carInfo">
-            <h1>Vehicle Information</h1>
+                <div class="row mb-3">
+                    <div class="form-group col-md-9">
+                        <label for="inputReg" class="form-label">Enter Registration</label>
+                        <input type="text" class="form-control" id="inputReg" placeholder="Example 181D123"
+                            onblur="processReg(this.value)">
+                    </div>
 
-            <div class="row mb-3">
-                <div class="form-group col-md-9">
-                    <label for="inputReg" class="form-label">Enter Registration</label>
-                    <input type="text" class="form-control" id="inputReg" placeholder="Example 181D123"
-                        onblur="processReg(this.value)">
+                    <div class="form-group col-md-3 mx-auto">
+                        <label for="inputReg" class="form-label">Year</label>
+                        <input type="text" id="carYear" class="form-auto form-control" readonly placeholder="From Reg">
+                    </div>
+
                 </div>
-
-                <div class="form-group col-md-3 mx-auto">
-                    <label for="inputReg" class="form-label">Year</label>
-                    <input type="text" id="carYear" class="form-auto form-control" readonly placeholder="From Reg">
-                </div>
-
-            </div>
-            <!-- MAKE -->
-            <div class="row mb-3">
-                <div class="form-group col-md-6">
-                    <label for="make" class="form-label">Make</label>
-                    <select class="form-select" id="make" required>
-                        <option value="">Car Brand</option>
-                        <option>Audi</option>
-                        <option>Alfa Romeo</option>
-                        <option>BMW</option>
-                        <option>BYD</option>
-                        <option>Citroën</option>
-                        <option>Dacia</option>
-                        <option>Fiat</option>
-                        <option>Ford</option>
-                        <option>Honda</option>
-                        <option>Hyundai</option>
-                        <option>Jaguar</option>
-                        <option>Kia</option>
-                        <option>Land Rover</option>
-                        <option>Lexus</option>
-                        <option>Mazda</option>
-                        <option>Mercedes-Benz</option>
-                        <option>Mini</option>
-                        <option>Mitsubishi</option>
-                        <option>Nissan</option>
-                        <option>Opel</option>
-                        <option>Peugeot</option>
-                        <option>Porsche</option>
-                        <option>Renault</option>
-                        <option>Seat</option>
-                        <option>Skoda</option>
-                        <option>Subaru</option>
-                        <option>Suzuki</option>
-                        <option>Tesla</option>
-                        <option>Toyota</option>
-                        <option>Volkswagen</option>
-                        <option>Volvo</option>
-                    </select>
+                <!-- MAKE -->
+                <div class="row mb-3">
+                    <div class="form-group col-md-6">
+                        <label for="make" class="form-label">Make</label>
+                        <select class="form-select" id="make" required>
+                            <option value="">Car Brand</option>
+                            <option>Audi</option>
+                            <option>Alfa Romeo</option>
+                            <option>BMW</option>
+                            <option>BYD</option>
+                            <option>Citroën</option>
+                            <option>Dacia</option>
+                            <option>Fiat</option>
+                            <option>Ford</option>
+                            <option>Honda</option>
+                            <option>Hyundai</option>
+                            <option>Jaguar</option>
+                            <option>Kia</option>
+                            <option>Land Rover</option>
+                            <option>Lexus</option>
+                            <option>Mazda</option>
+                            <option>Mercedes-Benz</option>
+                            <option>Mini</option>
+                            <option>Mitsubishi</option>
+                            <option>Nissan</option>
+                            <option>Opel</option>
+                            <option>Peugeot</option>
+                            <option>Porsche</option>
+                            <option>Renault</option>
+                            <option>Seat</option>
+                            <option>Skoda</option>
+                            <option>Subaru</option>
+                            <option>Suzuki</option>
+                            <option>Tesla</option>
+                            <option>Toyota</option>
+                            <option>Volkswagen</option>
+                            <option>Volvo</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select your vehicle make.
+                        </div>
+                    </div>
+                    <!-- MODEL -->
+                    <div class="col-md-6">
+                        <label for="model" class="form-label">Model</label>
+                        <input type="model" class="form-control" id="inputModel" placeholder="Model">
+                    </div>
                     <div class="invalid-feedback">
-                        Please select your vehicle make.
+                        Please select your vehicle Model.
                     </div>
                 </div>
-                <!-- MODEL -->
-                <div class="col-md-6">
-                    <label for="model" class="form-label">Model</label>
-                    <input type="model" class="form-control" id="inputModel" placeholder="Model">
+
+
+
+                <!-- FUEL TYPE -->
+                <div class="row mb-3">
+                    <div class="form-group col-md-6">
+                        <label for="fuelType" class="form-label">Fuel Type</label>
+                        <select class="form-select" id="fuelType" required>
+                            <option value="">Select Fuel Type</option>
+                            <option>Petrol</option>
+                            <option>Diesel</option>
+                            <option>Hybrid</option>
+                            <option>Electric</option>
+                        </select>
+
+                    </div>
+
+                    <!-- ENGINE CAPACITY -->
+                    <div class="form-group col-md-6">
+                        <label for="engineSize" class="form-label">Enter Engine Size (cc)</label>
+                        <input type="text" id="engineSize" class="form-control" placeholder="Example: '999', '1249'">
+                    </div>
+
                 </div>
-                <div class="invalid-feedback">
-                    Please select your vehicle Model.
+                <!-- VALUE -->
+                <div class="row mb-3">
+                    <div class="form-group col-md-4">
+                        <label for="carValue" class="form-label">Vehicle Value (€)</label>
+                        <input type="text" id="carValue" class="form-control" required>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="mileage" class="form-label">Estimated Annual Mileage</label>
+                        <input type="text" id="mileage" class="form-control" placeholder="(km)" required>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="parking" class="form-label">Parking Location</label>
+                        <select class="form-select" id="parking" required>
+                            <option value="">Select Location</option>
+                            <option value="0">Garage</option>
+                            <option value="1">Driveway</option>
+                            <option value="2">Street</option>
+
+                        </select>
+                    </div>
+
                 </div>
+                <!-- Imported Vehicle -->
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="importedSwitch">
+                    <label class="form-check-label" for="importedSwitch">Is this car imported?</label>
+                </div>
+                <!-- HIDDEN COUNTRY OF IMPORT -->
+                <div id="importedCountry" class="mb-3" style="display:none;">
+                    <label for="origin" class="form-label">Country of Origin</label>
+                    <input type="text" class="form-control" id="origin" placeholder="e.g. UK">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg" href="#insurancePreferences">Next: Insurance
+                        Preferences</button>
+                </div>
+
             </div>
+        </section>
 
 
+        <!-- Insurance Preferences-------------------------------------------------------- -->
+        <section class="whiteBack">
+            <div class="formSections" id="insurancePreferences">
+                <h1>Insurance Preferences</h1>
 
-            <!-- FUEL TYPE -->
-            <div class="row mb-3">
-                <div class="form-group col-md-6">
-                    <label for="fuelType" class="form-label">Fuel Type</label>
-                    <select class="form-select" id="fuelType" required>
-                        <option value="">Select Fuel Type</option>
-                        <option>Petrol</option>
-                        <option>Diesel</option>
-                        <option>Hybrid</option>
-                        <option>Electric</option>
-                    </select>
-
+                <div class="row d-flex justify-content-around">
+                    <!-- POLICY TYPE -->
+                    <div class="policy form-group col-lg-5 p-3 mb-3">
+                        <h4>1. Please select your policy type:</h4>
+                        <input type="radio" id="comprehensive" name="policy" value="comprehensive" required>
+                        <label for="comprehensive" class="radio form-label">Comprehensive</label><br>
+                        <input type="radio" id="fireTheft" name="policy" value="fireTheft">
+                        <label for="fireTheft" class="radio form-label">Third Party, Fire and Theft</label><br>
+                        <input type="radio" id="thirdOnly" name="policy" value="thirdOnly">
+                        <label for="thirdOnly" class="radio form-label">Third Party Only</label><br>
+                    </div>
+                    <!-- POLICY START -->
+                    <div class="policy form-group col-lg-5 p-3 mb-3">
+                        <h4>2. Please select policy START date</h4>
+                        <input type="date" id="policyStart" name="policyStart">
+                        <input type="submit">
+                    </div>
                 </div>
-
-                <!-- ENGINE CAPACITY -->
-                <div class="form-group col-md-6">
-                    <label for="engineSize" class="form-label">Enter Engine Size (cc)</label>
-                    <input type="text" id="engineSize" class="form-control" placeholder="Example: '999', '1249'">
-                </div>
-
-            </div>
-            <!-- VALUE -->
-            <div class="row mb-3">
-                <div class="form-group col-md-4">
-                    <label for="carValue" class="form-label">Vehicle Value (€)</label>
-                    <input type="text" id="carValue" class="form-control" required>
-                </div>
-
-                <div class="form-group col-md-4">
-                    <label for="mileage" class="form-label">Estimated Annual Mileage</label>
-                    <input type="text" id="mileage" class="form-control" placeholder="(km)" required>
-                </div>
-
-                <div class="form-group col-md-4">
-                    <label for="parking" class="form-label">Parking Location</label>
-                    <select class="form-select" id="parking" required>
-                        <option value="">Select Location</option>
-                        <option value="0">Garage</option>
-                        <option value="1">Driveway</option>
-                        <option value="2">Street</option>
-
-                    </select>
-                </div>
-
-            </div>
-            <!-- Imported Vehicle -->
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" id="importedSwitch">
-                <label class="form-check-label" for="importedSwitch">Is this car imported?</label>
-            </div>
-            <!-- HIDDEN COUNTRY OF IMPORT -->
-            <div id="importedCountry" class="mb-3" style="display:none;">
-                <label for="origin" class="form-label">Country of Origin</label>
-                <input type="text" class="form-control" id="origin" placeholder="e.g. UK">
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg" href="#insurancePreferences">Next: Insurance
-                    Preferences</button>
-            </div>
-
-        </div>
-
-        <br><br>
-
-        <!-- Insurance Preferences -->
-        <div class="formSections" id="insurancePreferences">
-            <h1>Insurance Preferences</h1>
-
-            <div class="row d-flex justify-content-around">
-                <!-- POLICY TYPE -->
-                <div class="policy form-group col-lg-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                    <h6>1. Please select your policy type:</h6>
-                    <input type="radio" id="comprehensive" name="policy" value="comprehensive" required>
-                    <label for="comprehensive" class="form-label">Comprehensive</label><br>
-                    <input type="radio" id="fireTheft" name="policy" value="fireTheft">
-                    <label for="fireTheft" class="form-label">Third Party, Fire and Theft</label><br>
-                    <input type="radio" id="thirdOnly" name="policy" value="thirdOnly">
-                    <label for="thirdOnly" class="form-label">Third Party Only</label><br>
-                </div>
-                <!-- POLICY START -->
-                <div class="policy form-group col-lg-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                    <h6>2. Please select policy START date</h6>
-                    <input type="date" id="policyStart" name="policyStart">
-                    <input type="submit">
-                </div>
-            </div>
-            <!-- POLICY DURATION -->
-            <div class="row d-flex justify-content-around">
-
-
                 <!-- POLICY ADDONS -->
-                <div class="policy form-group col-lg-11 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                    <h6>3. Please select your policy add-ons:</h6>
-                    <input type="checkbox" id="ncb" name="addon" value="ncb">
-                    <label for="ncb">No Claim Bonus Protection</label><br>
-                    <input type="checkbox" id="roadside" name="addon" value="roadside">
-                    <label for="roadside">Roadside Assistance</label><br>
-                    <input type="checkbox" id="newKey" name="addon" value="newKey">
-                    <label for="newKey">Key Replacement Cover</label><br>
+                <div class="row d-flex justify-content-around">
 
+                    <div class="policy form-group col-lg-11 p-3 mb-3">
+                        <h4>3. Please select your policy add-ons:</h4>
+                        <input type="checkbox" id="ncb" name="addon" value="ncb">
+                        <label for="ncb" class="radio form-label">No Claim Bonus Protection</label><br>
+                        <input type="checkbox" id="roadside" name="addon" value="roadside">
+                        <label for="roadside" class="radio form-label">Roadside Assistance</label><br>
+                        <input type="checkbox" id="newKey" name="addon" value="newKey">
+                        <label for="newKey" class="radio form-label">Key Replacement Cover</label><br>
+
+                    </div>
                 </div>
+
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg" href="#driverDetails">Next: Insurance
+                        add-ons</button>
+                </div>
+
             </div>
+        </section>
 
 
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg" href="#driverDetails">Next: Insurance
-                    add-ons</button>
-            </div>
-
-        </div>
-
-        <br><br>
-
-        <!-- Driver Details -->
+        <!-- Driver Details---------------------------------------------------------------- -->
         <!-- Driver Age -->
-        <div class="formSections" id="driverInfo">
-            <h1>Driver Details</h1>
-            <div class="row mb-3" id="driverDetails">
-                <div class="col-md-6">
-                    <label for="driverAge" class="form-label">Age</label>
-                    <input type="number" class="form-control" id="driverAge" placeholder="16+" min="16" required>
+        <section class="greenBack">
+            <div class="formSections" id="driverInfo">
+                <h1>Driver Details</h1>
+                <div class="row mb-3" id="driverDetails">
+                    <div class="col-md-6">
+                        <label for="driverAge" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="driverAge" placeholder="16+" min="16" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Full Name">
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="Full Name">
-                </div>
-            </div>
 
-            <!-- Driver Experience -->
-            <div class="row mb-3">
-                <div class="form-group col-md-6">
-                    <label for="noClaims" class="form-label">Driving Experience (years)</label>
-                    <select class="form-select" id="experience" required>
-                        <option value="">How long have you held your Drivers licence?</option>
-                        <option value="0">Under a year</option>
+                <!-- Driver Experience -->
+                <div class="row mb-3">
+                    <div class="form-group col-md-6">
+                        <label for="experience" class="form-label">Driving Experience (years)</label>
+                        <select class="form-select" id="experience" required>
+                            <option value="">How long have you held your Drivers licence?</option>
+                            <option value="0">Under a year</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+
+                    <!-- NO CLAIMS -->
+                    <div class="form-group col-md-6">
+                        <label for="noClaims" class="form-label">No Claims Bonus</label>
+                        <select class="form-select" id="noClaims" required>
+                            <option value="">Years</option>
+                            <option value="0">None</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="123 Main St">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="inputAddress2" class="form-label">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2"
+                        placeholder="Apartment, studio, or floor">
+                </div>
+
+
+                <div class="row mb-3">
+                    <div class="form-group col-md-4">
+                        <label for="County" class="form-label">County</label>
+                        <select class="form-select" id="County" required>
+                            <option value="">Select County</option>
+                            <option>Carlow</option>
+                            <option>Cavan</option>
+                            <option>Clare</option>
+                            <option>Cork</option>
+                            <option>Donegal</option>
+                            <option>Dublin</option>
+                            <option>Galway</option>
+                            <option>Kerry</option>
+                            <option>Kildare</option>
+                            <option>Kilkenny</option>
+                            <option>Laois</option>
+                            <option>Leitrim</option>
+                            <option>Limerick</option>
+                            <option>Longford</option>
+                            <option>Louth</option>
+                            <option>Mayo</option>
+                            <option>Meath</option>
+                            <option>Monaghan</option>
+                            <option>Offaly</option>
+                            <option>Roscommon</option>
+                            <option>Sligo</option>
+                            <option>Tipperary</option>
+                            <option>Waterford</option>
+                            <option>Westmeath</option>
+                            <option>Wexford</option>
+                            <option>Wicklow</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+
+
+                    <div class="form-group col-md-4">
+                        <label for="inputZip" class="form-label">Enter Post Code</label>
+                        <input type="text" class="form-control" id="inputZip" placeholder="DXX XXXX">
+                    </div>
+                </div>
+
+
+                <!-- PENALTY POINTS? -->
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="penaltySwitch">
+                    <label class="form-check-label" for="penaltySwitch">Do you have any penalty points?</label>
+                </div>
+                <!-- HIDDEN PENALTY -->
+                <div id="penaltyArea" class="mb-3" style="display:none;">
+                    <label for="penalty" class="form-label">How many penalty points do you have?</label>
+                    <select class="form-select" id="penalty" required>
+                        <option value="0">Select Points</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -261,135 +350,49 @@
                     </select>
                 </div>
 
-                <!-- NO CLAIMS -->
-                <div class="form-group col-md-6">
-                    <label for="noClaims" class="form-label">No Claims Bonus</label>
-                    <select class="form-select" id="noClaims" required>
-                        <option value="">Years</option>
-                        <option value="0">None</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5+</option>
-                    </select>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg" href="#contactInfo">Next: Contact Info</button>
                 </div>
             </div>
-            <div class="mb-3 form-group">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="123 Main St">
-            </div>
-            <div class="mb-3 form-group">
-                <label for="inputAddress2" class="form-label">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
+        </section>
 
-
-            <div class="row mb-3">
-                <div class="form-group col-md-4">
-                    <label for="County" class="form-label">County</label>
-                    <select class="form-select" id="County" required>
-                        <option value="">Select County</option>
-                        <option>Carlow</option>
-                        <option>Cavan</option>
-                        <option>Clare</option>
-                        <option>Cork</option>
-                        <option>Donegal</option>
-                        <option>Dublin</option>
-                        <option>Galway</option>
-                        <option>Kerry</option>
-                        <option>Kildare</option>
-                        <option>Kilkenny</option>
-                        <option>Laois</option>
-                        <option>Leitrim</option>
-                        <option>Limerick</option>
-                        <option>Longford</option>
-                        <option>Louth</option>
-                        <option>Mayo</option>
-                        <option>Meath</option>
-                        <option>Monaghan</option>
-                        <option>Offaly</option>
-                        <option>Roscommon</option>
-                        <option>Sligo</option>
-                        <option>Tipperary</option>
-                        <option>Waterford</option>
-                        <option>Westmeath</option>
-                        <option>Wexford</option>
-                        <option>Wicklow</option>
-                    </select>
+        <section class="whiteBack">
+            <!-- Contact Information----------------------------------------------------- -->
+            <div class="formSections" id="contactInfo">
+                <h1>Contact Information</h1>
+                <div class="row mb-3">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPhone">Enter Phone Number</label>
+                        <input type="phone" class="form-control" id="inputPhone" placeholder="Phone Number">
+                    </div>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
+                <div class="form-group form-check mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Agree to Terms & Conditions
+                        </label>
+                    </div>
                 </div>
-
-
-                <div class="form-group col-md-4">
-                    <label for="inputZip" class="form-label">Enter Post Code</label>
-                    <input type="text" class="form-control" id="inputZip" placeholder="DXX XXXX">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <button type="submit" class="btn btn-success btn-lg">Submit Details</button>
+                    <input class="btn btn-danger" type="reset" value="Reset Details">
                 </div>
             </div>
-
-
-            <!-- PENALTY POINTS? -->
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" id="penaltySwitch">
-                <label class="form-check-label" for="importedSwitch">Do you have any penalty points?</label>
-            </div>
-            <!-- HIDDEN PENALTY -->
-            <div id="penaltyArea" class="mb-3" style="display:none;">
-                <label for="origin" class="form-label">How many penalty points do you have?</label>
-                <select class="form-select" id="penalty" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5+</option>
-                </select>
-            </div>
-
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg" href="#contactInfo">Next: Contact Info</button>
-            </div>
-        </div>
-
-        <br><br>
-
-        <!-- Contact Information -->
-        <div class="formSections" id="contactInfo">
-            <h1>Contact Information</h1>
-            <div class="row mb-3">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPhone">Enter Phone Number</label>
-                    <input type="phone" class="form-control" id="inputPhone" placeholder="Phone Number">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Agree to Terms & Conditions
-                    </label>
-                </div>
-            </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <button type="submit" class="btn btn-success btn-lg">Submit Details</button>
-                <input class="btn btn-danger" type="reset" value="Reset Details">
-            </div>
-        </div>
-
+        </section>
     </form>
     <!-- Sticky Bottom price -->
-    <div class="sticky">
-        <h4>Premium : €<span id="premiumOutput">0.00</span></h4>
-        <h4>Monthly Premium : €<span id="monthlyPremiumOutput">0.00</span></h4>
-    </div>
-    <hr>
 
+        <div class="sticky">
+            <h5>Premium : €<span id="premiumOutput">0.00</span></h5>
+            <h5>Monthly Premium : €<span id="monthlyPremiumOutput">0.00</span></h5>
+        </div>
+
+    <hr>
 
 
 
