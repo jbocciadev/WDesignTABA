@@ -1,20 +1,22 @@
 @import "../../../base.css";
 
 .form-container {
-    /* background-color: gray; */
+    background-color: var(--green);
     display: flex;
     justify-content: center;
 }
 .life-form {
-    /* background-color: var(--green); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
     margin: 10px 0;
+    padding: 15px 0;
     min-width: 33vw;
     min-height: 100px;
+    border-radius: 60px;
+    box-shadow: 0 0 10px var(--black);
 }
 .form-title {
     justify-self: center;
@@ -23,15 +25,35 @@
 .formsection {
     display: flex;
     flex-direction: column;
-    margin: 0 0 0 -20px;
-    border-left: 3px solid var(--green);
+    /* margin: 0 0 0 -20px; */
+    /* border-left: 3px solid var(--green); */
 
     /* padding-left: 10%; */
     /* display: block; */
 }
-#cover-amount {
-    width: 50%;
+
+label {
+    font-size: large;
+    font-weight: bold;
 }
+
+input[type=text],input[type=date], .amount-slider-wrapper,.smoker-wrapper, #county {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.smoker-wrapper * {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* #cover-amount {
+    width: 50%;
+} */
 #cover-term {
     border: none;
     background-color: transparent;
@@ -73,15 +95,15 @@
     padding: 10px 20px;
 }
 
-.formsection div:not(.form-buttons):hover {
+/* .formsection div:not(.form-buttons):hover {
     background-color: lightgray;
-}
+} */
 
 .list-header {
-    border-top: 3px solid var(--blue);
+    border-top: 3px solid var(--green); 
     border-width: 90%;
     border-radius: 0 !important;
-    color: var(--blue);
+    color: var(--green);
 }
 #second-adult-list {
     display: none;
