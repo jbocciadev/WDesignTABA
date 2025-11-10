@@ -32,7 +32,7 @@ body {
     position: absolute;
     top: 0;
     width: 100vw;
-    height: 100px;
+    height: 110px;
     background-color: var(--green);
     z-index: -1;
 }
@@ -79,9 +79,10 @@ body {
     color: var(--black) !important;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover, .dropdown-item.active {
     background-color: var(--green);
-    color: var(--white);
+    color: var(--white) !important;
+    font-weight: 100;
 }
 
 .insurance-types {
