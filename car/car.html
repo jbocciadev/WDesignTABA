@@ -45,10 +45,69 @@
 
     </nav>
 
+
+    <body>
+
+        <!-- HIDDEN SECTION -- The TERMS AND CONDITIONS Overlay Div -->
+        <div id="tcOverlay" class="overlay">
+            <div class="overlayContent">
+                <h2>Cool Insurance - Terms and Conditions</h2>
+                <h4>1. Coverage</h4>
+                <p>Coverage for Life, Home, and Motor Insurance is provided as outlined in each policy schedule. Limits,
+                    benefits, and exclusions vary by product.</p>
+                <h4>2. Premiums</h4>
+                <p>Premiums must be paid by the due date. Failure to pay may result in suspension or cancellation of the
+                    policy.
+                </p>
+                <h4>3. Claims</h4>
+                <p>Claims must be submitted promptly with any supporting documents requested by Cool Insurance. Claim
+                    approval is subject to policy terms.</p>
+                <h4>4. Exclusions</h4>
+                <p>General and product-specific exclusions apply. Losses outside the scope of cover are not insured.</p>
+                <h4>5. Changes to Policy</h4>
+                <p>Cool Insurance may update policy terms when required. Continued use of the policy indicates
+                    acceptance of any changes.</p>
+                <h4>6. Cancellation</h4>
+                <p>Either party may cancel the policy according to the cancellation rules in the policy schedule.</p>
+                <h4>7. Liability</h4>
+                <p>Cool Insurance’s liability is limited to the amounts and conditions stated in the applicable policy.
+                </p>
+                <button id="closeOverlay">Accept and Close</button>
+            </div>
+        </div>
+    </body>
+
+
     <form>
-        <section class="greenBack">
+        <Section class="greenBack">
+            <div class="formSections">
+                <h1>Welcome to your Car quotation form</h1>
+
+                <h6>Please fill out the form below with your details. Please observe the following considerations when
+                    doing your online quotation:</h6>
+                <ul>
+                    <li>Max vehicle value for online quote is €200,000. Otherwise please contact us by phone</li>
+                    <li>Driver must be 16 years old or older to open a policy in their name.</li>
+                    <li>Your price is updated as you fill in the form so dont take the price for granted until we have
+                        received all your details.</li>
+                    <li>Once you complete a section please click the proceed button to continue.</li>
+                    <li>If you make a mistake please refer to the edit buttons to amend them</li>
+                    <li>Car age is determined through your vehicle's licence plate.</li>
+                    <li>If you have any questions please feel free to contact us or read through the FAQs</li>
+                </ul>
+                <h6>Please make sure you are familiar with the terms and conditions before agreeing to them.</h6>
+                <a href="#tc-overlay" onclick="openTC()" id="openTC">Terms and Conditions</a>
+            </div>
+        </Section>
+
+
+        <section class="whiteBack">
+            <!-- Hidden Edit Vehicle Info -->
+            <div class="editButtons">
+                <button type="button" class="btn btn-primary btn-lg" id="editCarInfo">Edit Vehicle Information</button>
+            </div>
             <!-- Vehicle Information-------------------------------------------------- -->
-            <div class="formSections" id="carInfo">
+            <div class="formSections" id="section1">
                 <h1>Vehicle Information</h1>
 
                 <div class="row mb-3">
@@ -143,7 +202,8 @@
                 <div class="row mb-3">
                     <div class="form-group col-md-4">
                         <label for="carValue" class="form-label">Vehicle Value (€)</label>
-                        <input type="text" id="carValue" class="form-control" required>
+                        <input type="number" id="carValue" class="form-control" placeholder="€200,000 max" max="200000"
+                            min="0" required>
                     </div>
 
                     <div class="form-group col-md-4">
@@ -174,8 +234,7 @@
                     <input type="text" class="form-control" id="origin" placeholder="e.g. UK">
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-lg" href="#insurancePreferences">Next: Insurance
-                        Preferences</button>
+                    <button type="submit" class="btn btn-primary btn-lg" id="closeCarInfo">Proceed</button>
                 </div>
 
             </div>
@@ -183,8 +242,13 @@
 
 
         <!-- Insurance Preferences-------------------------------------------------------- -->
-        <section class="whiteBack">
-            <div class="formSections" id="insurancePreferences">
+        <section class="greenBack">
+            <!-- Hidden Edit Insurance Preferences -->
+            <div class="editButtons">
+                <button type="button" class="btn btn-primary btn-lg" id="editInsPref">Edit Insurance
+                    Preferences</button>
+            </div>
+            <div class="formSections" id="section2">
                 <h1>Insurance Preferences</h1>
 
                 <div class="row d-flex justify-content-around">
@@ -222,8 +286,7 @@
 
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-lg" href="#driverDetails">Next: Insurance
-                        add-ons</button>
+                    <button type="submit" class="btn btn-primary btn-lg" id="closeInsPref">Proceed</button>
                 </div>
 
             </div>
@@ -232,8 +295,12 @@
 
         <!-- Driver Details---------------------------------------------------------------- -->
         <!-- Driver Age -->
-        <section class="greenBack">
-            <div class="formSections" id="driverInfo">
+        <section class="whiteBack">
+            <!-- Hidden Edit Insurance Preferences -->
+            <div class="editButtons">
+                <button type="button" class="btn btn-primary btn-lg" id="editDriverDetails">Edit Driver Details</button>
+            </div>
+            <div class="formSections" id="section3">
                 <h1>Driver Details</h1>
                 <div class="row mb-3" id="driverDetails">
                     <div class="col-md-6">
@@ -241,8 +308,8 @@
                         <input type="number" class="form-control" id="driverAge" placeholder="16+" min="16" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Full Name">
+                        <label for="fullname" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullname" placeholder="Full Name">
                     </div>
                 </div>
 
@@ -351,19 +418,19 @@
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-lg" href="#contactInfo">Next: Contact Info</button>
+                    <button type="submit" class="btn btn-primary btn-lg" id="closeDriverInfo">Proceed</button>
                 </div>
             </div>
         </section>
 
-        <section class="whiteBack">
+        <section class="greenBack">
             <!-- Contact Information----------------------------------------------------- -->
-            <div class="formSections" id="contactInfo">
+            <div class="formSections">
                 <h1>Contact Information</h1>
                 <div class="row mb-3">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPhone">Enter Phone Number</label>
@@ -380,17 +447,19 @@
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                     <button type="submit" class="btn btn-success btn-lg">Submit Details</button>
-                    <input class="btn btn-danger" type="reset" value="Reset Details">
+                    <button class="btn btn-danger" onclick="location.reload()">Reset Details</button>
+                    <!-- My Source: W3schools - Window location.reload() -->
                 </div>
             </div>
+
         </section>
     </form>
     <!-- Sticky Bottom price -->
 
-        <div class="sticky">
-            <h5>Premium : €<span id="premiumOutput">0.00</span></h5>
-            <h5>Monthly Premium : €<span id="monthlyPremiumOutput">0.00</span></h5>
-        </div>
+    <div class="sticky">
+        <h5>Premium : €<span id="premiumOutput">0.00</span></h5>
+        <h5>Monthly Premium : €<span id="monthlyPremiumOutput">0.00</span></h5>
+    </div>
 
     <hr>
 
@@ -448,7 +517,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
