@@ -25,7 +25,59 @@ function processReg(inputReg) {     // Take the input from Registration
     document.getElementById("carYear").value = year;
 }
 
+// PREVENT 200,000 plus value car
+const carValueInput = document.getElementById("carValue");
+
+carValueInput.addEventListener("input", function () {
+    let value = parseFloat(this.value) || 0;
+    if (value > 200000) {
+        this.value = 200000;  // automatically clamp
+    }
+});
+
 // DOM MANIPULATION -----------------------------------------------------------------------
+
+// FadeToggle jQuery sections
+$(document).ready(function () {
+
+    // Proceed buttons -- Fade buttons in bacause i needed them hidden via CSS when page is initially loaded
+    $("#closeCarInfo").click(function () {
+        $("#section1").fadeOut(850);
+        $("#editCarInfo").fadeIn(850); // show the edit buttons
+    });
+
+    $("#closeInsPref").click(function () {
+        $("#section2").fadeOut(850);
+        $("#editInsPref").fadeIn(850); // show the edit buttons
+    });
+
+    $("#closeDriverInfo").click(function () {
+        $("#section3").fadeOut(850);
+        $("#editDriverDetails").fadeIn(850); // show the edit buttons
+
+    });
+
+    // Edit buttons -- show section and hide the edit button
+    $("#editCarInfo").click(function () {
+        $("#section1").fadeIn(850);
+        $("#editCarInfo").fadeOut(850);
+
+    });
+
+    $("#editInsPref").click(function () {
+        $("#section2").fadeIn(850);
+        $("#editInsPref").fadeOut(850);
+
+    });
+
+    $("#editDriverDetails").click(function () {
+        $("#section3").fadeIn(850);
+        $("#editDriverDetails").fadeOut(850);
+    });
+
+});
+
+
 // IMPORT DESTINATION SHOW
 importedSwitch.addEventListener('change', function () {
     if (this.checked) {
@@ -44,42 +96,55 @@ penaltySwitch.addEventListener('change', function () {
     }
 });
 
+// TERMS AND CONDITIONS OPEN OVERLAY
+$(document).ready(function () {
+
+    $("#openTC").click(function () {
+        $("#tcOverlay").fadeIn(750); // show the edit buttons
+    });
+
+// TERMS AND CONDITIONS CLOSE OVERLAY -- Source Stackoverflow
+    $("#closeOverlay").click(function () {
+        $("#tcOverlay").fadeOut(750);
+    });
+});
+
 // CALCULATIONS ---------------------------------------------------------------------------
 // Vehicle Information Section
 
 function calculatePremium() {
     // Get the car value from the input. Starting Premium
     let total = 0;
-    let baseline = 500
     const carValue = parseFloat(document.getElementById("carValue").value || 0);
     // Determine the percentage based on car value ranges
-    let valueMultiplier = 0;
+    let valueMultiplier = 0.075;
     if (carValue <= 10000) {
         valueMultiplier = 0.01;
     } else if (carValue <= 20000) {
         valueMultiplier = 0.015;
-    }else if (carValue <= 30000) {
+    } else if (carValue <= 30000) {
         valueMultiplier = 0.017;
     } else if (carValue <= 40000) {
         valueMultiplier = 0.02;
     } else if (carValue <= 60000) {
         valueMultiplier = 0.025;
-    }else if (carValue <= 70000) {
+    } else if (carValue <= 70000) {
         valueMultiplier = 0.03;
-    }else if (carValue <= 80000) {
+    } else if (carValue <= 80000) {
         valueMultiplier = 0.04;
     } else {
         valueMultiplier = 0.07;
     }
 
-    total += carValue * valueMultiplier + baseline; // Calculate the base premium
+    total = carValue * valueMultiplier; // Calculate the base premium
+    console.log("Base Price:", total);
 
-
-    // Age multiplier
+    // CarAge multiplier
     const carYear = parseInt(document.getElementById("carYear").value || 0); // parse int the manufacture year
     const currentYear = new Date().getFullYear();  // determine current year
-    const carAge = currentYear - carYear;   // subtract the two
+    let carAge = Math.max(0, currentYear - carYear);    // subtract the two, make sure doesnt go below zero
     let ageMultiplier = 0; // default (no increase)
+
 
     if (carAge < 5) ageMultiplier = 0.02;
     else if (carAge < 10) ageMultiplier = 0.04;
@@ -87,20 +152,20 @@ function calculatePremium() {
     else ageMultiplier = 0.01; // 20+ years (vintage)
 
     total += total * ageMultiplier;// Calculate the base premium
-
+    console.log("point 2", total);
 
     // Engine capacity multiplier 
     const capacity = parseInt(document.getElementById("engineSize").value || 0); // parse int the manufacture year
     let engineMultiplier = 0; // default (no increase)
 
-    if (capacity > 0) engineMultiplier = 0.05;
-    else if (capacity > 999) engineMultiplier = 0.10;
-    else if (capacity > 1250) engineMultiplier = 0.20;
-    else if (capacity > 1450) engineMultiplier = 0.20;
-    else if (capacity > 2100) engineMultiplier = 0.20;
+
+    if (capacity > 4000) engineMultiplier = 0.5;
     else if (capacity > 3000) engineMultiplier = 0.4;
-    else if (capacity > 4000) engineMultiplier = 0.45;
-    else engineMultiplier = 0.5; // 4000cc or over
+    else if (capacity > 2100) engineMultiplier = 0.2;
+    else if (capacity > 1450) engineMultiplier = 0.2;
+    else if (capacity > 1250) engineMultiplier = 0.2;
+    else if (capacity > 999) engineMultiplier = 0.1;
+    else if (capacity > 0) engineMultiplier = 0.05;
 
     total += total * engineMultiplier;// Calculate the capacity premium
 
@@ -119,7 +184,7 @@ function calculatePremium() {
 
 
     // Parking multiplier 
-    const parking = parseInt(document.getElementById("parking").value || ""); // parse int the mileage
+    const parking = parseInt(document.getElementById("parking").value || 0); // parse int the value of dropdown item
     let parkingMultiplier = 0; // default (no increase)
 
     if (parking === 0) parkingMultiplier = -0.1;
@@ -140,30 +205,28 @@ function calculatePremium() {
     total += total * importMultiplier;
 
 
-    // Insurance Preferences Section
-    // ----------------------------------------------
+    // Insurance Preferences Section----------------------------------------------
 
     // Age multiplier
     const driverAge = parseInt(document.getElementById("driverAge").value);
     let driverAgeMultiplier = 0; // default (no increase)
 
-    if (driverAge > 40) driverAgeMultiplier = 0.01;
-    else if (driverAge > 30) driverAgeMultiplier = 0.03;
-    else if (driverAge > 25) driverAgeMultiplier = 0.05;
-    else if (driverAge > 23) driverAgeMultiplier = 0.10;
-    else if (driverAge > 21) driverAgeMultiplier = 0.25;
-    else if (driverAge > 18) driverAgeMultiplier = 0.4;
-    else driverAgeMultiplier = 0.5; // young driver Under 24yo
+    if (driverAge >= 40) driverAgeMultiplier = 0.01;
+    else if (driverAge >= 30) driverAgeMultiplier = 0.03;
+    else if (driverAge >= 25) driverAgeMultiplier = 0.05;
+    else if (driverAge >= 23) driverAgeMultiplier = 0.10;
+    else if (driverAge >= 21) driverAgeMultiplier = 0.25;
+    else if (driverAge >= 18) driverAgeMultiplier = 0.4;
+    else driverAgeMultiplier = 0.5; // young driver Under 18yo
 
     // Calculate the base premium
     total += total * driverAgeMultiplier
 
 
 
-    // Driver Experience Calculations (DRIVER DETAILS SECTION)
-    // ----------------------------------------------
-    // Had to assign values also
-    const experience = parseInt(document.getElementById("experience").value || 0); // parse int the manufacture year
+    // Driver Experience Calculations (DRIVER DETAILS SECTION)----------------------------------------------
+
+    const experience = Math.max(0, parseInt(document.getElementById("experience").value || 0)); //parse values and make sure cant be minuses
     let experienceMultiplier = 0; // default (no increase)
 
     if (experience === 0) experienceMultiplier = -0.04;
@@ -179,12 +242,12 @@ function calculatePremium() {
     // No Claim Bonus
     const ncb = parseInt(document.getElementById("noClaims").value || 0); // parse int the ncb amount // || 0 to avoid NaN errors
     let ncbMultiplier = 0;
-    if (ncb === 0) ncbMultiplier = -0;
-    else if (ncb === 1) ncbMultiplier = -0.1;
-    else if (ncb === 2) ncbMultiplier = -0.2;
-    else if (ncb === 3) ncbMultiplier = -0.3;
-    else if (ncb === 4) ncbMultiplier = -0.4;
-    else ncbMultiplier = -0.6; // 5+
+    if (ncb === 0) ncbMultiplier = 0;
+    else if (ncb === 1) ncbMultiplier = -5;
+    else if (ncb === 2) ncbMultiplier = -10;
+    else if (ncb === 3) ncbMultiplier = -20;
+    else if (ncb === 4) ncbMultiplier = -25;
+    else ncbMultiplier = -30; // 5+
 
     // Calculate the base premium
     total += total * ncbMultiplier
@@ -194,20 +257,14 @@ function calculatePremium() {
     const pen = parseInt(document.getElementById("penalty").value || 0);  // || 0 to avoid NaN errors
     let penaltyMultiplier = 0;
     if (pen === 0) penaltyMultiplier = 0;
-    else if (pen === 1) penaltyMultiplier = 0.25;
-    else if (pen === 2) penaltyMultiplier = 0.5;
-    else if (pen === 3) penaltyMultiplier = 0.75;
-    else if (pen === 4) penaltyMultiplier = 1;
-    else penaltyMultiplier = 1.5;
+    else if (pen === 1) penaltyMultiplier = 2.5;
+    else if (pen === 2) penaltyMultiplier = 5;
+    else if (pen === 3) penaltyMultiplier = 7;
+    else if (pen === 4) penaltyMultiplier = 10;
+    else penaltyMultiplier = 15;
 
     // Calculate the base premium
     total += total * penaltyMultiplier
-
-
-
-
-
-
 
 
     // THE BELOW ARE AT THE END BECAUSE THEY WERE GETTING AFFECTED BY THE min: Age multiplier. I want these to be set price seperate from the dynamic quotes
@@ -234,6 +291,9 @@ function calculatePremium() {
     if (policy) {
         total += rates[policy];
     }
+    let baseline = 300
+    total += baseline;
+
 
     // For the live pricing simple calculation for monthly payment. No increases compared to annual payment
     let monthlyTotal = total / 12;
