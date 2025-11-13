@@ -15,7 +15,8 @@
 
 <body>
 
-    <div class="brand-bar"><a href="#"><img class="company-logo" src="../assets/images/LOGO.png" alt="" width="30%"></a>
+    <div class="brand-bar"><a href="#"><img class="company-logo" src="../assets/images/LOGO.png"
+                alt="Currently Active Car Logo Navbar"></a>
     </div>
     <!-- Bootstrap responsive Navbar element -->
     <nav class="navbar navbar-expand-md sticky-top">
@@ -109,23 +110,23 @@
             <!-- Vehicle Information-------------------------------------------------- -->
             <div class="formSections" id="section1">
                 <h1>Vehicle Information</h1>
-
-                <div class="row mb-3">
-                    <div class="form-group col-md-9">
+                <!-- Input Reg -->
+                <div class="row mb-2 justify-content-around">
+                    <div class="form-group col-md-5">
                         <label for="inputReg" class="form-label">Enter Registration</label>
-                        <input type="text" class="form-control" id="inputReg" placeholder="Example 181D123"
-                            onblur="processReg(this.value)">
+                        <input type="text" class="form-control" id="inputReg" placeholder="Example 181-D-123">
+                        <span id="regWarning" style="color:rgb(255, 107, 107); display:none;">No spaces please!</span>
                     </div>
-
-                    <div class="form-group col-md-3 mx-auto">
-                        <label for="inputReg" class="form-label">Year</label>
-                        <input type="text" id="carYear" class="form-auto form-control" readonly placeholder="From Reg">
+                    <!-- Reg Graphic -->
+                    <div class="reg col-lg-7 d-flex">
+                        <img src="assets/media/images/reg.png" id="regEmblem" alt="Company Logo">
+                        <p id="regText"><span id="regCopy"></span></p>
                     </div>
 
                 </div>
                 <!-- MAKE -->
                 <div class="row mb-3">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="make" class="form-label">Make</label>
                         <select class="form-select" id="make" required>
                             <option value="">Car Brand</option>
@@ -166,12 +167,17 @@
                         </div>
                     </div>
                     <!-- MODEL -->
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="model" class="form-label">Model</label>
                         <input type="model" class="form-control" id="inputModel" placeholder="Model">
                     </div>
                     <div class="invalid-feedback">
                         Please select your vehicle Model.
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="inputYear" class="form-label">Year</label>
+                        <input type="number" id="carYear" class="form-control">
                     </div>
                 </div>
 
@@ -207,7 +213,7 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="mileage" class="form-label">Estimated Annual Mileage</label>
+                        <label for="mileage" class="form-label">Estimated Mileage</label>
                         <input type="text" id="mileage" class="form-control" placeholder="(km)" required>
                     </div>
 

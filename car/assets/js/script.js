@@ -1,31 +1,22 @@
 // Validations -------------------------------------------------------------------------
-//Reg Number validation and year autofill
-function processReg(inputReg) {     // Take the input from Registration
-    inputReg = inputReg.toUpperCase().trim();   //trim() removes spaces aeound the reg. toUpperCase() converts a reg to uppercase letters.
+//Reg validation -- WARN No spaces
+const regInput = document.getElementById("inputReg");
+const warning = document.getElementById("regWarning");
 
-    // Remove non numeric characters in reg (spaces, dashes, letters, etc)
-    let standardReg = '';
-    for (let i = 0; i < inputReg.length; i++) {
-        const ch = inputReg[i];
-        if (ch >= '0' && ch <= '9') {
-            standardReg += ch;
-        }
+regInput.addEventListener("input", () => {
+    if (regInput.value.includes(' ')) {
+        warning.style.display = "inline";  // show warning
+    } else {
+        warning.style.display = "none";    // hide warning
     }
+});
 
-    // Checks for first two digit
-    if (standardReg.length < 2) {
-        document.getElementById("carYear").value = "";
-        return;
-    }
 
-    // Sliced away range 0 to 2 to get first 2 digits for addtion
-    let year = 2000 + parseInt(standardReg.slice(0, 2));
 
-    // Fill carYear ID element
-    document.getElementById("carYear").value = year;
-}
 
-// PREVENT 200,000 plus value car
+
+
+// VALUE VALIDATION - PREVENT 200,000 plus car value 
 const carValueInput = document.getElementById("carValue");
 
 carValueInput.addEventListener("input", function () {
@@ -37,22 +28,37 @@ carValueInput.addEventListener("input", function () {
 
 // DOM MANIPULATION -----------------------------------------------------------------------
 
+// REG PLATE
+const input = document.getElementById("inputReg");
+const mirror = document.getElementById("regCopy");
+
+input.addEventListener("input", () => {
+    regCopy.textContent = input.value; // dynamically update the span
+});
+
+input.addEventListener("input", () => {
+    const cleaned = input.value.replace(/[\s]/g, '').toUpperCase(); //added .toUpperCase and removed symbols/spaces except dash, so reg looks good in the plate div
+    mirror.textContent = cleaned;
+});
+
+
+
 // FadeToggle jQuery sections
 $(document).ready(function () {
 
     // Proceed buttons -- Fade buttons in bacause i needed them hidden via CSS when page is initially loaded
     $("#closeCarInfo").click(function () {
-        $("#section1").fadeOut(850);
+        $("#section1").fadeOut(850); // hide the section
         $("#editCarInfo").fadeIn(850); // show the edit buttons
     });
 
     $("#closeInsPref").click(function () {
-        $("#section2").fadeOut(850);
+        $("#section2").fadeOut(850); // hide the section
         $("#editInsPref").fadeIn(850); // show the edit buttons
     });
 
     $("#closeDriverInfo").click(function () {
-        $("#section3").fadeOut(850);
+        $("#section3").fadeOut(850); // hide the section
         $("#editDriverDetails").fadeIn(850); // show the edit buttons
 
     });
@@ -78,7 +84,7 @@ $(document).ready(function () {
 });
 
 
-// IMPORT DESTINATION SHOW
+// IMPORT DESTINATION SHOW SECTION
 importedSwitch.addEventListener('change', function () {
     if (this.checked) {
         importedCountry.style.display = 'block';
@@ -87,7 +93,7 @@ importedSwitch.addEventListener('change', function () {
     }
 });
 
-// PENALTY POINT ADDITIONAL
+// PENALTY POINT ADDITIONAL SECTION SHOW
 penaltySwitch.addEventListener('change', function () {
     if (this.checked) {
         penaltyArea.style.display = 'block';
@@ -96,14 +102,14 @@ penaltySwitch.addEventListener('change', function () {
     }
 });
 
-// TERMS AND CONDITIONS OPEN OVERLAY
+// TERMS AND CONDITIONS OPEN OVERLAY/POP-UP
 $(document).ready(function () {
 
     $("#openTC").click(function () {
         $("#tcOverlay").fadeIn(750); // show the edit buttons
     });
 
-// TERMS AND CONDITIONS CLOSE OVERLAY -- Source Stackoverflow
+    // TERMS AND CONDITIONS CLOSE OVERLAY -- Source Stackoverflow
     $("#closeOverlay").click(function () {
         $("#tcOverlay").fadeOut(750);
     });
@@ -234,7 +240,7 @@ function calculatePremium() {
     else if (experience === 2) experienceMultiplier = -0.12;
     else if (experience === 3) experienceMultiplier = -0.16;
     else if (experience === 4) experienceMultiplier = -0.2;
-    else experienceMultiplier = -0.25; // 5+
+    else experienceMultiplier = -0.4; // 5+
 
     // Calculate the base premium
     total += total * experienceMultiplier;
@@ -243,11 +249,11 @@ function calculatePremium() {
     const ncb = parseInt(document.getElementById("noClaims").value || 0); // parse int the ncb amount // || 0 to avoid NaN errors
     let ncbMultiplier = 0;
     if (ncb === 0) ncbMultiplier = 0;
-    else if (ncb === 1) ncbMultiplier = -5;
-    else if (ncb === 2) ncbMultiplier = -10;
-    else if (ncb === 3) ncbMultiplier = -20;
-    else if (ncb === 4) ncbMultiplier = -25;
-    else ncbMultiplier = -30; // 5+
+    else if (ncb === 1) ncbMultiplier = -0.1;
+    else if (ncb === 2) ncbMultiplier = -0.3;
+    else if (ncb === 3) ncbMultiplier = -0.4;
+    else if (ncb === 4) ncbMultiplier = -0.5;
+    else ncbMultiplier = -0.7; // 5+
 
     // Calculate the base premium
     total += total * ncbMultiplier
