@@ -1,16 +1,14 @@
 
-
-
-/*houseIns-form {
-    background-color: #247AB7;
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    flex-direction: row;     
-}
-*/
-
 /* Headings  background-color: #3C9E82;*/
+h1 {
+    text-align: center;
+    border-radius: 15px;
+    margin: 1% -2%;
+    background-color: #3C9E82;
+    font-weight: 600;
+    padding: 1%;
+    color : #fff;;
+}
 
 h2 {
   
@@ -31,35 +29,56 @@ h3 {
     padding: 1%;
 }
 
+h4 {
+    font-weight: bold;
+    font-size: large;
+} 
+
 /* Classes */
+
+.form-container {
+    background-color:var(--green) ;
+    border-radius: 10px;
+    padding: 1% 4%;
+    box-shadow:0 0 5px black;
+}
+
+
 .houseIns-form {
     margin: 1vw 18vw;
     border-style: ridge;
-    border-radius: 20px;
+    border-radius: 40px;
     padding: 1% 4%;
-    box-shadow:0 0 5px black;
-  
+    box-shadow:0 0 5px black; 
+    background-color: white;
 }
+
+
+/*.personal-info {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+} */
 
 .form {
   font-family: "Zalando", sans-serif !important;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: var(--green);
   padding: 20px;
   box-shadow:0 0 5px black;
-
 }
 
 
 label{
  	display:block;
+  font-weight: bold;
  	margin-top:10px;
   }
 
 input[type=text], select {
   width: 100%;
   padding: 12px;
-  margin: 8px 0;
+  margin: 4px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -84,7 +103,7 @@ input[type=text], select {
  }
 
 input[type=submit] {
-  width: 100%;
+  width: 50%;
   background-color: #4CAF50;
   color: white;
   padding: 14px;
@@ -94,9 +113,15 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.submit-form {
+    border-radius: 50px;
+    padding: 1% 4%;
+    display: flex;
+    justify-content: center;  
+    margin-top: 20px;
+}
 
 button{
-    width:100%;
  	  margin-top:15px;
     border-radius: 15px;
  	  padding:8px;
