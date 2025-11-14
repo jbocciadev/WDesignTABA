@@ -1,9 +1,12 @@
 @import "../../../base.css";
 
-.form-container {
-    background-color: var(--green);
+.form-container {    
     display: flex;
     justify-content: center;
+}
+.green-bg {
+    background-color: var(--green);
+
 }
 .life-form {
     display: flex;
@@ -37,7 +40,7 @@ label {
     font-weight: bold;
 }
 
-input[type=text],input[type=date], .amount-slider-wrapper,.smoker-wrapper, #county {
+input[type=text], input[type=date],input[type=email], .amount-slider-wrapper,.smoker-wrapper, #county {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
@@ -46,6 +49,7 @@ input[type=text],input[type=date], .amount-slider-wrapper,.smoker-wrapper, #coun
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 .smoker-wrapper * {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -84,6 +88,12 @@ input[type=text],input[type=date], .amount-slider-wrapper,.smoker-wrapper, #coun
     color: #fff;
     /* margin-left: 15px; */
 }
+#remove-adult-btn {
+    border-color: #dc3545;
+    background-color: #dc3545;
+    color: #fff;
+    /* margin-left: 15px; */
+}
 #submit-form-btn {
     border-color: var(--green);
     background-color: var(--green);
@@ -100,11 +110,25 @@ input[type=text],input[type=date], .amount-slider-wrapper,.smoker-wrapper, #coun
 } */
 
 .list-header {
-    border-top: 3px solid var(--green); 
     border-width: 90%;
     border-radius: 0 !important;
     color: var(--green);
 }
 #second-adult-list {
     display: none;
+}
+
+input[type=checkbox] {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.form-check-input:checked {
+    background-color: var(--green) !important;
+    border-color: var(--green) !important;
+}
+input[type=checkbox]:focus {
+    box-shadow: 0 0 10px var(--green) !important;
+    border-color: var(--green);
 }

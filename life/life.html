@@ -72,170 +72,198 @@
         <!-- End of Navbar -->
 
         <div class="row d-flex justify-content-center">
-            <div class="form-container w-100">
-            <div class="life-form w-50">
-                <h2 class="form-title">Life Insurance Quote</h1>
-                <section class="formsection w-100">
-                    <form action="">
-                        <div class="first-adult">
-                            <div class="list-header text-center"><h4>First Adult</h4></div>
+            <form action="">
+                <div class="form-container w-100 green-bg">
+                    <div class="life-form w-75">
+                        <h2 class="form-title">Life Insurance Quote</h2>
+                        <section class="formsection w-100">
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="fname" class="d-block">First Name:</label>
-                                    <input type="text" id="fname" class="w-100"  placeholder="Your first name">
+                            <div class="first-adult py-0">
+                                <div class="list-header"><h4>First Adult</h4></div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="fname" class="d-block">First Name</label>
+                                        <input type="text" id="fname" class="w-100"  placeholder="Your first name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lname" class="d-block">Last Name</label>
+                                        <input type="text" class="w-100"  id ="lname" placeholder="Your last name">
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="lname" class="d-block">Last Name:</label>
-                                    <input type="text" class="w-100"  id ="lname" placeholder="Your last name">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="address" class="d-block">Address</label>
+                                        <input type="text" id="address" class="w-100"  placeholder="123 Main St">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="address2" class="d-block">Address 2</label>
+                                        <input type="text" class="w-100"  id ="address2" placeholder="Apartment, studio, or floor">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="eircode" class="d-block">Eircode</label>
+                                        <input type="text" class="w-100"  id ="eircode" >
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="city" class="d-block">City</label>
+                                        <input type="text" class="w-100"  id ="city" >
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="county" class="d-block">County</label>
+                                        <select class="form-select" id="county" required>
+                                            <option value="">Select County</option>
+                                            <option>Carlow</option>
+                                            <option>Cavan</option>
+                                            <option>Clare</option>
+                                            <option>Cork</option>
+                                            <option>Donegal</option>
+                                            <option>Dublin</option>
+                                            <option>Galway</option>
+                                            <option>Kerry</option>
+                                            <option>Kildare</option>
+                                            <option>Kilkenny</option>
+                                            <option>Laois</option>
+                                            <option>Leitrim</option>
+                                            <option>Limerick</option>
+                                            <option>Longford</option>
+                                            <option>Louth</option>
+                                            <option>Mayo</option>
+                                            <option>Meath</option>
+                                            <option>Monaghan</option>
+                                            <option>Offaly</option>
+                                            <option>Roscommon</option>
+                                            <option>Sligo</option>
+                                            <option>Tipperary</option>
+                                            <option>Waterford</option>
+                                            <option>Westmeath</option>
+                                            <option>Wexford</option>
+                                            <option>Wicklow</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="cover-amount-1" class="d-block">Cover amount</label>
+                                        <div class="amount-slider-wrapper"><input id="cover-amount-1" class="w-100 mt-1" type="range" min="5000" max="1000000" value="5000" step="500"></div> € <output for="cover-amount-1" id="cover-value-1" aria-hidden="true"></output>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="cover-term" class="d-block">Cover term</label>
+                                        <div class="amount-slider-wrapper"><input id="cover-term" class="d-inline-block" type="number" min="1" max="40" value="1" step="1">Year(s)</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="dob" class="d-block">Date of Birth</label>
+                                        <input type="date" name="dob" id="dob">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="smoker" class="d-block">Are you a smoker?</label>
+                                        <div class="smoker-wrapper d-flex justify-content-center">
+                                            <div class="smoker-yes">
+                                                <label for="smoker-yes">Yes</label> <input type="radio" name="smoker" value="yes" id="smoker-yes"> 
+                                            </div>
+                                            <div class="smoker-no">
+                                                <label for="smoker-no">No</label> <input type="radio" name="smoker" value="no" id="smoker-no">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="address" class="d-block">Address:</label>
-                                    <input type="text" id="address" class="w-100"  placeholder="123 Main St">
+
+                            <div class="second-adult d-none py-0">
+                                <div class="list-header"><h4>Second Adult</h4></div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="fname" class="d-block">First Name:</label>
+                                        <input type="text" id="fname" class="w-100"  placeholder="Your first name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lname" class="d-block">Last Name:</label>
+                                        <input type="text" class="w-100"  id ="lname" placeholder="Your last name">
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="address2" class="d-block">Address 2:</label>
-                                    <input type="text" class="w-100"  id ="address2" placeholder="Apartment, studio, or floor">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="cover-amount-2" class="d-block">Cover amount</label>
+                                        <div class="amount-slider-wrapper"><input id="cover-amount-2" class="w-100 mt-1" type="range" min="5000" max="1000000" value="5000" step="500"></div> € <output for="cover-amount-2" id="cover-value-2" aria-hidden="true"></output>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="cover-term" class="d-block">Cover term</label>
+                                        <div class="amount-slider-wrapper"><input id="cover-term" class="d-inline-block" type="number" min="1" max="40" value="1" step="1">Year(s)</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="dob" class="d-block">Date of Birth:</label>
+                                        <input type="date" name="dob" id="dob">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="smoker" class="d-block">Are you a smoker?</label>
+                                        <div class="smoker-wrapper d-flex justify-content-center">
+                                            <div class="smoker-yes">
+                                                <label for="smoker-yes">Yes</label> <input type="radio" name="smoker" value="yes" id="smoker-yes"> 
+                                            </div>
+                                            <div class="smoker-no">
+                                                <label for="smoker-no">No</label> <input type="radio" name="smoker" value="no" id="smoker-no">
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="eircode" class="d-block">Eircode:</label>
-                                    <input type="text" class="w-100"  id ="eircode" >
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="city" class="d-block">City:</label>
-                                    <input type="text" class="w-100"  id ="city" >
-                                </div>
+                            
                                 
-                                <div class="col-md-4">
-                                    <label for="county" class="d-block">County:</label>
-                                    <select class="form-select" id="county" required>
-                                        <option value="">Select County</option>
-                                        <option>Carlow</option>
-                                        <option>Cavan</option>
-                                        <option>Clare</option>
-                                        <option>Cork</option>
-                                        <option>Donegal</option>
-                                        <option>Dublin</option>
-                                        <option>Galway</option>
-                                        <option>Kerry</option>
-                                        <option>Kildare</option>
-                                        <option>Kilkenny</option>
-                                        <option>Laois</option>
-                                        <option>Leitrim</option>
-                                        <option>Limerick</option>
-                                        <option>Longford</option>
-                                        <option>Louth</option>
-                                        <option>Mayo</option>
-                                        <option>Meath</option>
-                                        <option>Monaghan</option>
-                                        <option>Offaly</option>
-                                        <option>Roscommon</option>
-                                        <option>Sligo</option>
-                                        <option>Tipperary</option>
-                                        <option>Waterford</option>
-                                        <option>Westmeath</option>
-                                        <option>Wexford</option>
-                                        <option>Wicklow</option>
-                                    </select>
+                        </section>
+                        <div class="form-buttons">
+                                    <input type="button" value="Add second Adult" id="add-adult-btn">
+                                    <input type="button" value="Remove second Adult" id="remove-adult-btn" class="d-none">
                                 </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="form-container w-100">
+                    <div class="life-form w-75">
+                        <h2 class="form-title">Contact Details</h2>
+                        <section class="formsection w-100">
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="cover-amount-1" class="d-block">Cover amount</label>
-                                    <div class="amount-slider-wrapper"><input id="cover-amount-1" class="w-100 mt-1" type="range" min="5000" max="1000000" value="5000" step="500"></div> € <output for="cover-amount-1" id="cover-value-1" aria-hidden="true"></output>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="cover-term" class="d-block">Cover term</label>
-                                    <div class="amount-slider-wrapper"><input id="cover-term" class="d-inline-block" type="number" min="1" max="40" value="1" step="1">Year(s)</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="dob" class="d-block">Date of Birth:</label>
-                                    <input type="date" name="dob" id="dob">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="smoker" class="d-block">Are you a smoker?</label>
-                                    <div class="smoker-wrapper d-flex justify-content-center">
-                                        <div class="smoker-yes">
-                                            <label for="smoker-yes">Yes</label> <input type="radio" name="smoker" value="yes" id="smoker-yes"> 
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="email" class="d-block">Email</label>
+                                            <input type="email" id="email" class="w-100"  placeholder="Your email">
                                         </div>
-                                        <div class="smoker-no">
-                                            <label for="smoker-no">No</label> <input type="radio" name="smoker" value="no" id="smoker-no">
+                                        <div class="col-md-6">
+                                            <label for="phone" class="d-block">Phone number</label>
+                                            <input type="text" id="phone" class="w-100 "  placeholder="Your phone number">
                                         </div>
-                                        
-                                         
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="second-adult d-none">
-                            <div class="list-header text-center"><h4>Second Adult</h4></div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="fname" class="d-block">First Name:</label>
-                                    <input type="text" id="fname" class="w-100"  placeholder="Your first name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="lname" class="d-block">Last Name:</label>
-                                    <input type="text" class="w-100"  id ="lname" placeholder="Your last name">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="cover-amount-2" class="d-block">Cover amount</label>
-                                    <div class="amount-slider-wrapper"><input id="cover-amount-2" class="w-100 mt-1" type="range" min="5000" max="1000000" value="5000" step="500"></div> € <output for="cover-amount-2" id="cover-value-2" aria-hidden="true"></output>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="cover-term" class="d-block">Cover term</label>
-                                    <div class="amount-slider-wrapper"><input id="cover-term" class="d-inline-block" type="number" min="1" max="40" value="1" step="1">Year(s)</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="dob" class="d-block">Date of Birth:</label>
-                                    <input type="date" name="dob" id="dob">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="smoker" class="d-block">Are you a smoker?</label>
-                                    <div class="smoker-wrapper d-flex justify-content-center">
-                                        <div class="smoker-yes">
-                                            <label for="smoker-yes">Yes</label> <input type="radio" name="smoker" value="yes" id="smoker-yes"> 
+                                    <div class="row">
+                                        <div class="col-md-12 d-flex justify-content-center form-check">
+                                            <input type="checkbox" id="terms" class="d-inline me-3 form-check-input" >
+                                            <label for="terms" class="d-inline">Agree to Terms and Conditions</label>
                                         </div>
-                                        <div class="smoker-no">
-                                            <label for="smoker-no">No</label> <input type="radio" name="smoker" value="no" id="smoker-no">
-                                        </div>
-                                        
-                                         
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                        <div class="form-buttons p-5">
-                            <input type="button" value="Add second Adult" id="add-adult-btn">
+                        </section>
+                        <div class="form-buttons">
                             <input type="button" value="Submit" id="submit-form-btn">
-                        </div> 
-                    </form>                
-                              
-                </section>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
                 
-
+            </form>
             </div>
-        </div>
         </div>
         
 
         <!-- Footer -->
         <footer>
-        <div class="footer-links-container">
+        <div class="footer-links-container mt-5">
             <div>
                 <h3>Our Products</h3>
                 <ul class="products-list">
