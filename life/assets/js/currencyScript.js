@@ -23,6 +23,14 @@ rangeInput1.addEventListener("input", function () {
 rangeInput2.addEventListener("input", function () {
     rangeOutput2.textContent = formatCurrency(this.value);
 });
+// Reset value to 5,000 when form is reset
+let secondAdultForm = document.getElementById("secondAdultForm");
+secondAdultForm.addEventListener("reset", function () {
+    let secondAmount = document.getElementById("cover-amount-2").getAttribute("value");
+    rangeOutput2.textContent = formatCurrency(secondAmount);
+});
+
+
 
 function formatCurrency(value) {
     // Function that formats currency values into numeric with thousand and cent separator

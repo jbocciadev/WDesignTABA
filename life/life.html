@@ -72,13 +72,12 @@
         <!-- End of Navbar -->
 
         <div class="row d-flex justify-content-center">
-            <form action="">
                 <div class="form-container w-100 green-bg">
                     <div class="life-form w-75">
                         <h2 class="form-title">Life Insurance Quote</h2>
                         <section class="formsection w-100">
-
                             <div class="first-adult py-0">
+                                <form action="">
                                 <div class="list-header"><h4>First Adult</h4></div>
 
                                 <div class="row">
@@ -172,9 +171,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                </form>
                             </div>
 
-                            <div class="second-adult d-none py-0">
+                            <div class="second-adult  py-0" id="secondAdultDiv">
+                                <form action="" class="d-none" id="secondAdultForm">
                                 <div class="list-header"><h4>Second Adult</h4></div>
 
                                 <div class="row">
@@ -210,12 +211,12 @@
                                             </div>
                                             <div class="smoker-no">
                                                 <label for="smoker-no">No</label> <input type="radio" name="smoker" value="no" id="smoker-no">
-                                            </div>
-                                            
+                                            </div>                                            
                                             
                                         </div>
                                     </div>
                                 </div>
+                                </form>
                             </div>
                             
                                 
