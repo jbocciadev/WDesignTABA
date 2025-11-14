@@ -1,16 +1,19 @@
 // VALIDATIONS SECTION -------------------------------------------------------------------------
 //Reg validation -- WARN No spaces
-const regInput = document.getElementById("inputReg");
-const warning = document.getElementById("regWarning");
+document.getElementById('inputReg').addEventListener('input', function () {
+    const reg = this.value;
+    const warning = document.getElementById('regWarning');
 
-regInput.addEventListener("input", () => {
-    if (regInput.value.includes(' ')) {
-        warning.style.display = "inline";  // show warning
+    // Logical check for Reg input
+    const pattern = /^\d{2,3}-[A-Za-z]{1,2}-\d+$/; // 2 or 3 digits for year, one or two letters for County code, and dashes
+    // warning if conditions are and arent met
+    if (!pattern.test(reg)) {
+        warning.textContent = "Format must be like your Reg Plate: 181-D-123";
+        warning.style.display = "inline";
     } else {
-        warning.style.display = "none";    // hide warning
+        warning.style.display = "none";
     }
 });
-
 
 // VALUE VALIDATION - PREVENT 200,000 plus car value 
 const carValueInput = document.getElementById("carValue");
@@ -25,12 +28,12 @@ carValueInput.addEventListener("input", function () {
 
 
 // DOM MANIPULATION SECTION-----------------------------------------------------------------------
-// REG PLATE
+// REG PLATE - Source W3Schools - HTML DOM Element textContent
 const input = document.getElementById("inputReg");
 const mirror = document.getElementById("regCopy");
 
 input.addEventListener("input", () => {
-    regCopy.textContent = input.value; // dynamically update the span
+    regCopy.textContent = input.value; // dynamically update the span container
 });
 
 input.addEventListener("input", () => {
@@ -40,7 +43,7 @@ input.addEventListener("input", () => {
 
 
 
-// FadeToggle jQuery sections
+// FadeToggle jQuery sections - collapsible section turn into edit sections buttons when 'proceed' button clicked
 $(document).ready(function () {
 
     // Proceed buttons -- Fade buttons in bacause i needed them hidden via CSS when page is initially loaded
@@ -77,9 +80,8 @@ $(document).ready(function () {
         $("#section3").fadeIn(850);
         $("#editDriverDetails").fadeOut(850);
     });
-
 });
-
+// END jQuery---------------------------
 
 // IMPORT DESTINATION SHOW SECTION
 importedSwitch.addEventListener('change', function () {
@@ -141,7 +143,6 @@ function calculatePremium() {
     }
 
     total = carValue * valueMultiplier; // Calculate the base premium
-    console.log("Base Price:", total);
 
     // CarAge multiplier
     const carYear = parseInt(document.getElementById("carYear").value || 0); // parse int the manufacture year
@@ -156,7 +157,7 @@ function calculatePremium() {
     else ageMultiplier = 0.01; // 20+ years (vintage)
 
     total += total * ageMultiplier;// Calculate the base premium
-    console.log("point 2", total);
+
 
     // Engine capacity multiplier 
     const capacity = parseInt(document.getElementById("engineSize").value || 0); // parse int the manufacture year
@@ -305,10 +306,32 @@ function calculatePremium() {
     // Display result - took 'total' and gave it ID to call it into my HTML to display premium Euro value
     document.getElementById("premiumOutput").textContent = total.toFixed(2);
     document.getElementById("monthlyPremiumOutput").textContent = monthlyTotal.toFixed(2);
+
+    // RETURN the totals variables for the EmailJS
+    return { total, monthlyTotal };
 }
 
 // Added event listeners for live changes
 document.querySelectorAll("input, select").forEach(el => {
     el.addEventListener("input", calculatePremium);
     el.addEventListener("change", calculatePremium);
+});
+
+// EMAILJS INTEGRATION -------------------------------------- Source: https://www.youtube.com/watch?v=ziYrGFADE1g&t=438s
+emailjs.init("X0VrOze2ucHH5azPw");
+
+document.getElementById("quotation-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page reload
+
+    const { total, monthlyTotal } = calculatePremium(); // return values from function
+
+    const formData = {
+        name: document.getElementById("fullname").value,
+        email: document.getElementById("inputEmail").value,
+        reg: document.getElementById("inputReg").value,
+    };
+
+    console.table(formData);
+    console.log("Annual total:", total.toFixed(2));
+    console.log("Monthly total:", monthlyTotal.toFixed(2));
 });

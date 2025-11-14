@@ -7,8 +7,9 @@ h1 {
     background-color: var(--green);
     font-weight: 600;
     padding: 1%;
-    box-shadow: 0px 0px 15px var(--green);
-    border-style: outset;
+    box-shadow: inset 0 0 3px #353535;
+    border: 2px solid #999;
+    text-shadow: 0 0 3px black;
 }
 
 h4 {
@@ -28,21 +29,29 @@ label {
 
 /* Classes -------------------------------------------------------------*/
 .formSections {
-    margin: 1vw 20vw;
-    border-radius: 60px;
+    margin: 1vw 15vw;
+    border-radius: 20px;
     padding: 1% 4%;
     background-color: white;
-    box-shadow: 0 0 10px;
+    box-shadow: 0px 0px 10px rgb(55, 55, 55);
+}
+
+/* Checkbox and switches made larger than native */
+.form-check-input {
+    font-size: 18px;
+    background-color: #c5e3ff;
 }
 
 /* Sections Background */
 .greenBack {
     background-color: var(--green);
     padding: 20px 0px 20px 0px;
+    box-shadow: 0 0 10px;
 }
 
 .whiteBack {
     padding: 20px 0px 20px 0px;
+    box-shadow: 0 0 10px;
 }
 
 /* Buttons and checkboxes end of sections */
@@ -54,8 +63,8 @@ label {
 .policy {
     text-align: center;
     margin-top: 15px;
-    border-style: outset;
-    border-radius: 40px;
+    border-style: inset;
+    border-radius: 20px;
     background-color: rgb(245, 245, 245);
 }
 
@@ -65,7 +74,7 @@ label {
     color: black;
     margin-top: 1%;
     border-color: #3C9E82;
-    box-shadow: 0 0 10px #3C9E82;
+    box-shadow: 0 0 2px #3C9E82;
 }
 
 /* Live Price */
@@ -74,7 +83,7 @@ div.sticky {
     bottom: 0;
     background-color: #247AB7;
     padding: 18px 18px 12px 18px;
-    width: 60vw;
+    width: 100vw;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -97,7 +106,7 @@ div.sticky {
     height: 72.5px;
     width: fit-content;
     border-radius: 11px;
-
+    box-shadow: 0 0 10px;
 }
 
 #regEmblem {
@@ -147,12 +156,10 @@ div.sticky {
 .overlayContent {
     background-color: white;
     padding: 40px;
-    border-radius: 40px;
+    border-radius: 20px;
     margin: 30px 30px 120px 30px;
-    width: 50%;
-    max-width: 60%;
+    width: 60%;
     text-align: left;
-    border-style: groove;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -185,13 +192,29 @@ div.sticky {
     }
 
     .overlayContent {
-        width: 90%;
-        padding: 20px;
+        padding: 12px;
+    }
+
+    .overlayContent {
+        background-color: white;
+        margin-bottom: 160px;
+        min-width: 80%;
+        padding: 12px;
+        border-radius: 20px;
+        text-align: left;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .reg {
         margin: 20px 10px 10px 10px;
     }
+
+    /* Minor responisveness adjust */
+    .btn.btn-danger,
+    .col-12 {
+        margin-bottom: 8px;
+    }
+
 }
 
 /* Mobile Large */

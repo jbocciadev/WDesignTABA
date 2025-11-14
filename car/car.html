@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../base.css" />
     <link rel="stylesheet" href="assets/css/car_style.css">
     <script src="https://kit.fontawesome.com/7c24784c1c.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
     <title>Cool insurance</title>
 </head>
 
@@ -20,8 +22,8 @@
         <div class="d-flex justify-content-center nav-wrapper">
             <nav class="navbar navbar-expand-lg bg-body-primary py-0">
                 <div class="container mb-2">
-                    <a class="navbar-brand" href="#"><img class="company-logo" href="../index.html" src="../assets/images/Cool_logo.png"
-                            alt="" /></a>
+                    <a class="navbar-brand" href="../index.html"><img class="company-logo"
+                            src="../assets/images/Cool_logo.png" alt="" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -94,7 +96,7 @@
     </body>
 
 
-    <form>
+    <form id="quotation-form">
         <Section class="greenBack">
             <div class="formSections">
                 <h1>Welcome to your Car quotation form</h1>
@@ -129,7 +131,7 @@
                 <div class="row mb-2 justify-content-around">
                     <div class="form-group col-md-5">
                         <label for="inputReg" class="form-label">Enter Registration</label>
-                        <input type="text" class="form-control" id="inputReg" placeholder="Example 181-D-123">
+                        <input type="text" class="form-control" id="inputReg" placeholder="Example 181-D-123" required>
                         <span id="regWarning" style="color:rgb(255, 107, 107); display:none;">No spaces please!</span>
                     </div>
                     <!-- Reg Graphic -->
@@ -183,16 +185,17 @@
                     </div>
                     <!-- MODEL -->
                     <div class="col-md-4">
-                        <label for="model" class="form-label">Model</label>
+                        <label for="text" class="form-label">Model</label>
                         <input type="model" class="form-control" id="inputModel" placeholder="Model">
                     </div>
                     <div class="invalid-feedback">
                         Please select your vehicle Model.
                     </div>
-
+                    <!-- Car Year -->
                     <div class="form-group col-md-4">
-                        <label for="inputYear" class="form-label">Year</label>
-                        <input type="number" id="carYear" class="form-control">
+                        <label for="carYear" class="form-label">Year</label>
+                        <input type="number" id="carYear" class="form-control" placeholder="Min 1900" min="1900"
+                            required>
                     </div>
                 </div>
 
@@ -255,7 +258,7 @@
                     <input type="text" class="form-control" id="origin" placeholder="e.g. UK">
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-lg" id="closeCarInfo">Proceed</button>
+                    <button type="button" class="btn btn-primary" id="closeCarInfo">Proceed</button>
                 </div>
 
             </div>
@@ -275,7 +278,7 @@
                 <div class="row d-flex justify-content-around">
                     <!-- POLICY TYPE -->
                     <div class="policy form-group col-lg-5 p-3 mb-3">
-                        <h4>1. Please select your policy type:</h4>
+                        <h4>1. Please select your policy type</h4>
                         <input type="radio" id="comprehensive" name="policy" value="comprehensive" required>
                         <label for="comprehensive" class="radio form-label">Comprehensive</label><br>
                         <input type="radio" id="fireTheft" name="policy" value="fireTheft">
@@ -287,14 +290,13 @@
                     <div class="policy form-group col-lg-5 p-3 mb-3">
                         <h4>2. Please select policy START date</h4>
                         <input type="date" id="policyStart" name="policyStart">
-                        <input type="submit">
                     </div>
                 </div>
                 <!-- POLICY ADDONS -->
                 <div class="row d-flex justify-content-around">
 
-                    <div class="policy form-group col-lg-11 p-3 mb-3">
-                        <h4>3. Please select your policy add-ons:</h4>
+                    <div class="policy form-group col-lg-5 p-3 mb-3">
+                        <h4>3. Please select your policy add-ons</h4>
                         <input type="checkbox" id="ncb" name="addon" value="ncb">
                         <label for="ncb" class="radio form-label">No Claim Bonus Protection</label><br>
                         <input type="checkbox" id="roadside" name="addon" value="roadside">
@@ -307,7 +309,7 @@
 
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-lg" id="closeInsPref">Proceed</button>
+                    <button type="button" class="btn btn-primary" id="closeInsPref">Proceed</button>
                 </div>
 
             </div>
@@ -330,7 +332,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="fullname" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullname" placeholder="Full Name">
+                        <input type="text" class="form-control" id="fullname" placeholder="Full Name" required>
                     </div>
                 </div>
 
@@ -439,7 +441,7 @@
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-lg" id="closeDriverInfo">Proceed</button>
+                    <button type="button" class="btn btn-primary" id="closeDriverInfo">Proceed</button>
                 </div>
             </div>
         </section>
@@ -467,7 +469,7 @@
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                    <button type="submit" class="btn btn-success btn-lg">Submit Details</button>
+                    <button type="submit" class="btn btn-success">Submit Details</button>
                     <button class="btn btn-danger" onclick="location.reload()">Reset Details</button>
                     <!-- My Source: W3schools - Window location.reload() -->
                 </div>
@@ -541,6 +543,7 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
+
 
 </body>
 

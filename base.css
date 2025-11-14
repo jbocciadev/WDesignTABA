@@ -31,7 +31,7 @@ body {
 .outer-background {
     position: absolute;
     top: 0;
-    width: 100vw;
+    width: 100%;
     height: 110px;
     background-color: var(--green);
     z-index: -1;
@@ -40,6 +40,7 @@ body {
     background-color: #fff; /*Need to fix this, image to remove background*/
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    box-shadow: 0 0 10px; /* so you can see the navbar on a white section - KO */
 }
 
 
