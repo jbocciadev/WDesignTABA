@@ -1,16 +1,20 @@
 @import "../../base.css";
 
+h3 {
+    font-weight: 600;
+}
+
 .landing-section {
     background-color: var(--green);
 }
 
 .hero-card {
     background-color: #fff;
-    border-radius: 60px;
-    width: 50%;
+    border-radius: 30px;
+    width: 65%;
     display: flex;
     flex-direction: row;
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25),
         -5px -5px 15px rgba(0, 0, 0, 0.25);
@@ -66,11 +70,11 @@
 
 .hero-card-2 {
     background-color: var(--green);
-    border-radius: 60px;
-    width: 50%;
+    border-radius: 30px;
+    width: 65%;
     display: flex;
     flex-direction: row;
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
@@ -87,14 +91,24 @@
 .faq-heading {
     text-align: center;
     font-weight: 600;
+    font-size: 42px;
     color: var(--white);
     border-radius: 20px;
-    justify-self: center;
+    border: 0px 0px 1px darkslategrey;
+    margin-bottom: 0;
+
 }
 
 .FAQs {
-    margin: 10px;
+
     padding: 20px;
+    box-shadow: 0 0 10px black;
+    background-color: var(--green);
+    border-radius: 30px;
+    width: 65%;
+    margin: 20px 0;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
 
 .accordion {
@@ -103,14 +117,15 @@
     cursor: pointer;
     padding: 18px;
     width: 100%;
-    border: none;
-    box-shadow: 0px 0px 10px var(--white);
+    border: 0 0 1px darkslategrey;
+    box-shadow: 0px 0px 8px var(--white);
     outline: none;
     font-size: 25px;
     font-weight: bold;
     transition: 0.4s;
     border-radius: 20px;
     margin: 10px 10px 10px 0px;
+
 }
 
 
@@ -167,7 +182,6 @@
     }
 
     .FAQs {
-        margin: 0% 10%;
-
+        width: 80vw;
     }
 }

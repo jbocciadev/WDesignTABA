@@ -20,10 +20,10 @@
 
 <body>
     <!-- Bootstrap-native responsive Navigation bar -->
-    <div class="outer-wrapper">
-        <div class="d-flex justify-content-center nav-wrapper">
-            <nav class="navbar navbar-expand-lg bg-body-primary py-0">
-                <div class="container mb-2">
+    <!-- <div class="outer-wrapper">
+        <div class="nav-wrapper">
+            <nav class="navbar navbar-expand-lg bg-body-primary">
+                <div class="container">
                     <a class="navbar-brand" href="#"><img class="company-logo" src="./assets/images/Cool_logo.png"
                             alt="" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -62,8 +62,37 @@
             </nav>
         </div>
     </div>
-    <div class="outer-background"></div> <!-- Empty div to allow for sticky navbar -->
+    <div class="outer-background"></div>  -->
+    <!-- Empty div to allow for sticky navbar -->
     <!-- End of Navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img id="cool_logo" src="./assets/images/Cool_logo1.png" alt="Cool logo"
+                    height="100" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <hr>
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./home/home.html"><i class="fa-solid fa-house"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./life/life.html"><i class="fa-solid fa-person"></i>Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./car/car.html"><i class="fa-solid fa-car"></i>Car</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
 
     <section class="landing-section container-fluid d-flex justify-content-center">
         <div class="hero-card d-none d-sm-block col-md-10 col-lg-8">
@@ -197,7 +226,7 @@
 
     <section class="landing-section-2 d-flex justify-content-center">
 
-        <div class="FAQs hero-card-2 d-none d-sm-block col-md-10 col-lg-8" id="FAQs">
+        <div class="FAQs" id="FAQs">
             <h3 class="faq-heading">FAQs</h3><br>
             <button class="accordion">Section 1</button>
             <div class="panel">
@@ -234,7 +263,8 @@
     <!-- <div style="height: 40vh"></div> -->
 
     <footer>
-        <div class="footer-links-container mt-5">
+        <hr>
+        <div class="footer-links-container mt-3">
             <div>
                 <h3>Our Products</h3>
                 <ul class="products-list">

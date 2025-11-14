@@ -6,8 +6,10 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"); */
 
 @font-face {
-    font-family: "Zalando"; /* set name */
-    src: url(https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap); /* url of the font */
+    font-family: "Zalando";
+    /* set name */
+    src: url(https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap);
+    /* url of the font */
 }
 
 :root {
@@ -16,11 +18,13 @@
     --white: #fafafa;
     --black: darkslategray;
 }
+
 body {
     background-color: var(--white);
     font-family: "Zalando", sans-serif !important;
     color: var(--black);
 }
+
 .outer-wrapper {
     background-color: transparent;
     overflow: visible;
@@ -28,6 +32,7 @@ body {
     top: 0;
     z-index: 1000;
 }
+
 .outer-background {
     position: absolute;
     top: 0;
@@ -35,55 +40,6 @@ body {
     height: 110px;
     background-color: var(--green);
     z-index: -1;
-}
-.nav-wrapper {
-    background-color: #fff; /*Need to fix this, image to remove background*/
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 0 10px; /* so you can see the navbar on a white section - KO */
-}
-
-
-.company-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 10vw;
-}
-.brand-bar {
-    justify-self: center;
-    justify-content: center;
-    width: 100%;
-    display: flex;
-}
-
-.nav-link {
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--black);
-}
-
-.nav-link:hover {
-    border-bottom: 4px solid #3c9e82;
-    padding-bottom: 4px;
-    color: var(--black);
-}
-
-.nav-link.show {
-    background-color: var(--green) !important;
-    color: var(--white) !important;
-    border-radius: 15px;
-}
-
-.nav-item .active {
-    font-weight: 600;
-    color: var(--black) !important;
-}
-
-.dropdown-item:hover, .dropdown-item.active {
-    background-color: var(--green);
-    color: var(--white) !important;
-    font-weight: 100;
 }
 
 .insurance-types {
@@ -129,13 +85,13 @@ body {
 
 footer {
     /* height: 20vh; */
-    padding-top: 10px;
-    /* background-color: white; */
+    background-color: rgb(255, 255, 255);
 }
 
 .footer-links-container {
     display: flex;
     justify-content: space-around;
+
 }
 
 footer h3 {
@@ -189,6 +145,7 @@ footer hr {
 
 /* Target tablets */
 @media (max-width: 768px) {
+
     .hero-text-1,
     .hero-text-2,
     .hero-text-3 {
@@ -196,10 +153,9 @@ footer hr {
     }
 
     .company-logo {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 75%;
+
+
+        width: 65%;
     }
 }
 
@@ -245,8 +201,92 @@ footer hr {
     }
 }
 
+
+/* REVISED NAVBAR --------------------------------------------------------------------- */
+/* ICONS */
+.navbar i {
+    font-size: 2.5rem;
+    color: #3c9e82;
+    text-align: center;
+}
+
+.navbar a {
+    font-size: 30px;
+    color: #212529;
+    font-weight: 600;
+    display: grid;
+}
+
+.container {
+    margin: 0%;
+}
+
+.navbar {
+    position: sticky;
+    box-shadow: 0 0 10px darkslategray;
+    background-color: var(--white);
+    border: 1px solid #212529;
+    justify-content: space-evenly;
+}
+
+
+
+.nav-link:hover {
+    color: var(--white);
+    background-color: var(--green);
+    box-shadow: 0 0 10px var(--green);
+}
+
+/* Target the icon to change too on hover -> nav-link */
+.nav-link:hover i {
+    color: var(--white);
+}
+
+.nav-link,
+.nav-link i {
+    transition: color 0.7s ease, background-color 0.7s ease;
+}
+
+.nav-link {
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    margin: 0px 10px 0px 10px;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navbar a {
+        display: inline;
+    }
+
+    .navbar i {
+        margin: 10px 10px 10px 10px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    li.nav-link {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar a,
+    .navbar i {
+        font-size: 25px;
+    }
+}
+
+/* REVISED NAVBAR END---------------------------------------------------- */
+
 /* Target smallest mobile screens */
 @media (max-width: 320px) {
+
     .hero-text-1,
     .hero-text-2,
     .hero-text-3 {
@@ -256,6 +296,7 @@ footer hr {
 
 /* Maintain a fixed font-sixe property value in screens larger than 1440px wide */
 @media (min-width: 1440px) {
+
     .hero-text-1,
     .hero-text-2,
     .hero-text-3 {
@@ -284,7 +325,7 @@ footer hr {
 /* Fixed */
 @media (max-width: 768px) {
     .footer-links-container {
-    display: grid;
-    text-align: center;
-}
+        display: grid;
+        text-align: center;
+    }
 }
