@@ -1,8 +1,9 @@
 @import "../../base.css";
 
-h3 {
+h1 {
     font-weight: 600;
 }
+
 
 .landing-section {
     background-color: var(--green);
@@ -88,53 +89,47 @@ h3 {
 }
 
 /* FAQs section--------------------------------- */
-.faq-heading {
-    text-align: center;
+.faq-toggle {
     font-weight: 600;
-    font-size: 42px;
-    color: var(--white);
+    padding: 24px;
+    font-size: 24px;
+    background-color: darkslategrey;
     border-radius: 20px;
-    border: 0px 0px 1px darkslategrey;
-    margin-bottom: 0;
-
+    margin: 20px;
+    width: 100%;
+    justify-self: center;
 }
 
-.FAQs {
-
-    padding: 20px;
-    box-shadow: 0 0 10px black;
-    background-color: var(--green);
-    border-radius: 30px;
-    width: 65%;
-    margin: 20px 0;
-    padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+.faq-toggle:hover {
+    color: darkslategray;
+    font-size: 28px;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 .accordion {
-    background-color: var(--white);
+    background-color: #ffffff;
     color: darkslategray;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: 0 0 1px darkslategrey;
-    box-shadow: 0px 0px 8px var(--white);
-    outline: none;
-    font-size: 25px;
-    font-weight: bold;
+    padding: 12px;
+    width: 85%;
+    font-size: 15px;
     transition: 0.4s;
     border-radius: 20px;
-    margin: 10px 10px 10px 0px;
+    margin: 5px;
 
 }
 
+.accordion:hover {
+    box-shadow: 0px 0px 7px var(--white);
+}
 
 .accordion.active,
 .accordion:hover {
-    background-color: var(--blue);
-    box-shadow: 0px 0px 0px var(--white);
-    color: var(--white);
-
+    background-color: var(--white);
+    color: darkslategray;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .accordion:after {
@@ -151,8 +146,9 @@ h3 {
 }
 
 .panel p {
-
+    width: 80%;
     color: var(--white);
+    margin-top: 5px;
 }
 
 .panel {
@@ -160,6 +156,26 @@ h3 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
+    justify-items: center;
+}
+
+/* Hidden Edit Butoons from get go ------------------------------------------ */
+#homeFAQ,
+#lifeFAQ,
+#carFAQ {
+    display: none;
+}
+
+/* FAQ Main */
+.faqMain {
+    background-color: var(--green);
+    border-radius: 30px;
+    width: 65%;
+    color: var(--white);
+    text-align: center;
+    margin: 20px 0;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
 
 /* End FAQs ------------------------ */
@@ -181,7 +197,7 @@ h3 {
         height: auto;
     }
 
-    .FAQs {
+    .faqMain {
         width: 80vw;
     }
 }
