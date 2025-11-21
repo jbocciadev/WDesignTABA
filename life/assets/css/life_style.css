@@ -148,7 +148,3 @@ input[type=checkbox]:focus {
 .shadowOnFocus:focus, .shadowOnFocus:has(input:focus) {
     box-shadow: 0 0 10px var(--green);
 }
-.toastClass {
-    background-color: red;
-    width: 50vw !important;
-}

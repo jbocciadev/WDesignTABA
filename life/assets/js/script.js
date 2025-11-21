@@ -7,7 +7,6 @@ let secondAdultInputs = secondAdult.querySelectorAll("input") // https://develop
 
 // Add event listeners
 addAdultBtn.addEventListener("click", function(){
-
     // Display second adult form
     secondAdult.classList.remove("d-none");
     // Enable fields in second adult section
@@ -23,7 +22,7 @@ removeAdultBtn.addEventListener("click", function() {
     // Clear all inputs inside second adult
     // loop through the inputs, disable and define the value depending on the type
     
-    triggerToast("", "Warning toast");
+    triggerToast("info", "Second adult removed");
 
     for (input of secondAdultInputs){
         input.disabled = true;
@@ -58,11 +57,9 @@ removeAdultBtn.addEventListener("click", function() {
 function triggerToast(toastType, toastText) {
     let toastParameters = {
         text: toastText,
-        duration: 3000,
+        duration: 2500,
         position: "center", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
-        // className: toastClass,
-        // gravity: "bottom",        
     }
     if (toastType == "info"){
             toastParameters.style = {
@@ -79,5 +76,5 @@ function triggerToast(toastType, toastText) {
             };
         }
     Toastify(toastParameters).showToast();
-
 }
+
