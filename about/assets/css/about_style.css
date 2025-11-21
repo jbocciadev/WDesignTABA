@@ -1,0 +1,31 @@
+<!-- This is the about us page css for our cool insurance site 
+ Joanne Brennan Elliott JBE-->
+
+.form-container {
+  width: 100%;
+  background-color:offwhite ;
+  margin: 0 auto;   /* centers it */
+  padding: 10px;
+  
+}
+
+
+ .aboutus-form {
+    background-color: #3C9E82;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 600px;
+    color: white;
+    padding: 10px;
+    box-shadow:0 0 5px black; 
+
+}
+.aboutus-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.aboutus-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
