@@ -76,12 +76,13 @@
         <!-- End of Navbar -->
 
         <div class="row d-flex justify-content-center">
+            <form action="" class="w-100" id="lifeForm">
                 <div class="form-container w-100 green-bg">
                     <div class="life-form w-75">
                         <div class="titlediv">
                             <h2 class="form-title" id="formTitle">Life Insurance Quote</h2>
                         </div>
-                        <form action="" class="w-100" id="lifeForm">
+                        
                         <section class="formsection w-100">
                             <div class="first-adult py-0" >
                                 
@@ -90,11 +91,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="fname1" class="d-block">First Name <span class="reqd-asterisk">*</span></label>
-                                        <input type="text" id="fname1" class="w-100 shadowOnFocus"  placeholder="Your first name" required>
+                                        <input type="text" id="fname1" name="First Name" class="w-100 shadowOnFocus validate"  placeholder="Your first name" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="lname1" class="d-block">Last Name <span class="reqd-asterisk">*</span></label>
-                                        <input type="text" class="w-100 shadowOnFocus"  id ="lname1" placeholder="Your last name" required>
+                                        <input type="text" name="Last Name" class="w-100 shadowOnFocus validate"  id ="lname1" placeholder="Your last name" required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -110,16 +111,16 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="dob1" class="d-block">Date of Birth <span class="reqd-asterisk">*</span></label>
-                                        <input type="date" class="shadowOnFocus" name="dob" id="dob1" required>
+                                        <input type="date" class="shadowOnFocus validate" name="dob" id="dob1" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="smoker" class="d-block">Are you a smoker? <span class="reqd-asterisk">*</span></label>
                                         <div class="smoker-wrapper d-flex justify-content-center shadowOnFocus">
                                             <div class="smoker-yes">
-                                                <label for="smoker-yes">Yes</label> <input type="radio" name="smoker" value="yes" id="smoker-yes1" required> 
+                                                <label for="smoker-yes">Yes</label> <input type="radio" class="firstSmoker validate" name="smoker" value="yes" id="smoker-yes1" required> 
                                             </div>
                                             <div class="smoker-no">
-                                                <label for="smoker-no">No</label> <input type="radio" name="smoker" value="no" id="smoker-no1">
+                                                <label for="smoker-no">No</label> <input type="radio" class="firstSmoker" name="smoker" value="no" id="smoker-no1">
                                             </div>
                                         </div>
                                     </div>
@@ -133,11 +134,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="fname2" class="d-block">First Name <span class="reqd-asterisk">*</span></label>
-                                        <input type="text" id="fname2" name="fname2" class="w-100 shadowOnFocus"  placeholder="Your first name" required disabled>
+                                        <input type="text" id="fname2" name="First Name" class="w-100 shadowOnFocus validate"  placeholder="Your first name" required disabled>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="lname2" class="d-block">Last Name <span class="reqd-asterisk">*</span></label>
-                                        <input type="text" class="w-100 shadowOnFocus" name="lname2" id ="lname2" placeholder="Your last name" required disabled>
+                                        <input type="text" class="w-100 shadowOnFocus validate" name="Last Name" id ="lname2" placeholder="Your last name" required disabled>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -150,16 +151,16 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="dob2" class="d-block">Date of Birth <span class="reqd-asterisk">*</span></label>
-                                        <input type="date" class="shadowOnFocus" name="dob" id="dob2" required disabled>
+                                        <input type="date" class="shadowOnFocus validate" name="dob" id="dob2" required disabled>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="smoker" class="d-block">Are you a smoker? <span class="reqd-asterisk">*</span></label>
                                         <div class="smoker-wrapper d-flex justify-content-center shadowOnFocus">
                                             <div class="smoker-yes">
-                                                <label for="smoker-yes">Yes</label> <input type="radio" name="smoker-2" value="yes" id="smoker-yes2" required disabled> 
+                                                <label for="smoker-yes">Yes</label> <input type="radio" class="secondSmoker validate" name="smoker-2" value="yes" id="smoker-yes2" required disabled> 
                                             </div>
                                             <div class="smoker-no">
-                                                <label for="smoker-no">No</label> <input type="radio" name="smoker-2" value="no" id="smoker-no2" disabled>
+                                                <label for="smoker-no">No</label> <input type="radio" class="secondSmoker" name="smoker-2" value="no" id="smoker-no2" disabled>
                                             </div>                                            
                                             
                                         </div>
@@ -185,7 +186,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="address" class="d-block">Address <span class="reqd-asterisk">*</span></label>
-                                    <input type="text" id="address" class="w-100 shadowOnFocus" placeholder="123 Main St" required>
+                                    <input type="text" id="address" name="Address" class="w-100 shadowOnFocus validate" placeholder="123 Main St" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="address2" class="d-block">Address 2</label>
@@ -195,7 +196,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="eircode" class="d-block">Eircode <span class="reqd-asterisk">*</span></label>
-                                    <input type="text" class="w-100 shadowOnFocus"  id ="eircode" required>
+                                    <input type="text" class="w-100 shadowOnFocus validate" name="Eircode" id ="eircode" minlength="7" maxlength="8" pattern=".{7,8}" placeholder="D09 F95T"required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="city" class="d-block">City</label>
@@ -204,7 +205,7 @@
                                 
                                 <div class="col-md-4">
                                     <label for="county" class="d-block">County <span class="reqd-asterisk">*</span></label>
-                                    <select class="form-select shadowOnFocus" id="county" required>
+                                    <select class="form-select shadowOnFocus validate" name="County" id="county" required>
                                         <option value="">Select County</option>
                                         <option>Carlow</option>
                                         <option>Cavan</option>
@@ -239,16 +240,16 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="email" class="d-block">Email <span class="reqd-asterisk">*</span></label>
-                                    <input type="email" id="email" class="w-100 shadowOnFocus"  placeholder="Your email" required>
+                                    <input type="email" id="email" name="Email" class="w-100 shadowOnFocus validate"  placeholder="Your email" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="phone" class="d-block">Phone number <span class="reqd-asterisk">*</span></label>
-                                    <input type="text" id="phone" class="w-100 shadowOnFocus"  placeholder="Your phone number" required>
+                                    <input type="tel" name="phone" id="phone" class="w-100 shadowOnFocus validate" placeholder="Your mobile phone number (085-123-4567)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 d-flex justify-content-center form-check">
-                                    <input type="checkbox" id="terms" class="d-inline me-3 form-check-input shadowOnFocus" required>
+                                    <input type="checkbox" id="terms" class="d-inline me-3 form-check-input shadowOnFocus validate" required>
                                     <label for="terms" class="d-inline">Agree to Terms and Conditions <span class="reqd-asterisk">*</span></label>
                                 </div>
                             </div>

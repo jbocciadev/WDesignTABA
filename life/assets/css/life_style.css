@@ -49,7 +49,7 @@ label {
     font-weight: bold;
 }
 
-input[type=text], input[type=date],input[type=email], .amount-slider-wrapper,.smoker-wrapper, #county {
+input[type=text], input[type=date],input[type=email],input[type=tel],  .amount-slider-wrapper,.smoker-wrapper, #county {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
@@ -125,6 +125,7 @@ input[type=text], input[type=date],input[type=email], .amount-slider-wrapper,.sm
 .list-header {
     border-width: 90%;
     border-radius: 0 !important;
+    margin-top: 10px;
     color: var(--green);
 }
 #second-adult-list {
