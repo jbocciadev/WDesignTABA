@@ -22,6 +22,8 @@ addAdultBtn.addEventListener("click", function(){
 removeAdultBtn.addEventListener("click", function() {
     // Clear all inputs inside second adult
     // loop through the inputs, disable and define the value depending on the type
+    
+    triggerToast("", "Warning toast");
 
     for (input of secondAdultInputs){
         input.disabled = true;
@@ -51,3 +53,31 @@ removeAdultBtn.addEventListener("click", function() {
         top: 0,
     })
 });
+
+// Custom toast function to handle toast according to type and text sent
+function triggerToast(toastType, toastText) {
+    let toastParameters = {
+        text: toastText,
+        duration: 3000,
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        // className: toastClass,
+        // gravity: "bottom",        
+    }
+    if (toastType == "info"){
+            toastParameters.style = {
+                background: "linear-gradient(to right, var(--blue), var(--green))",
+            };
+        } else if (toastType == "warning") {
+            toastParameters.style = {
+                background: "red"
+            };
+        } else {
+            toastParameters.style = {
+                background: "yellow",
+                color: "black"
+            };
+        }
+    Toastify(toastParameters).showToast();
+
+}
