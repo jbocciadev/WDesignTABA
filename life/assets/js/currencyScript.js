@@ -24,8 +24,8 @@ rangeInput2.addEventListener("input", function () {
     rangeOutput2.textContent = formatCurrency(this.value);
 });
 // Reset value to 5,000 when form is reset
-let secondAdultForm = document.getElementById("secondAdultForm");
-secondAdultForm.addEventListener("reset", function () {
+let removeBtn = document.getElementById("remove-adult-btn");
+removeBtn.addEventListener("click", function () {
     let secondAmount = document.getElementById("cover-amount-2").getAttribute("value");
     rangeOutput2.textContent = formatCurrency(secondAmount);
 });

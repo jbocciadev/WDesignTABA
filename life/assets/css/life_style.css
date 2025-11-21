@@ -21,9 +21,17 @@
     border-radius: 60px;
     box-shadow: 0 0 10px var(--black);
 }
+.titlediv {
+    width: 75% !important;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--black);
+}
 .form-title {
     justify-self: center;
-    color: var(--green);
+    margin: 10px 0 !important;
+
 }
 .formsection {
     display: flex;
@@ -34,6 +42,7 @@
     /* padding-left: 10%; */
     /* display: block; */
 }
+
 
 label {
     font-size: large;
@@ -74,6 +83,10 @@ input[type=text], input[type=date],input[type=email], .amount-slider-wrapper,.sm
 .formsection ul {
     list-style: none;
     font-weight: 500;
+}
+.form-buttons {
+    display: flex;
+    justify-content: center;
 }
 .form-buttons * {
     border: 2px solid;
@@ -131,4 +144,7 @@ input[type=checkbox] {
 input[type=checkbox]:focus {
     box-shadow: 0 0 10px var(--green) !important;
     border-color: var(--green);
+}
+.shadowOnFocus:focus, .shadowOnFocus:has(input:focus) {
+    box-shadow: 0 0 10px var(--green);
 }
