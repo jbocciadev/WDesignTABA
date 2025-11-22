@@ -1,3 +1,4 @@
+@import "../../../base.css";
 /* TAGS */
 h1 {
     text-align: center;
@@ -78,6 +79,17 @@ label {
     box-shadow: 0 0 2px #3C9E82;
 }
 
+/* Collapsed Form Edit Buttons */
+.collapsed {
+width:600px;
+justify-self: center;
+text-align: center;
+}
+/* Nice affect on the above */
+.collapsed:hover {
+font-weight: bold;
+}
+
 /* Live Price */
 div.sticky {
     position: sticky;
@@ -133,11 +145,11 @@ div.sticky {
 #editInsPref,
 #editDriverDetails {
     display: none;
-    width: 300px;
 }
 
-.editButtons {
-    justify-self: center;
+/* Contrasting Color */
+#editInsPref {
+    color: #fff;
 }
 
 /* TCs OVERLAY ----------------------------------------------------------------------------- */
