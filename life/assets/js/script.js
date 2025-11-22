@@ -126,7 +126,6 @@ let reqFields = lifeForm.querySelectorAll(".validate"); // identify inputs with 
                 case "radio":
                     // get both buttons and make sure that either one is selected
                     let buttons = field.parentNode.parentNode.querySelectorAll("input");
-                    // document.querySelectorAll(".firstSmoker");
                     if(!buttons[0].checked && !buttons[1].checked) {
                         field.parentNode.parentNode.focus();
                         triggerToast("warning", `Please select "Yes" or "No" in the smoker status.`)
@@ -180,6 +179,11 @@ let reqFields = lifeForm.querySelectorAll(".validate"); // identify inputs with 
             }
         }
     }
+    // 1 capture relevant fields
+    // 2 send email
+    // 3 clear form
+    // 4 hide form, show success message
+    lifeForm.requestSubmit();
 });
 
 // TO DO
