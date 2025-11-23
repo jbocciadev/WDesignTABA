@@ -53,38 +53,50 @@ removeAdultBtn.addEventListener("click", function() {
     })
 });
 
-// Custom toast function to handle toast according to type and text sent
-function triggerToast(toastType, toastText) {
-    let toastParameters = {
-        text: toastText,
-        duration: 2500,
-        position: "center", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-    }
-    if (toastType == "info"){
-            toastParameters.style = {
-                background: "linear-gradient(to right, var(--blue), var(--green))",
-            };
-        } else if (toastType == "warning") {
-            toastParameters.style = {
-                background: "red"
-            };
-        } else {
-            toastParameters.style = {
-                background: "yellow",
-                color: "black"
-            };
-        }
-    Toastify(toastParameters).showToast();
-}
 
-// *** Handle form validation ***
+
+// *** Handle form submission ***
 // 1 get submit button
 document.getElementById("submit-form-btn").addEventListener("click", function(event){
-// 2 implement validation on the form
-event.preventDefault(); // Stop the form from sending information to its target
-let lifeForm = document.getElementById("lifeForm");
-let reqFields = lifeForm.querySelectorAll(".validate"); // identify inputs with a "validate" class
+    // 2 implement validation on the form
+    event.preventDefault(); // Stop the form from sending information to its target
+    let lifeForm = document.getElementById("lifeForm");
+    if (validateForm(lifeForm)) {
+
+        // create firstAdult object with cover amount, cover term, age and smoker attributes
+        let firstAdult = {};
+        firstAdult.cover = document.getElementById("cover-amount-1").value;
+        firstAdult.term = document.getElementById("cover-term-1").value;        
+        firstAdult.age = new Date().getFullYear() - new Date(document.getElementById("dob-1").value).getFullYear(); // calculate age - only current year - birth year
+        firstAdult.smoker = document.getElementById("smoker-yes1").checked;
+
+        let firstAdultPremium, secondAdultPremium = [0,0];
+        firstAdultPremium = calculatePremium(firstAdult);
+
+        // Add second adult if second adult form fields are visible
+        let secondAdult = document.getElementById("secondAdultDiv");       
+        if (!secondAdult.classList.contains("d-none")){
+        let secondAdult = {};
+        secondAdult.cover = document.getElementById("cover-amount-2").value;
+        secondAdult.term = document.getElementById("cover-term-1").value; // Term is same for both        
+        secondAdult.age = new Date().getFullYear() - new Date(document.getElementById("dob-2").value).getFullYear(); // calculate age - only current year - birth year
+        secondAdult.smoker = document.getElementById("smoker-yes2").checked;
+        secondAdultPremium = calculatePremium(secondAdult);
+        }
+        let totalPremium = firstAdultPremium + secondAdultPremium;
+        
+    }
+    
+    
+});
+
+// TO DO
+// 1 implement emailjs
+// 2 add form fields to the email to be sent
+
+// VALIDATE FORM FIELDS----------------------------
+function validateForm(lifeForm){
+    let reqFields = lifeForm.querySelectorAll(".validate"); // identify inputs with a "validate" class
     for (field of reqFields) {
         if (field.disabled == false){
             let t = field.type;
@@ -107,7 +119,7 @@ let reqFields = lifeForm.querySelectorAll(".validate"); // identify inputs with 
                 case "email":
                     if (field.value.trim() == "") {
                         field.focus();
-                        triggerToast("warning", `${field.name} is a mandatory field.`);
+                                triggerToast("warning", `${field.name} is a mandatory field.`);
                         return;
                     }
                     if (field.value.search("@") == -1 || field.value.search(".") == -1){ //check for missing "@" and  missing "."
@@ -179,13 +191,77 @@ let reqFields = lifeForm.querySelectorAll(".validate"); // identify inputs with 
             }
         }
     }
+    console.log("from inside validateForm()")
+    return true;
+};
+
+// CALCULATE MONTHLY PREMIUM -----------------------------
+function calculatePremium(adult){
+    // Premium will be calculated in thirds, age, term and smoker (multiplier). 
+    // Max premium will be calculated as a percentage of €1000 for cover under €250,000, or total amount if cover is larger.
+    let monthlyPremium = 0;
+    let premiumMultiplier = 0;
+    let maxPremium = 1000;
+    let maxPremiumThreshold = 250000; // All covers > €250K will pay full max premium
+
+    // Factor in cover amount
+    if (adult.cover < maxPremiumThreshold) {
+        maxPremium = maxPremium * (adult.cover/maxPremiumThreshold) // links maxPremium to cover value as percentage of threshold
+    }
+
+    // Factor in smoker
+    if (adult.smoker){
+        premiumMultiplier += 1* (1/3); // if smoker, multiplier is 33% more
+    }
+    // Factor in Age
+    premiumMultiplier += 1* ((1/3) * Math.min(1, (adult.age/50))); // links multiplier to age. If age 50 or more, this part is added cpmpletely, otherwise, a fraction of this 33%
+
+    // Factor in cover term
+    premiumMultiplier += 1* (1/3) * (adult.term/40)
+
+    // Calculate total monthly premium
+    monthlyPremium = maxPremium * premiumMultiplier;
+    
+    return monthlyPremium;
+
+}
+
+// Custom toast function to handle toast according to type and text sent----------------------------
+function triggerToast(toastType, toastText) {
+    let toastParameters = {
+        text: toastText,
+        duration: 2500,
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+    }
+    if (toastType == "info"){
+            toastParameters.style = {
+                background: "linear-gradient(to right, var(--blue), var(--green))",
+            };
+        } else if (toastType == "warning") {
+            toastParameters.style = {
+                background: "red"
+            };
+        } else {
+            toastParameters.style = {
+                background: "yellow",
+                color: "black"
+            };
+        }
+    Toastify(toastParameters).showToast();
+}
+
+
+
+
+// 0 Calculate premium
+    // let multiplier = 0;
+    // let maxPremium = 500;
+    // vars for calculation
+    // let 
     // 1 capture relevant fields
+    // Name, email, 
     // 2 send email
     // 3 clear form
     // 4 hide form, show success message
-    lifeForm.requestSubmit();
-});
-
-// TO DO
-// 1 implement emailjs
-// 2 add form fields to the email to be sent
+    // lifeForm.requestSubmit();
