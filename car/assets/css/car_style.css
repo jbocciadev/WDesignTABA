@@ -1,4 +1,5 @@
 @import "../../../base.css";
+
 /* TAGS */
 h1 {
     text-align: center;
@@ -27,6 +28,12 @@ label {
     font-weight: bold;
 }
 
+input:invalid,
+select:invalid,
+textarea:invalid {
+    scroll-margin-top: 200px;
+    /* height of navbar */
+}
 
 /* Classes -------------------------------------------------------------*/
 .formSections {
@@ -81,12 +88,13 @@ label {
 
 /* Collapsed Form Edit Buttons */
 .editDropdown {
-justify-self: center;
-text-align: center;
+    justify-self: center;
+    text-align: center;
 }
+
 /* Nice affect on the above */
 .editDropdown:hover {
-font-weight: bold;
+    font-weight: bold;
 }
 
 /* Live Price */

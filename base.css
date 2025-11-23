@@ -229,8 +229,6 @@ footer hr {
     justify-content: space-evenly;
 }
 
-
-
 .nav-link:hover {
     color: var(--white);
     background-color: var(--green);
@@ -244,7 +242,7 @@ footer hr {
 
 .nav-link,
 .nav-link i {
-    transition: color 0.7s ease, background-color 0.7s ease;
+    transition: color 1.0s ease, background-color 0.4s ease;
 }
 
 .nav-link {
@@ -271,11 +269,6 @@ footer hr {
 }
 
 @media (max-width: 992px) {
-    li.nav-link {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .navbar a,
     .navbar i {
         font-size: 25px;
@@ -302,10 +295,6 @@ footer hr {
     .hero-text-3 {
         font-size: 25px;
     }
-
-    .nav-link {
-        /* font-size: 32px; */
-    }
 }
 
 /* Display no content on screens smaller than 320px wide */
@@ -315,12 +304,6 @@ footer hr {
     }
 }
 
-/* Fixed */
-@media (min-width: 768px) {
-    .nav-link {
-        /* font-size: 26px; */
-    }
-}
 
 /* Fixed */
 @media (max-width: 768px) {
