@@ -84,7 +84,7 @@
                         </div>
                         
                         <section class="formsection w-100">
-                            <div class="first-adult py-0" >
+                            <div class="first-adult py-0" id="firstAdultDiv">
                                 
                                 <div class="list-header"><h4>First Adult</h4></div>
 
@@ -105,13 +105,13 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="cover-term" class="d-block">Cover term <span class="reqd-asterisk">*</span></label>
-                                        <div class="amount-slider-wrapper shadowOnFocus"><input id="cover-term" class="d-inline-block" type="number" min="1" max="40" value="1" step="1">Year(s)</div>
+                                        <div class="amount-slider-wrapper shadowOnFocus"><input id="cover-term-1" class="d-inline-block" type="number" min="1" max="40" value="1" step="1">Year(s)</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="dob1" class="d-block">Date of Birth <span class="reqd-asterisk">*</span></label>
-                                        <input type="date" class="shadowOnFocus validate" name="dob" id="dob1" >
+                                        <input type="date" class="shadowOnFocus validate" name="dob" id="dob-1" >
                                     </div>
                                     <div class="col-md-6">
                                         <label for="smoker" class="d-block">Are you a smoker? <span class="reqd-asterisk">*</span></label>
@@ -151,7 +151,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="dob2" class="d-block">Date of Birth <span class="reqd-asterisk">*</span></label>
-                                        <input type="date" class="shadowOnFocus validate" name="dob" id="dob2"  disabled>
+                                        <input type="date" class="shadowOnFocus validate" name="dob" id="dob-2"  disabled>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="smoker" class="d-block">Are you a smoker? <span class="reqd-asterisk">*</span></label>
@@ -200,7 +200,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="city" class="d-block">City</label>
-                                    <input type="text" class="w-100 shadowOnFocus"  id ="city">
+                                    <input type="text" class="w-100 shadowOnFocus" id ="city">
                                 </div>
                                 
                                 <div class="col-md-4">
@@ -244,7 +244,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="phone" class="d-block">Phone number <span class="reqd-asterisk">*</span></label>
-                                    <input type="tel" name="phone" id="phone" class="w-100 shadowOnFocus validate" placeholder="Your mobile phone number (085-123-4567)" pattern="[0-9]" >
+                                    <input type="tel" name="phone" id="phone" class="w-100 shadowOnFocus validate" placeholder="Your mobile phone number (085-123-4567)" >
                                 </div>
                             </div>
                             <div class="row">
@@ -321,9 +321,13 @@
             <p>For educational purposes only</p>
         </div>
     </footer>
-        <script src="./assets/js/script.js"></script>
-        <script src="./assets/js/currencyScript.js"></script>
-        <!-- Toastify script -->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/currencyScript.js"></script>
+    <!-- Toastify script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- EmailJS CDN script -->
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
     </body>
 </html>
