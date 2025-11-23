@@ -246,6 +246,7 @@ function sendEmail(quoteDetails) {
     const templateID = "template_nxmytjl";
 
     const emailData = {};
+    emailData.insurance_type = "life";
     emailData.email = document.getElementById("email").value.trim();
     emailData.name = quoteDetails.firstAdult.name;
     emailData.monthly_total = new Intl.NumberFormat("en-IE",{minimumFractionDigits:2, maximumFractionDigits:2}).format(quoteDetails.totalPremium);
