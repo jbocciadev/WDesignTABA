@@ -78,7 +78,7 @@
         </div>
     </body>
 
-
+    <!-- FORM START -->
     <form id="quotationForm">
         <Section class="greenBack">
             <div class="formSections">
@@ -94,7 +94,8 @@
                     <li>Once you complete a section please click the proceed button to continue.</li>
                     <li>If you make a mistake please refer to the edit buttons to amend them</li>
                     <li>Car age is determined through your vehicle's licence plate.</li>
-                    <li>If you have any questions please feel free to contact us or read through the FAQs</li>
+                    <li>If you have any questions please feel free to contact us or read through the <a
+                            href="../index.html#FAQs">FAQs</a></li>
                 </ul>
                 <h6>Please make sure you are familiar with the terms and conditions before agreeing to them.</h6>
                 <a href="#tc-overlay" onclick="openTC()" id="openTC">Terms and Conditions</a>
@@ -168,10 +169,8 @@
                     <!-- MODEL -->
                     <div class="col-md-4">
                         <label for="text" class="form-label">Model</label>
-                        <input type="model" class="form-control" id="inputModel" placeholder="Model">
-                    </div>
-                    <div class="invalid-feedback">
-                        Please select your vehicle Model.
+                        <input type="text" class="form-control" id="inputModel" placeholder="Vehicle model name"
+                            required>
                     </div>
                     <!-- Car Year -->
                     <div class="form-group col-md-4">
@@ -200,7 +199,8 @@
                     <!-- ENGINE CAPACITY -->
                     <div class="form-group col-md-6">
                         <label for="engineSize" class="form-label">Enter Engine Size (cc)</label>
-                        <input type="text" id="engineSize" class="form-control" placeholder="Example: '999', '1249'">
+                        <input type="number" id="engineSize" class="form-control" placeholder="Example: '999', '1249'"
+                            required>
                     </div>
 
                 </div>
@@ -211,12 +211,12 @@
                         <input type="number" id="carValue" class="form-control" placeholder="€200,000 max" max="200000"
                             min="0" required>
                     </div>
-
+                    <!-- Estimated Mileage -->
                     <div class="form-group col-md-4">
                         <label for="mileage" class="form-label">Estimated Mileage</label>
-                        <input type="text" id="mileage" class="form-control" placeholder="(km)" required>
+                        <input type="number" id="mileage" class="form-control" placeholder="(km)" required>
                     </div>
-
+                    <!-- Parking Location -->
                     <div class="form-group col-md-4">
                         <label for="parking" class="form-label">Parking Location</label>
                         <select class="form-select" id="parking" required>
@@ -250,8 +250,10 @@
         <!-- Insurance Preferences-------------------------------------------------------- -->
         <section class="greenBack">
             <!-- Hidden Edit Insurance Preferences -->
-            <h3 class="editDropdown" id="editInsPref"><i class="fa-solid fa-list-check"></i></i> Edit Insurance Preferences
-                <i class="fa fa-chevron-down"></i></h3>
+            <h3 class="editDropdown" id="editInsPref"><i class="fa-solid fa-list-check"></i></i> Edit Insurance
+                Preferences
+                <i class="fa fa-chevron-down"></i>
+            </h3>
             <!-- Start of section -->
             <div class="formSections" id="section2">
                 <h1>Insurance Preferences</h1>
@@ -270,7 +272,7 @@
                     <!-- POLICY START -->
                     <div class="policy form-group col-lg-5 p-3 mb-3">
                         <h4>2. Please select policy START date</h4>
-                        <input type="date" id="policyStart" name="policyStart">
+                        <input type="date" id="policyStart" name="policyStart" required>
                     </div>
                 </div>
                 <!-- POLICY ADDONS -->
@@ -302,7 +304,8 @@
         <section class="whiteBack">
             <!-- Hidden Edit Insurance Preferences -->
             <h3 class="editDropdown" id="editDriverDetails"><i class="fa-solid fa-id-card"></i></i> Edit Driver Details
-                <i class="fa fa-chevron-down"></i></h3>
+                <i class="fa fa-chevron-down"></i>
+            </h3>
             <!-- Start of Driver info -->
             <div class="formSections" id="section3">
                 <h1>Driver Details</h1>
@@ -392,13 +395,13 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputCity" class="form-label">City</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <input type="text" class="form-control" id="inputCity" required>
                     </div>
 
 
                     <div class="form-group col-md-4">
                         <label for="inputZip" class="form-label">Enter Post Code</label>
-                        <input type="text" class="form-control" id="inputZip" placeholder="DXX XXXX">
+                        <input type="text" class="form-control" id="inputZip" placeholder="DXX XXXX" required>
                     </div>
                 </div>
 
@@ -438,7 +441,8 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPhone">Enter Phone Number</label>
-                        <input type="phone" class="form-control" id="inputPhone" placeholder="Phone Number" required>
+                        <input type="tel" class="form-control" id="inputPhone" placeholder="0831234567" required>
+                        <span id="phoneWarning" style="color:red; display:none;"></span>
                     </div>
                 </div>
                 <div class="form-group form-check mb-3">
@@ -483,7 +487,7 @@
                 <ul class="products-list">
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#FAQs">FAQs</a></li>
+                    <li><a href="../index.html#FAQs">FAQs</a></li>
                 </ul>
             </div>
 
@@ -524,6 +528,9 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/validations.js"></script>
+    <script src="assets/js/calculations.js"></script>
+    <script src="assets/js/DOMmanipulations.js"></script>
 
 
 </body>
