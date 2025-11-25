@@ -5,7 +5,7 @@ h1 {
     text-align: center;
     color: #fff;
     border-radius: 15px;
-    margin: 10px -10px 30px -10px;
+    margin: 10px -5px 30px -5px;
     background-color: var(--green);
     font-weight: 600;
     padding: 1%;
@@ -36,6 +36,7 @@ textarea:invalid {
 }
 
 /* Classes -------------------------------------------------------------*/
+/* Form  Sections */
 .formSections {
     margin: 1vw 15vw;
     border-radius: 20px;
@@ -43,6 +44,10 @@ textarea:invalid {
     background-color: white;
     box-shadow: 0px 0px 10px rgb(55, 55, 55);
     border: 1px solid darkslategray;
+}
+
+#section2 {
+    padding: 20px;
 }
 
 /* Checkbox and switches made larger than native */
