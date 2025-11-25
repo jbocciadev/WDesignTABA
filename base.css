@@ -151,12 +151,6 @@ footer hr {
     .hero-text-3 {
         font-size: 2vw;
     }
-
-    .company-logo {
-
-
-        width: 65%;
-    }
 }
 
 /* Target larger mobile phones */
@@ -221,6 +215,10 @@ footer hr {
     margin: 0%;
 }
 
+li.nav-item {
+    margin: 0px 10px 0px 10px;
+}
+
 .navbar {
     position: sticky;
     box-shadow: 0 0 10px darkslategray;
@@ -230,7 +228,7 @@ footer hr {
 }
 
 /* Active Page highlighted navbar */
-.nav-link.activated{
+.nav-link.activated {
     box-shadow: 0 0 10px var(--green);
 }
 
@@ -247,12 +245,12 @@ footer hr {
 
 .nav-link,
 .nav-link i {
-    transition: color 1.0s ease, background-color 0.4s ease;
+    transition: color 0.5s ease, background-color 0.4s ease;
 }
 
 .nav-link {
     border-radius: 10px;
-    width: 180px;
+    width: 140px;
     text-align: center;
     margin: 0px 10px 0px 10px;
 }
@@ -263,6 +261,10 @@ footer hr {
         justify-content: space-between;
     }
 
+    .nav-link {
+        padding-right: 10px;
+    }
+
     .navbar a {
         display: inline;
     }
@@ -271,12 +273,20 @@ footer hr {
         margin: 10px 10px 10px 10px;
     }
 
-}
-
-@media (max-width: 992px) {
     .navbar a,
     .navbar i {
         font-size: 25px;
+    }
+}
+
+@media (max-width: 460px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    #cool_logo {
+        width: 200px;
+        height: auto;
     }
 }
 
