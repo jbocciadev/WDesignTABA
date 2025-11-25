@@ -229,6 +229,11 @@ footer hr {
     justify-content: space-evenly;
 }
 
+/* Active Page highlighted navbar */
+.nav-link.activated{
+    box-shadow: 0 0 10px var(--green);
+}
+
 .nav-link:hover {
     color: var(--white);
     background-color: var(--green);

@@ -51,7 +51,7 @@ carValueInput.addEventListener("input", function () {
 document.getElementById('quotationForm').addEventListener('submit', function (e) {
     let valid = true;
 
-    // Example: Reg plate check Source - https://www.w3schools.com/jsref/met_element_scrollintoview.asp
+    // Reg plate check Source - https://www.w3schools.com/jsref/met_element_scrollintoview.asp
     const reg = document.getElementById('inputReg').value.trim();
     const regWarning = document.getElementById('regWarning');
     if (!/^\d{2,3}-[A-Za-z]{1,2}-\d+$/.test(reg)) {
