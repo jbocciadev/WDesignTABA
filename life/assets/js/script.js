@@ -67,7 +67,7 @@ document.getElementById("lifeForm").addEventListener("submit", function(event){
         firstAdult.name = lifeForm.querySelector("#fname1").value.trim();
         firstAdult.surname = lifeForm.querySelector("#lname1").value.trim();
         firstAdult.cover = document.getElementById("cover-amount-1").value;
-        firstAdult.term = document.getElementById("cover-term-1").value;
+        firstAdult.term = document.getElementById("cover-term").value;
         firstAdult.dob = document.getElementById("dob-1").value;        
         firstAdult.age = new Date().getFullYear() - new Date(document.getElementById("dob-1").value).getFullYear(); // calculate age - only current year - birth year
         firstAdult.smoker = document.getElementById("smoker-yes1").checked ? "Yes" : "No";

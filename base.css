@@ -15,7 +15,7 @@
 :root {
     --green: #3c9e82;
     --blue: #247ab7;
-    --white: #fafafa;
+    --white: #fff;
     --black: darkslategray;
 }
 
@@ -229,8 +229,8 @@ li.nav-item {
     position: sticky;
     box-shadow: 0 0 10px darkslategray;
     background-color: var(--white);
-    border: 1px solid #212529;
     justify-content: space-evenly;
+    /* border-radius: 0 0 30px 30px; */
 }
 
 /* Active Page highlighted navbar */
