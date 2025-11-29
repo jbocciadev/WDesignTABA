@@ -249,9 +249,20 @@ h1 {
 }
 
 
-
-
 /* ----------------------- */
+
+@media (min-width: 1900px) {
+    .hero-text-p, .contact-card input, .contact-card textarea, .contact-card label, .aboutPoints, p, a {
+        font-size: 25px !important;
+    }
+    h5, h3 {
+        font-size: 32px;
+    }
+    h2, i {
+        font-size: 40px !important;
+    }
+
+}
 
 @media (max-width: 768px) {
 

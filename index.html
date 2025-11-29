@@ -376,21 +376,51 @@
     <!-- END OF FAQ ------------------------------------------------------------- -->
 
     <section class="landing-section d-flex justify-content-center" id="contact-section">
-        <div class="hero-card d-none d-sm-block col-md-10 col-lg-8">
-            <div class="row d-flex justify-content-center">
+        <div class="hero-card contact-card col-md-10 col-lg-8">
+            <div class="row w-100 mx-auto d-flex justify-content-center">
                 <div class="contact-us">
                     <h1 class="text-center">Contact us <i class="fa-solid fa-envelope-open-text"></i></h1>
                     <hr>
                 </div>
-                <div class="row">
-                    <div class="w-50">
+                <div class="row d-flex flex-column flex-sm-row">
+                    <!-- Map for mobile -->
+                    <div class="d-sm-none w-100 w-sm-50">
+                        <div class="" id="map-wrapper">
+                            <iframe id="map"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.6613214231406!2d-6.245943923032343!3d53.349318574500714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e8ce998744b%3A0x122434bd6251cc7c!2sMayor%20Street%20Lower%2C%20North%20Wall%2C%20Dublin!5e0!3m2!1sen!2sie!4v1763923979113!5m2!1sen!2sie"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <!-- Map for larger screens -->
+                    <div class="d-none d-sm-block w-50"> 
                         <div class="m-4" id="map-wrapper">
                             <iframe id="map"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.6613214231406!2d-6.245943923032343!3d53.349318574500714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e8ce998744b%3A0x122434bd6251cc7c!2sMayor%20Street%20Lower%2C%20North%20Wall%2C%20Dublin!5e0!3m2!1sen!2sie!4v1763923979113!5m2!1sen!2sie"
                                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-                    <div class="w-50 px-5 d-flex flex-column align-items-center justify-content-between">
+                    <!-- Contact form for mobile -->
+                    <div class="d-sm-none w-100 d-flex flex-column align-items-center justify-content-between">
+                        <div class="container m-4 px-3 py-2 h-100" id="form-wrapper">
+                            <form action="" id="contact-form" class="d-flex flex-column justify-content-around">
+                                <div class="row mb-2">                                    
+                                    <input type="text" id="name" class="contact-input" placeholder="Your name" required>
+                                </div>
+                                <div class="row mb-2">                                    
+                                    <input type="email" id="email" class="contact-input" placeholder="Your email"
+                                        required>
+                                </div>
+                                <div class="row mb-2">                                    
+                                    <textarea name="message" id="message" class="contact-input" wrap="hard" rows="8"
+                                        placeholder="Your message..."></textarea>
+                                </div>
+                                <input type="submit" name="submit-btn" id="submit-btn" class="align-self-center">
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Contact form for larger screens -->
+                    <div class="d-none d-sm-flex w-50 px-5 d-flex flex-column align-items-center justify-content-between">
                         <div class="container m-4 px-5 py-2 h-100" id="form-wrapper">
                             <form action="" id="contact-form" class="d-flex flex-column justify-content-around">
                                 <div class="row">
@@ -407,9 +437,8 @@
                                     <textarea name="message" id="message" class="contact-input" wrap="hard" rows="8"
                                         placeholder="Your message..."></textarea>
                                 </div>
-                                <!-- <div class="d-inline" class="w-50" id="submit-btn-wrapper"> -->
                                 <input type="submit" name="submit-btn" id="submit-btn" class="w-50 align-self-center">
-                                <!-- </div> -->
+                                
                             </form>
                         </div>
                     </div>
@@ -417,28 +446,7 @@
             </div>
 
         </div>
-        <!-- Card for smallest screen sizes -->
-        <div class="hero-card d-sm-none d-block">
-            <div class="row">
-                <div class="image-wrapper w-100">
-                    <img src="./assets/images/home.jpg" alt="" />
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-text w-100">
-                    <h1 class="hero-text-header">Home insurance</h1>
-                    <p class="hero-text-p">
-                        Protect your home and everything in it with
-                        comprehensive coverage designed for your peace of
-                        mind. From natural disasters to unexpected
-                        accidents, our home insurance policies ensure your
-                        property, belongings, and personal liability are
-                        always safeguarded. Because home is where the heart
-                        is, and we take it seriously.
-                    </p>
-                </div>
-            </div>
-        </div>
+
     </section>
 
     <section class="landing-section-2 d-flex justify-content-center" id="about">
