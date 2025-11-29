@@ -16,8 +16,8 @@ h1 {
     flex-direction: row;
     margin: 20px 0;
     padding: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25),
-        -5px -5px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px darkslategray;
+
 }
 
 .hero-image {
@@ -42,7 +42,8 @@ h1 {
     object-fit: cover;
     scale: 90%;
     border-radius: 60px;
-    box-shadow: 0 0 15px rgba(60, 158, 130, 0.5);
+        box-shadow: 0 0 10px darkslategray;
+
 }
 
 .hero-text {
@@ -76,7 +77,8 @@ h1 {
     flex-direction: row;
     margin: 20px 0;
     padding: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px darkslategray;
+
 }
 
 .hero-card-2 * {
@@ -84,7 +86,8 @@ h1 {
 }
 
 .hero-card-2 img {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 10px darkslategray;
+
 }
 
 /* FAQs section--------------------------------- */
@@ -188,7 +191,8 @@ h1 {
     text-align: center;
     margin: 20px 0;
     padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px darkslategray;
+
 }
 
 /* End FAQs ------------------------ */
@@ -200,15 +204,13 @@ h1 {
 #map {
     width: 100%;
     aspect-ratio: 4 / 4;
-    border-radius: 10px;
     margin: 0;
-    box-shadow: 0 0 10px var(--green);
     object-fit: cover;
 }
 
-#form-wrapper {
+#form-wrapper, #map {
     border-radius: 10px;
-    box-shadow: 0 0 10px var(--green);
+    box-shadow: 0 0 10px darkslategray;
 }
 
 #contact-form {
@@ -234,7 +236,10 @@ h1 {
     list-style-type: none;
     margin-bottom: 18px;
 }
+.card, .card-img-top {
+    box-shadow: 0 0 10px darkslategray;
 
+}
 .card-img-top {
     width: fit-content;
     height: 250px;
@@ -243,9 +248,7 @@ h1 {
     margin-top: 16px;
 }
 
-.card-text {
-    text-align: center;
-}
+
 
 
 /* ----------------------- */

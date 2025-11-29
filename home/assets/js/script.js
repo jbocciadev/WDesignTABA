@@ -40,6 +40,7 @@ function mySubmit() {
 		phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-digit characters	   
 		if (phoneNumber === "") {
 			alert("Please fill in your phone number with numbers only please.");
+			phoneNumber.focus();
 		return;
 		}
 		if (phoneNumber.length < 10) {
