@@ -355,3 +355,18 @@ li.nav-item {
         text-align: center;
     }
 }
+@media (min-width: 1900px) {
+    .hero-text-p, form input, form textarea, form label, .aboutPoints, p, a, form output, select {
+        font-size: 25px !important;
+    }
+    h3, h4, h5 {
+        font-size: 32px;
+    }
+    h2, i {
+        font-size: 40px !important;
+    }
+    input[type=radio], input[type=checkbox] {
+        transform: scale(1.5);
+    }
+
+}
