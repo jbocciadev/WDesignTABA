@@ -1,3 +1,7 @@
+// JS file for the life insurance quotation page 
+// Juan A. Boccia 
+// Student ID: 23435330
+
 // Display/remove second Adult form
 // get elements
 let addAdultBtn = document.getElementById("add-adult-btn");

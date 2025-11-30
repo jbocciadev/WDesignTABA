@@ -1,4 +1,8 @@
-// Script to format money values with currency
+// Script to format money values with currency for the life insurance quotation page 
+// Juan A. Boccia 
+// Student ID: 23435330
+
+
 // https://getbootstrap.com/docs/5.3/forms/range/
 // initialize variables
 const [rangeInput1, rangeInput2] = [

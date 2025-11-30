@@ -85,7 +85,7 @@ body {
 
 footer {
     /* height: 20vh; */
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
 }
 
 .footer-links-container {
@@ -110,7 +110,7 @@ footer li {
 .products-list a {
     list-style: none;
     text-decoration: none;
-    color: #212529;
+    color: var(--black);
 }
 
 .footer-logo {
@@ -228,7 +228,7 @@ li.nav-item {
 .navbar {
     position: sticky;
     box-shadow: 0 0 10px darkslategray;
-    background-color: var(--white);
+    background-color: var(--white) !important;
     justify-content: space-evenly;
     /* border-radius: 0 0 30px 30px; */
 }
