@@ -58,7 +58,10 @@ input[type=text], input[type=date],input[type=email],input[type=tel],  .amount-s
   border-radius: 4px;
   box-sizing: border-box;
 }
-
+#cover-term {
+    text-align: right;
+    color: var(--black);
+}
 .smoker-wrapper * {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -71,7 +74,6 @@ input[type=text], input[type=date],input[type=email],input[type=tel],  .amount-s
     border: none;
     background-color: transparent;
     width: 2.5em;
-    margin-right: -15px;
 }
 
 #cover-term:focus,
@@ -93,21 +95,25 @@ input[type=text], input[type=date],input[type=email],input[type=tel],  .amount-s
     border-radius: 5px;
     font-weight: 500;
     padding: 5px 10px;
-    text-shadow: -0.5px -0.5px 0.5px #000, 0.5px 0.5px 0.5px #000; /* text-shadow: 1px 1px 1px #000; */
+    /* text-shadow: -0.5px -0.5px 0.5px #000, 0.5px 0.5px 0.5px #000; text-shadow: 1px 1px 1px #000; */
 }
-#add-adult-btn {
+#add-adult-btn, #remove-adult-btn, #submit-form-btn {
+    border: none;
+    box-shadow: 0 0 10px var(--black);
+}
+#add-adult-btn:hover {
     border-color: var(--blue);
     background-color: var(--blue);
     color: #fff;
     /* margin-left: 15px; */
 }
-#remove-adult-btn {
+#remove-adult-btn:hover {
     border-color: #dc3545;
     background-color: #dc3545;
     color: #fff;
     /* margin-left: 15px; */
 }
-#submit-form-btn {
+#submit-form-btn:hover {
     border-color: var(--green);
     background-color: var(--green);
     color: #fff;
@@ -155,3 +161,5 @@ input[type=checkbox]:focus {
 .reqd-asterisk {
     color: var(--green);
 }
+
+@media ()
