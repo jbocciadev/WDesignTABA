@@ -3,7 +3,9 @@
  script.js file for Home Insurance form submission
  Date: 7th November 2025 --
 */
-
+document.getElementById("homeForm").addEventListener("submit", function(event) {
+		event.preventDefault();
+	});
 
 function mySubmit() {      	  
 
@@ -119,11 +121,29 @@ function mySubmit() {
 		// All validations passed, proceed with submission
 		let userName = userFirstName + " " + userLastName;
 
+		// Capture details into object for sendEmail function 
+		let quoteDetails = {};
+		quoteDetails.firstName = userFirstName;
+		quoteDetails.email = userEmail;
+		quoteDetails.phoneNumber = phoneNumber;
+		quoteDetails.startDate = startDate;
+		quoteDetails.address = document.getElementById("ecode").value.trim();
+		// retrieve house type from form
+		let typeSelect = document.getElementById("houseType");
+		quoteDetails.houseType = typeSelect.options[typeSelect.selectedIndex].text;
+		quoteDetails.rebuildCost = rebuildCost;
+		quoteDetails.contentsValue = contentsValue;
+		// retrieve security system from the form
+		let security = document.getElementById("securitySystems");
+		quoteDetails.security = security.options[security.selectedIndex].text;
+		quoteDetails.noClaims = noClaims;
+
+		sendEmail(quoteDetails);
+
 		//alert(userName+ ", thank you for your details. We will be in touch shortly.");
 		alert("Hi " +userName+ ", Thank you for your details. \nWe will be in touch shortly via the email you provided " +userEmail+ " or your phone number you provided " +phoneNumber+ ".");  
 	//	alert(userName+ ", Thank you for your details.  "<br> " We will be in touch shortly via the email you provided " +userEmail+ " or your phone number you provided " +phoneNumber+ ".");
-		hide();
-		form.reset(); // Reset the form after submission
+		document.getElementById("homeForm").reset(); // Reset the form after submission
 	}
 
 }
@@ -131,3 +151,40 @@ function mySubmit() {
 	//	document.getElementById("MySubmit").style.display = "none";
 	//	document.getElementById("ThankYouMessage").style.display = "block";
 	//}
+
+// Emailjs code implementation
+
+function sendEmail(quoteDetails){
+	emailjs.init("X0VrOze2ucHH5azPw");
+	// emailJS generic template and service id
+	const serviceID = "service_t7m9ufn";
+	const templateID = "template_nxmytjl";
+
+	const emailData = {};
+	emailData.insurance_type = "home";
+	emailData.email = quoteDetails.email;
+	emailData.name = quoteDetails.firstName;
+	emailData.cover_info = `Cover Start Date: ${quoteDetails.startDate}
+		Address/eircode: ${quoteDetails.address}
+		House type: ${quoteDetails.houseType}
+		Rebuild cost: ${quoteDetails.rebuildCost}
+		Contents value insured: ${quoteDetails.contentsValue}
+		Security system? ${quoteDetails.security}
+		Years of no claims: ${quoteDetails.noClaims}
+		Contact telephone number: ${quoteDetails.phoneNumber}`;
+	
+	// placeholder values for quote
+	let monthly_total = 20
+	emailData.monthly_total = new Intl.NumberFormat("en-IE",{minimumFractionDigits:2, maximumFractionDigits:2}).format(monthly_total);
+    emailData.annual_total = new Intl.NumberFormat("en-IE",{minimumFractionDigits:2, maximumFractionDigits:2}).format(parseFloat(emailData.monthly_total) * 12);
+    
+
+	emailjs.send(serviceID, templateID, emailData)
+	.then(() => {
+                console.log("info", "Your quotation was emailed to " + emailData.email);
+            })
+            .catch((error) => {
+                console.error("Error sending quotation:", error);
+                alert("Error sending email");
+            });
+}
