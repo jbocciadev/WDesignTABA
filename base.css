@@ -356,17 +356,20 @@ li.nav-item {
     }
 }
 @media (min-width: 1900px) {
-    .hero-text-p, form input, form textarea, form label, .aboutPoints, p, a, form output, select, li, button {
-        font-size: 25px !important;
+    .hero-text-p, form textarea, form label, .aboutPoints, p, a, form output, select, li, button {
+        font-size: 22px !important;
     }
     h3, h4, h5, h6 {
-        font-size: 32px !important;
+        font-size: 28px !important;
     }
     h2, i {
         font-size: 40px !important;
     }
     input[type=radio], input[type=checkbox] {
         transform: scale(1.5);
+    }
+    form input {
+        margin-right: 20px;
     }
 
 }
