@@ -47,7 +47,6 @@
     /* display: block; */
 }
 
-
 label {
     font-size: large;
     font-weight: bold;
@@ -71,9 +70,6 @@ input[type=text], input[type=date],input[type=email],input[type=tel],  .amount-s
     padding-bottom: 0 !important;
 }
 
-/* #cover-amount {
-    width: 50%;
-} */
 #cover-term {
     border: none;
     background-color: transparent;
