@@ -70,7 +70,7 @@
         </div> -->
 
         <!--  <form action="/action_page.php"> -->
-        <form>       
+        <form id="homeForm">       
             <div class="form-container w-100"> <!-- Full width container for the form -->
                 <div class="houseIns-form" id="TermsInfo">
                 <h1>Welcome to your Home Insurance quotation form</h1>
@@ -146,7 +146,7 @@
                       <div class="col-sm-6"> 
                         <label for="houseType">House Type</label>
                         <select class="form-select" id="houseType" name="houseType">
-                            <option value="ownerOccupiedCover">Owner Occupied Cover</option>
+                            <option value="ownerOccupiedCover" selected>Owner Occupied Cover</option>
                             <option value="landlordOrTenentCover">Landlord Or Tenant Cover</option>
                             <option value="holidayHomeCover">Holiday Home Cover</option>
                         </select>
@@ -194,7 +194,7 @@
                             <!-- do you have any security systems installed?  --> 
                             <label for="securitySystems">Security Systems</label>  
                             <select class="form-select" id="securitySystems" name="securitySystems">
-                                <option value="yes">Yes</option>
+                                <option value="yes" selected>Yes</option>
                                 <option value="no">No</option>
                             </select>
                         </div>
@@ -203,7 +203,7 @@
                             <!-- how do you heat your home?  --> 
                             <label for="heatingType">Heating Type</label>
                             <select class="form-select" id="heatingType" name="heatingType">
-                                <option value="centralHeating">Central Heating</option>
+                                <option value="centralHeating" selected>Central Heating</option>
                                 <option value="electricHeating">Electric Heating</option>
                                 <option value="gasHeating">Gas Heating</option>
                                 <option value="otherHeating">Other</option> 
@@ -220,7 +220,7 @@
                         <!--how many years no claims on home insurance? -->
                         <div class="col-sm-6">
                             <label for="noClaimsYears">Number of Claim Free Years</label>
-                            <input type="number" id="noClaimsYears" name="noClaimsYears" placeholder="e.g., 5">
+                            <input type="number" id="noClaimsYears" name="noClaimsYears" placeholder="e.g., 5" value="0">
                         </div> 
                     </div>
                 </div> <!-- End of House Info section -->
@@ -339,5 +339,9 @@
             </footer>
 
     <script src="./assets/js/script.js"></script>
+    <!-- EmailJS CDN script -->
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
     </body>
 </html>

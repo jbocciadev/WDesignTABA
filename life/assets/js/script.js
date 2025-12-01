@@ -279,8 +279,6 @@ function sendEmail(quoteDetails) {
     emailjs.send(serviceID, templateID, emailData)
         .then(() => {
                 triggerToast("info", "Your quotation was emailed to " + emailData.email);
-                // document.getElementById("emailQuote").textContent =
-                //     "Quotation has been successfully sent to your email!"; // prevent user from sending same email again, transform button
             })
             .catch((error) => {
                 console.error("Error sending quotation:", error);
@@ -313,11 +311,3 @@ function triggerToast(toastType, toastText) {
         }
     Toastify(toastParameters).showToast();
 };
-
-// 0 Calculate premium
-    // 1 capture relevant fields
-    // Name, email, 
-    // 2 send email
-    // 3 clear form
-    // 4 hide form, show success message
-    // lifeForm.requestSubmit();
