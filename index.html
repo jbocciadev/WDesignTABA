@@ -9,20 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./base.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="https://kit.fontawesome.com/7c24784c1c.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" type="image/x-icon">
+    <!-- Preloading image (https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) -->
+    <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+    <link rel="preload" fetchpriority="high" as="image" href="./assets/images/LandingHeroImage.webp" type="image/webp">
+    <!-- Preconnecting to fontawesome for reduced path latency -->
+     <link rel="preconnect" href="https://ka-f.fontawesome.com">
     <title>Cool insurance</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#"><img id="cool_logo" src="./assets/images/Cool_logo.png" alt="Cool logo"
+            <a class="navbar-brand" href="#"><img id="cool_logo" src="./assets/images/Cool_logo.webp" alt="Cool logo"
                     height="100" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -68,7 +69,7 @@
         <div class="hero-card d-none d-sm-block col-md-10 col-lg-8">
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="./assets/images/LandingHeroImage.png" alt="" />
+                    <img src="./assets/images/LandingHeroImage.webp" alt="" class="d-none d-sm-block"/>
                 </div>
                 <div class="hero-text">
                     <h1 class="hero-text-header">Life insurance</h1>
@@ -88,7 +89,7 @@
         <div class="hero-card d-sm-none d-block">
             <div class="row">
                 <div class="image-wrapper w-100">
-                    <img src="./assets/images/LandingHeroImage.png" alt="" />
+                    <img src="./assets/images/LandingHeroImage mob.webp" alt="" class="d-block d-sm-none"/>
                 </div>
             </div>
             <div class="hero-image">
@@ -112,7 +113,7 @@
         <div class="hero-card-2 d-none d-sm-block col-md-10 col-lg-8">
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="./assets/images/pexels-olly-787476.jpg" alt="" />
+                    <img src="./assets/images/pexels-olly-787476.webp" alt="" class="d-none d-sm-block"/>
                 </div>
                 <div class="hero-text">
                     <h1 class="hero-text-header">Car insurance</h1>
@@ -131,7 +132,7 @@
         <div class="hero-card-2 d-sm-none d-block">
             <div class="row">
                 <div class="image-wrapper w-100">
-                    <img src="./assets/images/pexels-olly-787476.jpg" alt="" />
+                    <img src="./assets/images/pexels-olly-787476 mob.webp" alt="" class="d-block d-sm-none"/>
                 </div>
             </div>
             <div class="hero-image">
@@ -154,7 +155,7 @@
         <div class="hero-card d-none d-sm-block col-md-10 col-lg-8">
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="./assets/images/home.jpg" alt="" />
+                    <img src="./assets/images/home.webp" alt="" class="d-none d-small-block"/>
                 </div>
                 <div class="hero-text">
                     <h1 class="hero-text-header">Home insurance</h1>
@@ -175,7 +176,7 @@
         <div class="hero-card d-sm-none d-block">
             <div class="row">
                 <div class="image-wrapper w-100">
-                    <img src="./assets/images/home.jpg" alt="" />
+                    <img src="./assets/images/home mob.webp" alt="" class="d-block d-sm-none"/>
                 </div>
             </div>
             <div class="hero-image">
@@ -354,7 +355,7 @@
                                     <textarea name="message" id="message" class="contact-input" wrap="hard" rows="8"
                                         placeholder="Your message..." required></textarea>
                                 </div>
-                                <input type="submit" name="submit-btn" id="submit-btn" class="align-self-center">
+                                <input type="submit" name="submit-btn" id="submit-btn" class="align-self-center mt-3">
                                 
                             </form>
                             <div class="d-none my-2" id="successMessage">
@@ -483,7 +484,7 @@
             </div>
             <div>
                 <div>
-                    <a href="#"><img class="footer-logo" src="./assets/images/Cool_logo.png" alt="" /></a>
+                    <a href="#"><img class="footer-logo" src="./assets/images/Cool_logo.webp" alt="" /></a>
                 </div>
                 <div class="footer-socials">
                     <div>
@@ -512,9 +513,17 @@
             <p>For educational purposes only</p>
         </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- Fontawesome JS kit -->
+    <script src="https://kit.fontawesome.com/7c24784c1c.js" crossorigin="anonymous"></script>
+
 <!-- Jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="assets\js\script.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="assets\js\script.js"></script>
+  </body>
 
 </html>
