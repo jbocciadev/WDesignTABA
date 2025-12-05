@@ -1,7 +1,7 @@
 @import "../../../base.css";
 
 /* TAGS */
-h1 {
+h2 {
     text-align: center;
     color: #fff;
     border-radius: 15px;
@@ -108,7 +108,7 @@ div.sticky {
     bottom: 0;
     background-color: #247AB7;
     padding: 18px 18px 12px 18px;
-    width: 100vw;
+    width: 100%;
     color: white;
     display: flex;
     justify-content: space-around;
