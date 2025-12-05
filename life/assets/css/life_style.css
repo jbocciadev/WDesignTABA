@@ -84,12 +84,15 @@ input[type=text], input[type=date],input[type=email],input[type=tel],  .amount-s
 .form-buttons {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 .form-buttons * {
     border: 2px solid;
     border-radius: 5px;
     font-weight: 500;
     padding: 5px 10px;
+    min-width: 20%;
+    aspect-ratio: 4/1;
 }
 #add-adult-btn, #remove-adult-btn, #submit-form-btn {
     border: none;
@@ -149,4 +152,11 @@ input[type=checkbox]:focus {
 }
 .reqd-asterisk {
     color: var(--green);
+}
+
+@media (min-width: 1900px){
+    form input {
+        font-size: 25px !important;
+    }
+    
 }
