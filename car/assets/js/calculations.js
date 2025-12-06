@@ -73,7 +73,7 @@ function calculatePremium() {
 
     if (parking === 0) parkingMultiplier = -0.2; // garaged
     else if (parking === 1) parkingMultiplier = 0;
-    else parkingMultiplier = 0.2; 
+    else parkingMultiplier = 0.2;
 
     total += total * parkingMultiplier; // Calculate the Parking premium
 
@@ -213,7 +213,7 @@ document.getElementById("quotationForm").addEventListener("submit", function (ev
     // emailJS car template and service id
     const serviceID = "service_t7m9ufn";
     const templateID = "template_79rrvnt";
-    
+
     // has to match the parameters in the service template
     const quotationForm = {
         name: name,
@@ -226,13 +226,15 @@ document.getElementById("quotationForm").addEventListener("submit", function (ev
     // console.table(quotationForm);
     // console.log("Annual total:", total.toFixed(2));
     // console.log("Monthly total:", monthlyTotal.toFixed(2));
+    console.log(name, inputEmail, reg);
+    console.log(quotationForm);
 
     // forward details onto the service with conditionals for info
     emailjs.send(serviceID, templateID, quotationForm)
         .then(() => {
             alert("Your quotation was emailed to: " + inputEmail);
             // Hide the submit button after sending the email
-            document.getElementById("emailquote").style.display = 'none'; 
+            document.getElementById("emailQuote").style.display = 'none';
         })
         .catch((error) => {
             console.error("Error sending quotation:", error);
