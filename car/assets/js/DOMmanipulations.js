@@ -1,3 +1,7 @@
+//  This is the car insurance quotation page of our company's site
+// Kevin Orlov 
+// Student ID: x24150614 
+
 // DOM MANIPULATION SECTION-----------------------------------------------------------------------
 // REG PLATE - Source W3Schools - HTML DOM Element textContent
 const input = document.getElementById("inputReg");

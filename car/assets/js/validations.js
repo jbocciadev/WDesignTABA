@@ -1,3 +1,7 @@
+//  This is the car insurance quotation page of our company's site
+// Kevin Orlov 
+// Student ID: x24150614 
+
 // VALIDATIONS SECTION -------------------------------------------------------------------------
 //Reg validation -- WARN No spaces
 document.getElementById('inputReg').addEventListener('input', function () {
