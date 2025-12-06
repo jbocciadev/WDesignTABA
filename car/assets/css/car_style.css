@@ -91,6 +91,10 @@ textarea:invalid {
     box-shadow: 0 0 2px #3C9E82;
 }
 
+.btn-primary {
+    width: 200px;
+}
+
 /* Collapsed Form Edit Buttons */
 .editDropdown {
     justify-self: center;
