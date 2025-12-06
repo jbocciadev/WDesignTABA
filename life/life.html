@@ -30,13 +30,16 @@
         ></script>
         <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
         <title>Cool insurance</title>
+        <!-- SEO Optimisation -->
+        <meta name="description" content="Ireland-based affordable insurance company established in 2025. Life insurance, Car insurance and Home insurance For educational purposes only.">
+
     </head>
     <body>
    
     <!-- Bootstrap-native responsive Navigation bar -->
     <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="../index.html"><img id="cool_logo" src="../assets/images/Cool_logo.png" alt="Cool logo"
+            <a class="navbar-brand" href="../index.html" aria-label="Back to home page"><img id="cool_logo" src="../assets/images/Cool_logo.webp" alt="Cool logo"
                     height="100" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -49,26 +52,26 @@
                 <ul class="navbar-nav ms-auto align-items-center d-none d-sm-flex">
                     
                     <li class="nav-item">
-                        <a class="nav-link activated" href="#"><i class="fa-solid fa-person"></i>Life</a>
+                        <a class="nav-link activated" href="#" aria-label="this page"><i class="fa-solid fa-person"></i>Life</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../car/car.html"><i class="fa-solid fa-car"></i>Car</a>
+                        <a class="nav-link" href="../car/car.html" aria-label="car insurance"><i class="fa-solid fa-car"></i>Car</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../home/home.html"><i class="fa-solid fa-house"></i>Home</a>
+                        <a class="nav-link" href="../home/home.html" aria-label="home insurance"><i class="fa-solid fa-house"></i>Home</a>
                     </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto align-items-center d-sm-none">
                     <div>                        
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="#">Life</a><i class="fa-solid fa-person text-center"></i>
+                            <a class="nav-link" href="#" aria-label="this page">Life</a><i class="fa-solid fa-person text-center" ></i>
                         </li>
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="../car/car.html">Car</a><i class="fa-solid fa-car text-center"></i>
+                            <a class="nav-link" href="../car/car.html" aria-label="car insurance">Car</a><i class="fa-solid fa-car text-center"></i>
                         </li>
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="../home/home.html">Home</a><i class="fa-solid fa-house text-center"></i>
+                            <a class="nav-link" href="../home/home.html" aria-label="home insurance">Home</a><i class="fa-solid fa-house text-center"></i>
                         </li>
                     </div>
                 </ul>
@@ -79,7 +82,7 @@
     <!-- End of Navbar -->        
 
         <div class="row d-flex justify-content-center m-0">
-            <form action="" class="w-100 p-0" id="lifeForm">
+            <form action="" class="w-100 p-0" id="lifeForm" role="main">
                 <div class="form-container py-3 w-100 green-bg">
                     <div class="life-form col-11 col-sm-9">
                         <div class="titlediv">
@@ -114,17 +117,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-md-6 p-0 py-sm-2 px-sm-4">
-                                        <label for="dob1" class="d-block">Date of Birth <span class="reqd-asterisk">*</span></label>
+                                        <label for="dob-1" class="d-block">Date of Birth <span class="reqd-asterisk">*</span></label>
                                         <input type="date" class="shadowOnFocus validate" name="dob" id="dob-1" >
                                     </div>
                                     <div class="col-12 col-md-6 p-0 py-sm-2 px-sm-4">
                                         <label for="smoker" class="d-block">Are you a smoker? <span class="reqd-asterisk">*</span></label>
                                         <div class="smoker-wrapper d-flex justify-content-center shadowOnFocus" tabindex="0">
                                             <div class="smoker-yes" >
-                                                <label for="smoker-yes">Yes</label> <input type="radio" class="firstSmoker validate" name="smoker" value="yes" id="smoker-yes1" > 
+                                                <label for="smoker-yes1">Yes</label> <input type="radio" class="firstSmoker validate" name="smoker" value="yes" id="smoker-yes1" > 
                                             </div>
                                             <div class="smoker-no">
-                                                <label for="smoker-no">No</label> <input type="radio" class="firstSmoker" name="smoker" value="no" id="smoker-no1">
+                                                <label for="smoker-no1">No</label> <input type="radio" class="firstSmoker" name="smoker" value="no" id="smoker-no1">
                                             </div>
                                         </div>
                                     </div>
@@ -154,17 +157,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-md-6 p-0 py-sm-2 px-sm-4">
-                                        <label for="dob2" class="d-block">Date of Birth <span class="reqd-asterisk">*</span></label>
+                                        <label for="dob-2" class="d-block">Date of Birth <span class="reqd-asterisk">*</span></label>
                                         <input type="date" class="shadowOnFocus validate" name="dob" id="dob-2"  disabled>
                                     </div>
                                     <div class="col-12 col-md-6 p-0 py-sm-2 px-sm-4">
                                         <label for="smoker" class="d-block">Are you a smoker? <span class="reqd-asterisk">*</span></label>
                                         <div class="smoker-wrapper d-flex justify-content-center shadowOnFocus" tabindex="0">
                                             <div class="smoker-yes">
-                                                <label for="smoker-yes">Yes</label> <input type="radio" class="secondSmoker validate" name="smoker-2" value="yes" id="smoker-yes2"  disabled> 
+                                                <label for="smoker-yes2">Yes</label> <input type="radio" class="secondSmoker validate" name="smoker-2" value="yes" id="smoker-yes2"  disabled> 
                                             </div>
                                             <div class="smoker-no">
-                                                <label for="smoker-no">No</label> <input type="radio" class="secondSmoker" name="smoker-2" value="no" id="smoker-no2" disabled>
+                                                <label for="smoker-no2">No</label> <input type="radio" class="secondSmoker" name="smoker-2" value="no" id="smoker-no2" disabled>
                                             </div>                                            
                                             
                                         </div>
@@ -279,35 +282,35 @@
             <div>
                 <h3>Our Products</h3>
                 <ul class="products-list">
-                    <li><a href="#">Life Insurance</a></li>
-                    <li><a href="../car/car.html">Car Insurance</a></li>
-                    <li><a href="../home/home.html">Home Insurance</a></li>
+                    <li><a href="#" aria-label="this page" tabindex="-1">Life Insurance</a></li>
+                    <li><a href="../car/car.html" aria-label="Car insurance">Car Insurance</a></li>
+                    <li><a href="../home/home.html" aria-label="Home insurance">Home Insurance</a></li>
                 </ul>
             </div>
             <div>
                 <h3>Cool Insurance</h3>
                 <ul class="products-list">
-                    <li><a href="../index.html#FAQs">FAQs</a></li>
-                    <li><a href="../index.html#contact-section">Contact</a></li>
-                    <li><a href="../index.html#about">About us</a></li>
+                    <li><a href="../index.html#FAQs" aria-label="Visit our FAQs section">FAQs</a></li>
+                    <li><a href="../index.html#contact-section" aria-label="Visit our contact-us form">Contact</a></li>
+                    <li><a href="../index.html#about" aria-label="visit our about-us section">About us</a></li>
                 </ul>
             </div>
             <div>
                 <div>
-                    <a href="../index.html"><img class="footer-logo" src="../assets/images/Cool_logo.png" alt="" /></a>
+                    <a href="../index.html" aria-label="Back to the home page"><img class="footer-logo" src="../assets/images/Cool_logo.webp" alt="" /></a>
                 </div>
                 <div class="footer-socials">
                     <div>
-                        <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                     <div>
-                        <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" aria-label="linked in"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                     <div>
-                        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                     <div>
-                        <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" aria-label="youtube"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
