@@ -222,6 +222,7 @@ footer hr {
 
 li.nav-item {
     margin: 0px 10px 0px 10px;
+    display: block !important;
 }
 
 .navbar {
@@ -229,7 +230,6 @@ li.nav-item {
     box-shadow: 0 0 10px darkslategray;
     background-color: var(--white) !important;
     justify-content: space-evenly;
-    /* border-radius: 0 0 30px 30px; */
 }
 
 /* Active Page highlighted navbar */

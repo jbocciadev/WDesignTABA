@@ -34,7 +34,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <hr>
-                <!--  -->
                 <ul class="navbar-nav ms-auto align-items-center d-none d-sm-flex">
                     
                     <li class="nav-item">
@@ -49,17 +48,15 @@
                 </ul>
 
                 <ul class="navbar-nav ms-auto align-items-center d-sm-none">
-                    <div>                        
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="./life/life.html" aria-label="life insurance">Life</a><i class="fa-solid fa-person text-center"></i>
+                            <a class="nav-link" href="./life/life.html" aria-label="life insurance">Life <i class="fa-solid fa-person text-center"></i></a>
                         </li>
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="./car/car.html" aria-label="car insurance">Car</a><i class="fa-solid fa-car text-center"></i>
+                            <a class="nav-link" href="./car/car.html" aria-label="car insurance">Car <i class="fa-solid fa-car text-center"></i></a>
                         </li>
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="./home/home.html" aria-label="home insurance">Home</a><i class="fa-solid fa-house text-center"></i>
+                            <a class="nav-link" href="./home/home.html" aria-label="home insurance">Home <i class="fa-solid fa-house text-center"></i></a>
                         </li>
-                    </div>
                 </ul>
             </div>
         </div>
@@ -91,7 +88,7 @@
             <div class="hero-card d-sm-none d-block">
                 <div class="row">
                     <div class="image-wrapper w-100">
-                        <img src="./assets/images/LandingHeroImage mob.webp" alt="A group of friends enjoying time sitting on the grass." class="d-block d-sm-none"/>
+                        <img src="./assets/images/LandingHeroImage_mob.webp" alt="A group of friends enjoying time sitting on the grass." class="d-block d-sm-none"/>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -134,7 +131,7 @@
             <div class="hero-card-2 d-sm-none d-block">
                 <div class="row">
                     <div class="image-wrapper w-100">
-                        <img src="./assets/images/pexels-olly-787476 mob.webp" alt="A lady drives her convertible." class="d-block d-sm-none"/>
+                        <img src="./assets/images/pexels-olly-787476_mob.webp" alt="A lady drives her convertible." class="d-block d-sm-none"/>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -178,7 +175,7 @@
             <div class="hero-card d-sm-none d-block">
                 <div class="row">
                     <div class="image-wrapper w-100">
-                        <img src="./assets/images/home mob.webp" alt="A row of houses along a residential road." class="d-block d-sm-none"/>
+                        <img src="./assets/images/home_mob.webp" alt="A row of houses along a residential road." class="d-block d-sm-none"/>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -199,7 +196,7 @@
         </section>
     </main>
 
-    <!-- FAQ Main section --------------------------------------------------------->
+    <!-- FAQ Main section -->
     <section class="landing-section-2 d-flex justify-content-center" id="FAQs">
         <div class="faqMain">
             <h1 class="faqHeading">Frequently Asked Questions <i class="fa-solid fa-clipboard-question"></i></h1>
@@ -207,7 +204,7 @@
 
             <!-- LIFE CHEVRON -->
             <h3 class="faq-toggle" id="lifeButton"><i class="fa-solid fa-person" style="font-size: 1.15em;"></i> Life
-                Questions <i class="fa fa-chevron-down" id="lifeButton"></i></h3>
+                Questions <i class="fa fa-chevron-down" ></i></h3>
             <!-- LIFE FAQ -->
             <div id="lifeFAQ">
                 <button class="accordion">What types of life insurance do you offer?</button>
@@ -247,7 +244,7 @@
 
             <!-- CAR CHEVRON -->
             <h3 class="faq-toggle" id="carButton"><i class="fa-solid fa-car"></i> Car Questions <i
-                    class="fa fa-chevron-down" id="carButton"></i></h3>
+                    class="fa fa-chevron-down" ></i></h3>
 
             <!-- CAR FAQ -->
             <div id="carFAQ">
@@ -284,7 +281,7 @@
 
             <!-- HOME CHEVRON -->
             <h3 class="faq-toggle" id="homeButton"><i class="fa-solid fa-house"></i> Home Questions <i
-                    class="fa fa-chevron-down" id="homeButton"></i></h3>
+                    class="fa fa-chevron-down"></i></h3>
             <!-- HOME FAQ -->
             <div id="homeFAQ">
                 <button class="accordion">What does home insurance cover?</button>
@@ -295,11 +292,13 @@
 
                 <button class="accordion">What is the difference between building and contents insurance?</button>
                 <div class="panel">
-                    <li>Building insurance covers the structure of your home.
-                    </li>
-                    <li>Contents insurance covers the personal items inside your home.
+                    
+                    <p>Building insurance covers the structure of your home.
+                    </p>
+                    <p>Contents insurance covers the personal items inside your home.
                         You can purchase one or both depending on your needs.
-                    </li>
+                    </p>
+                    
                 </div>
 
                 <button class="accordion">Do I need home insurance if I’m renting?</button>
@@ -329,7 +328,7 @@
             </div>
         </div>
     </section>
-    <!-- END OF FAQ ------------------------------------------------------------- -->
+    <!-- END OF FAQ -->
 
     <section class="landing-section d-flex justify-content-center" id="contact-section">
         <div class="hero-card contact-card col-md-10 col-lg-8">
@@ -338,11 +337,10 @@
                     <h1 class="text-center">Contact us <i class="fa-solid fa-envelope-open-text"></i></h1>
                     <hr>
                 </div>
-                <div class="row d-flex flex-column flex-sm-row">
-                    
+                <div class="row d-flex flex-column flex-sm-row">                    
                     <!-- Contact form -->
                     <div class="d-flex flex-column align-items-center justify-content-between">
-                            <form action="" id="contact-form" class="d-flex flex-column justify-content-around">
+                            <form action="post" id="contact-form" class="d-flex flex-column justify-content-around">
                                 <div class="row mb-2 mx-auto">   
                                     <label for="name">Name *</label>
                                     <input type="text" id="name" class="contact-input" placeholder="Your name" required>
@@ -354,7 +352,7 @@
                                 </div>
                                 <div class="row mb-2 mx-auto">    
                                     <label for="message">Your message to us *</label>
-                                    <textarea name="message" id="message" class="contact-input" wrap="hard" rows="8"
+                                    <textarea name="message" id="message" class="contact-input" wrap="hard" rows="8" cols="20"
                                         placeholder="Your message..." required></textarea>
                                 </div>
                                 <input type="submit" name="submit-btn" id="submit-btn" class="align-self-center mt-3">
@@ -372,17 +370,15 @@
                                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map to our HQ"></iframe>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
     </section>
 
     <section class="landing-section-2 d-flex justify-content-center" id="about">
 
-        <div> <!-- Full width container for the form -->
+        <div> 
+            <!-- Full width container for the form -->
             <div class="faqMain mx-auto text-start" id="AboutUsSection"> <!-- Edited CSS to center the form -->
                 <h1 class="faqHeading">About Us</h1>
                 <h2 class="text-center">Pioneering Insurance Online Since 2025</h2>
@@ -462,6 +458,7 @@
                 </div>
 
             </div>
+        </div>
     </section>
 
 
@@ -525,7 +522,7 @@
 
 <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="assets\js\script.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 
 </html>
