@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../base.css" />
     <link rel="stylesheet" href="assets/css/car_style.css">
     <script src="https://kit.fontawesome.com/7c24784c1c.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
     <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
 
@@ -23,7 +23,7 @@
     <!-- Bootstrap-native responsive Navigation bar -->
     <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="../index.html"><img id="cool_logo" src="../assets/images/Cool_logo.webp" alt="Cool logo"
+            <a class="navbar-brand" href="../index.html" aria-label="this page"><img id="cool_logo" src="../assets/images/Cool_logo.webp" alt="Cool insurance logo"
                     height="100" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -32,32 +32,29 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <hr>
-                <!--  -->
                 <ul class="navbar-nav ms-auto align-items-center d-none d-sm-flex">
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="../life/life.html"><i class="fa-solid fa-person"></i>Life</a>
+                        <a class="nav-link" href="../life.html" aria-label="life insurance"><i class="fa-solid fa-person"></i>Life</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link activated" href="#"><i class="fa-solid fa-car"></i>Car</a>
+                        <a class="nav-link" href="../car.html" aria-label="car insurance"><i class="fa-solid fa-car"></i>Car</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../home/home.html"><i class="fa-solid fa-house"></i>Home</a>
+                        <a class="nav-link" href="../home/home.html" aria-label="home insurance"><i class="fa-solid fa-house"></i>Home</a>
                     </li>
                 </ul>
-
+                <!-- Navbar list for smaller screens -->
                 <ul class="navbar-nav ms-auto align-items-center d-sm-none">
-                    <div>                        
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="../life/life.html">Life</a><i class="fa-solid fa-person text-center"></i>
+                            <a class="nav-link" href="../life.html" aria-label="life insurance">Life <i class="fa-solid fa-person text-center"></i></a>
                         </li>
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="#">Car</a><i class="fa-solid fa-car text-center"></i>
+                            <a class="nav-link" href="../car.html" aria-label="car insurance">Car <i class="fa-solid fa-car text-center"></i></a>
                         </li>
                         <li class="nav-item d-flex justify-content-between">
-                            <a class="nav-link" href="../home/home.html">Home</a><i class="fa-solid fa-house text-center"></i>
+                            <a class="nav-link" href="../home/home.html" aria-label="home insurance">Home <i class="fa-solid fa-house text-center"></i></a>
                         </li>
-                    </div>
                 </ul>
             </div>
         </div>
@@ -66,9 +63,8 @@
     <!-- End of Navbar -->
 
 
-    <body>
 
-        <!-- HIDDEN SECTION -- The TERMS AND CONDITIONS Overlay Div -->
+        <!-- HIDDEN SECTION / The TERMS AND CONDITIONS Overlay Div -->
         <div id="tcOverlay" class="overlay">
             <div class="overlayContent">
                 <h1>Cool Insurance - Terms and Conditions</h1>
@@ -95,7 +91,6 @@
                 <button id="closeOverlay">Accept and Close</button>
             </div>
         </div>
-    </body>
 
     <!-- FORM START -->
     <form id="quotationForm">
@@ -189,7 +184,7 @@
                     </div>
                     <!-- MODEL -->
                     <div class="col-md-4">
-                        <label for="text" class="form-label">Model</label>
+                        <label for="inputModel" class="form-label">Model</label>
                         <input type="text" class="form-control" id="inputModel" placeholder="Vehicle model name"
                             required>
                     </div>
@@ -271,7 +266,7 @@
         <!-- Insurance Preferences-------------------------------------------------------- -->
         <section class="greenBack">
             <!-- Hidden Edit Insurance Preferences -->
-            <h3 class="editDropdown" id="editInsPref"><i class="fa-solid fa-list-check"></i></i> Edit Insurance
+            <h3 class="editDropdown" id="editInsPref"><i class="fa-solid fa-list-check"></i> Edit Insurance
                 Preferences
                 <i class="fa fa-chevron-down"></i>
             </h3>
@@ -294,7 +289,7 @@
                     <div class="policy form-group col-lg-5 p-3 mb-3">
                         <label for="policyStart" class="mb-1">Policy Start Date</label><br>
                         <input type="date" class="mb-1" id="policyStart" name="policyStart" required><br>
-                        <p">Cannot be back-dated*</p>
+                        <p>Cannot be back-dated*</p>
                     </div>
                 </div>
                 <!-- POLICY ADDONS -->
@@ -325,7 +320,7 @@
         <!-- Driver Age -->
         <section class="whiteBack">
             <!-- Hidden Edit Insurance Preferences -->
-            <h3 class="editDropdown" id="editDriverDetails"><i class="fa-solid fa-id-card"></i></i> Edit Driver Details
+            <h3 class="editDropdown" id="editDriverDetails"><i class="fa-solid fa-id-card"></i> Edit Driver Details
                 <i class="fa fa-chevron-down"></i>
             </h3>
             <!-- Start of Driver info -->
@@ -437,7 +432,8 @@
                 <div id="penaltyArea" class="mb-3" style="display:none;">
                     <label for="penalty" class="form-label">How many penalty points do you have?</label>
                     <select class="form-select" id="penalty" required>
-                        <option value="0">Select Points</option>
+                        <option value="">Select Points</option>
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -514,22 +510,16 @@
             </div>
 
             <div>
-                <div>
-                    <a href="../index.html"><img class="footer-logo" src="../assets/images/Cool_logo.webp"
-                            alt="Company Logo" /></a>
+                <div><a href="../index.html" aria-label="this page"><img class="footer-logo" src="../assets/images/Cool_logo.webp" alt="" /></a>
                 </div>
                 <div class="footer-socials">
-                    <div>
-                        <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <div><a href="https://www.facebook.com/" target="_blank" aria-label="facebook"><i class="fa-brands fa-facebook"></i></a>
                     </div>
-                    <div>
-                        <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <div><a href="https://www.linkedin.com/" target="_blank" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
-                    <div>
-                        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <div><a href="https://www.instagram.com/" target="_blank" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
                     </div>
-                    <div>
-                        <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <div><a href="https://www.youtube.com/" target="_blank" aria-label="youtube"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
