@@ -138,7 +138,7 @@ div.sticky {
     border-style: inset;
     padding: 0%;
     height: 72.5px;
-    width: fit-content;
+    width: 250px;
     border-radius: 11px;
     box-shadow: 0 0 10px;
 }
