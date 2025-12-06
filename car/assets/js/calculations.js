@@ -214,7 +214,7 @@ document.getElementById("quotationForm").addEventListener("submit", function (ev
     const serviceID = "service_t7m9ufn";
     const templateID = "template_79rrvnt";
     
-    //has to match the parameters in the service template
+    // has to match the parameters in the service template
     const quotationForm = {
         name: name,
         input_Email: inputEmail,
@@ -231,8 +231,8 @@ document.getElementById("quotationForm").addEventListener("submit", function (ev
     emailjs.send(serviceID, templateID, quotationForm)
         .then(() => {
             alert("Your quotation was emailed to: " + inputEmail);
-            document.getElementById("emailQuote").textContent =
-                "Quotation has been successfully sent to your email!"; // prevent user from sending same email again, transform button
+            // Hide the submit button after sending the email
+            document.getElementById("emailquote").style.display = 'none'; 
         })
         .catch((error) => {
             console.error("Error sending quotation:", error);

@@ -136,9 +136,9 @@ div.sticky {
 /* REG GRAPHIC ---------------------------------------------------------------*/
 .reg {
     border-style: inset;
-    padding: 0%;
+    padding: 0px;
     height: 72.5px;
-    width: 250px;
+    width: 248px;
     border-radius: 11px;
     box-shadow: 0 0 10px;
 }
@@ -148,9 +148,11 @@ div.sticky {
 }
 
 #regText {
-    font-size: 32px;
-    margin: 13px;
+    font-size: 27px;
+    margin: 2px;
+    text-align: center;
     font-weight: 600;
+    line-height: 70px;
 }
 
 /* REG END ------------------------------------------------------------------ */
