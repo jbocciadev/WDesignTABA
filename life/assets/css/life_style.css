@@ -42,7 +42,7 @@
     flex-direction: column;
 }
 
-label {
+label, .smoker-label {
     font-size: large;
     font-weight: bold;
 }
@@ -98,6 +98,7 @@ input[type=text], input[type=date],input[type=email],input[type=tel],  .amount-s
     border: none;
     box-shadow: 0 0 10px var(--black);
 }
+
 #add-adult-btn:hover {
     border-color: var(--blue);
     background-color: var(--blue);
@@ -118,7 +119,6 @@ input[type=text], input[type=date],input[type=email],input[type=tel],  .amount-s
     border-radius: 5px;
     padding: 10px 20px;
 }
-
 
 .list-header {
     border-radius: 0 !important;
@@ -156,6 +156,9 @@ input[type=checkbox]:focus {
 @media (min-width: 1900px){
     form input {
         font-size: 25px !important;
+    }
+    #cover-term {
+        margin: 0 !important;
     }
     
 }

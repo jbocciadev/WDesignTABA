@@ -232,10 +232,10 @@ function calculatePremium(adult){
         premiumMultiplier += 1* (1/3); // if smoker, multiplier is 33% more
     }
     // Factor in Age
-    premiumMultiplier += 1* ((1/3) * Math.min(1, (adult.age/50))); // links multiplier to age. If age 50 or more, this part is added cpmpletely, otherwise, a fraction of this 33%
+    premiumMultiplier += 1* ((1/3) * Math.min(1, (adult.age/50))); // links multiplier to age. If age 50 or more, this part is added completely, otherwise, a fraction of this 33%
 
     // Factor in cover term
-    premiumMultiplier += 1* (1/3) * (adult.term/40)
+    premiumMultiplier += 1* (1/3) * (adult.term/40) // A percentage of the max term of 40 yrs will apply
 
     // Calculate total monthly premium
     monthlyPremium = maxPremium * premiumMultiplier;
@@ -282,7 +282,8 @@ function sendEmail(quoteDetails) {
             })
             .catch((error) => {
                 console.error("Error sending quotation:", error);
-                alert("Error sending email");
+                triggerToast("error", error.message)
+                // alert("Error sending email");
             });
 
 }
